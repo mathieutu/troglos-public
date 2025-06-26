@@ -2,21 +2,29 @@
   "name": "troglos-cr",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "yarn data:generate && next dev --turbopack",
+    "build": "yarn data:generate && next build",
     "start": "next start",
-    "lint": "prettier --write . && next lint --fix"
+    "lint": "prettier --write . && next lint --fix",
+    "data:generate": "node --env-file-if-exists=.env src/scripts/fetchData.ts"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.4",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "github-slugger": "^2.0.0",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^24.0.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

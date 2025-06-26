@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  /* Font families */
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* https://davidpiesse.github.io/tailwind-md-colours/*/
+  /*--color-caving-50:  #efebe9;*/
+  /*--color-caving-100: #d7ccc8;*/
+  /*--color-caving-200: #bcaaa4;*/
+  /*--color-caving-300: #a1887f;*/
+  /*--color-caving-400: #8d6e63;*/
+  /*--color-caving-500: #795548;*/
+  /*--color-caving-600: #6d4c41;*/
+  /*--color-caving-700: #5d4037;*/
+  /*--color-caving-800: #4e342e;*/
+  /*--color-caving-900: #3e2723 ;*/
+  /*--color-caving-950: oklch(27.9% 0.077 45.635);*/
+
+  /* ChatGPT */
+  --color-brown-50: oklch(0.98 0.01 45);
+  --color-brown-100: oklch(0.94 0.02 45);
+  --color-brown-200: oklch(0.88 0.03 45);
+  --color-brown-300: oklch(0.78 0.05 45);
+  --color-brown-400: oklch(0.68 0.07 45);
+  --color-brown-500: oklch(0.58 0.09 45);
+  --color-brown-600: oklch(0.48 0.09 45);
+  --color-brown-700: oklch(0.38 0.08 45);
+  --color-brown-800: oklch(0.28 0.07 45);
+  --color-brown-900: oklch(0.20 0.06 45);
+  --color-brown-950: oklch(0.12 0.05 45);
+
+  --color-primary-50: var(--color-indigo-50);
+  --color-primary-100: var(--color-indigo-100);
+  --color-primary-200: var(--color-indigo-200);
+  --color-primary-300: var(--color-indigo-300);
+  --color-primary-400: var(--color-indigo-400);
+  --color-primary-500: var(--color-indigo-500);
+  --color-primary-600: var(--color-indigo-600);
+  --color-primary-700: var(--color-indigo-700);
+  --color-primary-800: var(--color-indigo-800);
+  --color-primary-900: var(--color-indigo-900);
+  --color-primary-950: var(--color-indigo-950);
+
+  --color-canyon-50: var(--color-teal-50);
+  --color-canyon-100: var(--color-teal-100);
+  --color-canyon-200: var(--color-teal-200);
+  --color-canyon-300: var(--color-teal-300);
+  --color-canyon-400: var(--color-teal-400);
+  --color-canyon-500: var(--color-teal-500);
+  --color-canyon-600: var(--color-teal-600);
+  --color-canyon-700: var(--color-teal-700);
+  --color-canyon-800: var(--color-teal-800);
+  --color-canyon-900: var(--color-teal-900);
+  --color-canyon-950: var(--color-teal-950);
+
+  --color-caving-50: var(--color-brown-50);
+  --color-caving-100: var(--color-brown-100);
+  --color-caving-200: var(--color-brown-200);
+  --color-caving-300: var(--color-brown-300);
+  --color-caving-400: var(--color-brown-400);
+  --color-caving-500: var(--color-brown-500);
+  --color-caving-600: var(--color-brown-600);
+  --color-caving-700: var(--color-brown-700);
+  --color-caving-800: var(--color-brown-800);
+  --color-caving-900: var(--color-brown-900);
+  --color-caving-950: var(--color-brown-950);
+
+  /* Line heights */
+  --line-height-11: 2.75rem;
+  --line-height-12: 3rem;
+  --line-height-13: 3.25rem;
+  --line-height-14: 3.5rem;
+
+  /* Z-index values */
+  --z-60: 60;
+  --z-70: 70;
+  --z-80: 80;
+}
+
+.color-canyon{
+  --color-primary-50: var(--color-canyon-50);
+  --color-primary-100: var(--color-canyon-100);
+  --color-primary-200: var(--color-canyon-200);
+  --color-primary-300: var(--color-canyon-300);
+  --color-primary-400: var(--color-canyon-400);
+  --color-primary-500: var(--color-canyon-500);
+  --color-primary-600: var(--color-canyon-600);
+  --color-primary-700: var(--color-canyon-700);
+  --color-primary-800: var(--color-canyon-800);
+  --color-primary-900: var(--color-canyon-900);
+  --color-primary-950: var(--color-canyon-950);
+}
+
+.color-caving{
+  --color-primary-50: var(--color-caving-50);
+  --color-primary-100: var(--color-caving-100);
+  --color-primary-200: var(--color-caving-200);
+  --color-primary-300: var(--color-caving-300);
+  --color-primary-400: var(--color-caving-400);
+  --color-primary-500: var(--color-caving-500);
+  --color-primary-600: var(--color-caving-600);
+  --color-primary-700: var(--color-caving-700);
+  --color-primary-800: var(--color-caving-800);
+  --color-primary-900: var(--color-caving-900);
+  --color-primary-950: var(--color-caving-950);
+}
+
+@layer components {
+  .link {
+    @apply text-primary-500 hover:text-primary-600 dark:hover:text-primary-400;
+  }
+}

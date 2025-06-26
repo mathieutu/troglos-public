@@ -1,103 +1,74 @@
-import Image from "next/image";
+import { formatDateFr } from '@/utils/dates'
+import { Link } from '@/components/Link'
+import { Tag } from '@/components/Tag'
+import { tripsReports } from '@/data/trips'
 
-export default function Home() {
+export default async function Home() {
+  const MAX_DISPLAY = 10
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
+            Comptes rendus de <span className="text-caving-500">Spéléologie</span> et de{' '}
+            <span className="text-canyon-500">Canyonisme</span>
+          </h1>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">Les sorties du Clan.</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+          {!tripsReports.length && 'Aucun compte rendu trouvé.'}
+          {tripsReports.slice(0, MAX_DISPLAY).map((trip) => {
+            return (
+              <li key={trip.id} className="py-12">
+                <article className={trip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'}>
+                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                    <dl>
+                      <dt className="sr-only">Publié le</dt>
+                      <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+                        <time dateTime={trip.tripDate}>{formatDateFr(trip.tripDate)}</time>
+                      </dd>
+                    </dl>
+                    <div className="space-y-5 xl:col-span-3">
+                      <div className="space-y-6">
+                        <div>
+                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
+                            <Link href="#" className="text-gray-900 dark:text-gray-100">
+                              {trip.title}
+                            </Link>
+                          </h2>
+                          <div className="flex flex-wrap">
+                            {trip.tags.map((tag) => (
+                              <Tag key={tag.slug} tag={tag} />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                          {trip.quickSummary}
+                        </div>
+                      </div>
+                      {trip.description && (
+                        <div className="text-base leading-6 font-medium">
+                          <Link href="#" className="link" aria-label={`Lire "${trip.title}"`}>
+                            Lire &rarr;
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+      {tripsReports.length > MAX_DISPLAY && (
+        <div className="flex justify-end text-base leading-6 font-medium">
+          <Link href="/comptes-rendus" className="link" aria-label="All posts">
+            Tous les Comptes Rendus &rarr;
+          </Link>
+        </div>
+      )}
+    </>
+  )
 }
