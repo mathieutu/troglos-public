@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "prettier --write . && next lint --fix",
     "typecheck": "tsc --noEmit",
+    "check": "yarn lint && yarn typecheck",
     "data:generate": "node --env-file-if-exists=.env --experimental-strip-types src/scripts/fetchData.ts"
   },
   "dependencies": {
