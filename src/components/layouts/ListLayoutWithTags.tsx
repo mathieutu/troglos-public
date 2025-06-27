@@ -10,6 +10,7 @@ import { Bleed } from '@/components/Bleed'
 import banner from '@/assets/images/marcel.jpg'
 import Image from 'next/image'
 import { PageTitle } from '@/components/PageTitle'
+import { TRIPS_PER_PAGE } from '@/config/config'
 
 interface PaginationProps {
   totalPages: number
@@ -109,8 +110,6 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
     </div>
   )
 }
-
-export const TRIPS_PER_PAGE = 6
 
 interface ListLayoutProps {
   currentTag?: TagType

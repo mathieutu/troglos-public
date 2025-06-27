@@ -1,5 +1,6 @@
-import { ListLayoutWithTags, TRIPS_PER_PAGE } from '@/components/layouts/ListLayoutWithTags'
+import { ListLayoutWithTags } from '@/components/layouts/ListLayoutWithTags'
 import { tripsReports } from '@/data/trips'
+import { TRIPS_PER_PAGE } from '@/config/config'
 
 // export const metadata = genPageMetadata({ title: 'Blog' })
 

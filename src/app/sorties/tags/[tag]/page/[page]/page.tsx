@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { tags } from '@/data/trips'
-import { ListLayoutWithTags, TRIPS_PER_PAGE } from '@/components/layouts/ListLayoutWithTags'
+import { ListLayoutWithTags } from '@/components/layouts/ListLayoutWithTags'
+import { TRIPS_PER_PAGE } from '@/config/config'
 
 export const dynamicParams = false
 

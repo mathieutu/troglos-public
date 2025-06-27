@@ -10,3 +10,5 @@ export const footerNavLinks = [
   { href: '/terms', title: 'Terms of Service' },
   { href: '/contact', title: 'Contact' },
 ]
+
+export const TRIPS_PER_PAGE = 6

@@ -4,11 +4,10 @@ import { Card } from '@/components/Card'
 import caving from '@/assets/images/guiers.png'
 import canyoning from '@/assets/images/canyon/purcaraccia-1.jpg'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
+import { TRIPS_PER_PAGE } from '@/config/config'
 
 export default async function Home() {
-  const MAX_DISPLAY = 6
-
-  const tripsToDisplay = tripsReports.slice(0, MAX_DISPLAY)
+  const tripsToDisplay = tripsReports.slice(0, TRIPS_PER_PAGE)
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
