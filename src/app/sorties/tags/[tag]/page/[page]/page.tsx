@@ -1,9 +1,6 @@
-import { slug } from 'github-slugger'
 import { notFound } from 'next/navigation'
 import { tags } from '@/data/trips'
 import { ListLayoutWithTags } from '@/components/layouts/ListLayoutWithTags'
-
-const POSTS_PER_PAGE = 5
 
 // export const generateStaticParams = async () => {
 //   const tagCounts = tagData as Record<string, number>

@@ -11,7 +11,20 @@ const nextConfig: NextConfig = {
       new URL('https://avatars.slack-edge.com/**'),
     ],
   },
-  /* config options here */
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            icon: true,
+          },
+        },
+      ],
+    })
+    return config
+  },
   turbopack: {
     rules: {
       '*.svg': {
