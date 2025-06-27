@@ -57,7 +57,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="flex justify-end text-base leading-6 font-medium">
-        <Link href="/comptes-rendus" className="link" aria-label="All posts">
+        <Link href="/sorties" className="link" aria-label="All posts">
           Tous les Comptes Rendus &rarr;
         </Link>
       </div>

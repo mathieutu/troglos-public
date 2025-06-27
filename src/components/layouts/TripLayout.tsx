@@ -144,12 +144,8 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
                   </div>
                 )}
                 <div className="pt-4 xl:pt-8">
-                  <Link
-                    href="/comptes-rendus"
-                    className="link"
-                    aria-label="Tous les comptes-rendus"
-                  >
-                    &larr; Tous les comptes-rendus
+                  <Link href="/sorties" className="link" aria-label="Toutes les sorties">
+                    &larr; Toutes les sorties
                   </Link>
                 </div>
               </div>
