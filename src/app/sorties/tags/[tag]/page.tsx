@@ -19,13 +19,9 @@ import { ListLayoutWithTags } from '@/components/layouts/ListLayoutWithTags'
 //   })
 // }
 
-// export const generateStaticParams = async () => {
-//   const tagCounts = tagData as Record<string, number>
-//   const tagKeys = Object.keys(tagCounts)
-//   return tagKeys.map((tag) => ({
-//     tag: encodeURI(tag),
-//   }))
-// }
+export const dynamicParams = false
+
+export const generateStaticParams = async () => tags.map((tag) => ({ tag: tag.slug }))
 
 export default async function TagPageIndex(props: { params: Promise<{ tag: string }> }) {
   const params = await props.params

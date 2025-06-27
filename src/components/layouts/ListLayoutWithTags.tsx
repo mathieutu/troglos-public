@@ -110,7 +110,7 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
   )
 }
 
-const TRIPS_PER_PAGE = 6
+export const TRIPS_PER_PAGE = 6
 
 interface ListLayoutProps {
   currentTag?: TagType

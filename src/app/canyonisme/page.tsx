@@ -60,7 +60,7 @@ export default function CanyoningPage() {
             <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
               <div className="pt-4 xl:pt-8">
                 <Link
-                  href={`/speleologie`}
+                  href="/speleologie"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
                   &larr; La spéléologie
@@ -68,7 +68,7 @@ export default function CanyoningPage() {
               </div>
               <div className="pt-4 xl:pt-8">
                 <Link
-                  href={`/club`}
+                  href="/club"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
                   Le club &rarr;

@@ -54,9 +54,9 @@ import { tripsReports } from '@/data/trips'
 //   }
 // }
 
-// export const generateStaticParams = async () => {
-//   return allBlogs.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
-// }
+export const dynamicParams = false
+
+export const generateStaticParams = async () => tripsReports.map((trip) => ({ trip: trip.slug }))
 
 export default async function Page(props: { params: Promise<{ trip: string }> }) {
   const params = await props.params
