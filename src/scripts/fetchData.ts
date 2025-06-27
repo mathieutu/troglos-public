@@ -47,6 +47,15 @@ const formateDateIso = (date: Date | string): string =>
     })
     .replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1')
 
+const uniqBy = <T, K>(array: T[], keyFn: (item: T) => K): T[] => {
+  const seen = new Set<K>()
+  return array.filter((item) => {
+    const key = keyFn(item)
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const computeTripsAndTags = (rawTrips: Record<string, any>[]): [TripReport[], Tag[]] => {
   const tripSlugger = new UniqueSlugger()
@@ -67,12 +76,15 @@ const computeTripsAndTags = (rawTrips: Record<string, any>[]): [TripReport[], Ta
 
   const trips = rawTrips.map((trip) => ({
     ...trip,
-    tags: [
-      addTag(SPORTS[trip.placeType as TripReport['placeType']]),
-      addTag(trip.tripType),
-      addTag(trip.place.county.replace(/\s(.*)/, '')),
-      addTag(trip.place.region),
-    ],
+    tags: uniqBy(
+      [
+        addTag(SPORTS[trip.placeType as TripReport['placeType']]),
+        addTag(trip.tripType),
+        addTag(trip.place.county.replace(/\s(.*)/, '')),
+        addTag(trip.place.region),
+      ],
+      (tag) => tag.slug
+    ),
     title: trip.place.name,
     slug: tripSlugger.slug(`${formateDateIso(trip.tripDate)} ${normalize(trip.place.name)}`),
   })) as TripReport[]
