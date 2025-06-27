@@ -3,18 +3,21 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(0.286 0.001 17.242);
+  /*--foreground: #171717;*/
 }
 
 @theme {
   /* Font families */
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /*--color-foreground: var(--foreground);*/
 
   /* https://davidpiesse.github.io/tailwind-md-colours/*/
   /*--color-caving-50:  #efebe9;*/
@@ -29,8 +32,20 @@
   /*--color-caving-900: #3e2723 ;*/
   /*--color-caving-950: oklch(27.9% 0.077 45.635);*/
 
+  --color-background-50: #f6f5f5;
+  --color-background-100: #e7e6e6;
+  --color-background-200: #d1d0d0;
+  --color-background-300: #b1afb0;
+  --color-background-400: #8a8686;
+  --color-background-500: #6f6b6b;
+  --color-background-600: #5e5c5d;
+  --color-background-700: #504e4f;
+  --color-background-800: #464444;
+  --color-background-900: #3d3c3c;
+  --color-background-950: #2b2a2a;
+
   /* ChatGPT */
-  --color-brown-50: oklch(0.98 0.01 45);
+  --color-brown-50: oklch(0.96 0.013 35.731);
   --color-brown-100: oklch(0.94 0.02 45);
   --color-brown-200: oklch(0.88 0.03 45);
   --color-brown-300: oklch(0.78 0.05 45);
@@ -39,20 +54,20 @@
   --color-brown-600: oklch(0.48 0.09 45);
   --color-brown-700: oklch(0.38 0.08 45);
   --color-brown-800: oklch(0.28 0.07 45);
-  --color-brown-900: oklch(0.20 0.06 45);
+  --color-brown-900: oklch(0.2 0.06 45);
   --color-brown-950: oklch(0.12 0.05 45);
 
-  --color-primary-50: var(--color-indigo-50);
-  --color-primary-100: var(--color-indigo-100);
-  --color-primary-200: var(--color-indigo-200);
-  --color-primary-300: var(--color-indigo-300);
-  --color-primary-400: var(--color-indigo-400);
-  --color-primary-500: var(--color-indigo-500);
-  --color-primary-600: var(--color-indigo-600);
-  --color-primary-700: var(--color-indigo-700);
-  --color-primary-800: var(--color-indigo-800);
-  --color-primary-900: var(--color-indigo-900);
-  --color-primary-950: var(--color-indigo-950);
+  --color-primary-50: var(--color-yellow-50);
+  --color-primary-100: var(--color-yellow-100);
+  --color-primary-200: var(--color-yellow-200);
+  --color-primary-300: var(--color-yellow-300);
+  --color-primary-400: var(--color-yellow-400);
+  --color-primary-500: var(--color-yellow-500);
+  --color-primary-600: var(--color-yellow-600);
+  --color-primary-700: var(--color-yellow-700);
+  --color-primary-800: var(--color-yellow-800);
+  --color-primary-900: var(--color-yellow-900);
+  --color-primary-950: var(--color-yellow-950);
 
   --color-canyon-50: var(--color-teal-50);
   --color-canyon-100: var(--color-teal-100);
@@ -90,7 +105,7 @@
   --z-80: 80;
 }
 
-.color-canyon{
+.color-canyon {
   --color-primary-50: var(--color-canyon-50);
   --color-primary-100: var(--color-canyon-100);
   --color-primary-200: var(--color-canyon-200);
@@ -104,7 +119,7 @@
   --color-primary-950: var(--color-canyon-950);
 }
 
-.color-caving{
+.color-caving {
   --color-primary-50: var(--color-caving-50);
   --color-primary-100: var(--color-caving-100);
   --color-primary-200: var(--color-caving-200);
@@ -122,4 +137,14 @@
   .link {
     @apply text-primary-500 hover:text-primary-600 dark:hover:text-primary-400;
   }
+}
+
+body {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url('https://ffspeleo.fr/images/home-body-fond.png');
+  background-attachment: fixed;
+  background-color: var(--color-background-950);
+  background-blend-mode: color-burn;
+  background-size: 75%;
 }

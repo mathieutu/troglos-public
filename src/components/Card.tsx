@@ -1,18 +1,19 @@
 import { Link } from './Link'
 import Image from 'next/image'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 type CardProps = {
   title: string
   description: string
-  imgSrc?: string
+  imgSrc?: string | StaticImport
   href?: string
 }
 export const Card = ({ title, description, imgSrc, href }: CardProps) => (
-  <div className="md max-w-[544px] p-4 md:w-1/2">
+  <div className="max-w-[544px] p-4">
     <div
       className={`${
         imgSrc && 'h-full'
-      } overflow-hidden rounded-md border-2 border-gray-200/60 dark:border-gray-700/60`}
+      } bg-primary-100/40 border-primary-700/30 overflow-hidden rounded-md border-2`}
     >
       {imgSrc &&
         (href ? (
@@ -35,7 +36,7 @@ export const Card = ({ title, description, imgSrc, href }: CardProps) => (
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
+        <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight text-gray-950">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
               {title}
@@ -44,14 +45,14 @@ export const Card = ({ title, description, imgSrc, href }: CardProps) => (
             title
           )}
         </h2>
-        <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="prose mb-3 max-w-none text-gray-950">{description}</p>
         {href && (
           <Link
             href={href}
-            className="link text-base leading-6 font-medium"
-            aria-label={`Link to ${title}`}
+            className="link text-primary-900 text-base leading-6 font-medium"
+            aria-label={`Détails : ${title}`}
           >
-            Learn more &rarr;
+            En savoir plus &rarr;
           </Link>
         )}
       </div>

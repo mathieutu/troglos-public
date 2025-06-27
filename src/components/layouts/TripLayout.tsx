@@ -1,4 +1,4 @@
-import PageTitle from '@/components/PageTitle'
+import { PageTitle } from '@/components/PageTitle'
 import { SectionContainer } from '@/components/SectionContainer'
 import { Tag } from '@/components/Tag'
 import { ScrollTopAndComment } from '@/components/ScrollTopAndComment'
@@ -6,6 +6,7 @@ import { TripReport } from '@/data/trips'
 import { formatDateFr, formatDurationMinutes } from '@/utils/dates'
 import { Link } from '@/components/Link'
 import Image from 'next/image'
+import avatarGroup from '@/assets/images/img.png'
 
 interface LayoutProps {
   trip: TripReport
@@ -17,7 +18,7 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
   return (
     <SectionContainer>
       <ScrollTopAndComment />
-      <article>
+      <article className={trip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'}>
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6">
             <div className="space-y-1 text-center">
@@ -63,6 +64,22 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
                         </dl>
                       </li>
                     ))}
+                    {trip.externalAttendees && (
+                      <li className="flex items-center space-x-2">
+                        <Image
+                          src={avatarGroup}
+                          width={38}
+                          height={38}
+                          alt=""
+                          className="h-10 w-10 rounded-full"
+                        />
+                        <div className="text-sm leading-5 font-medium whitespace-nowrap">
+                          <span className="text-gray-900 dark:text-gray-100">
+                            des participants externes
+                          </span>
+                        </div>
+                      </li>
+                    )}
                   </ul>
                 </dd>
               </dl>
@@ -104,23 +121,23 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
                 )}
                 {(nextTrip || prevTrip) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                    {prevTrip && prevTrip.slug && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Compte-rendu précédent
-                        </h2>
-                        <div className="link">
-                          <Link href={`/comptes-rendus/${prevTrip.slug}`}>{prevTrip.title}</Link>
-                        </div>
-                      </div>
-                    )}
                     {nextTrip && nextTrip.slug && (
                       <div>
                         <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                           Compte-rendu suivant
                         </h2>
                         <div className="link">
-                          <Link href={`/comptes-rendus/${nextTrip.slug}`}>{nextTrip.title}</Link>
+                          <Link href={`/sorties/${nextTrip.slug}`}>{nextTrip.title}</Link>
+                        </div>
+                      </div>
+                    )}
+                    {prevTrip && prevTrip.slug && (
+                      <div>
+                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                          Compte-rendu précédent
+                        </h2>
+                        <div className="link">
+                          <Link href={`/sorties/${prevTrip.slug}`}>{prevTrip.title}</Link>
                         </div>
                       </div>
                     )}

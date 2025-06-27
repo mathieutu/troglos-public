@@ -1,9 +1,8 @@
 export const headerNavLinks = [
-  { href: '/', title: 'Home' },
-  { href: '/blog', title: 'Blog' },
-  { href: '/tags', title: 'Tags' },
-  { href: '/projects', title: 'Projects' },
-  { href: '/about', title: 'About' },
+  { href: '/', title: 'Activités' },
+  { href: '/sorties', title: 'Sorties' },
+  { href: '/club', title: 'Le club' },
+  { href: '/initiations', title: 'Nous rejoindre' },
 ]
 
 export const footerNavLinks = [

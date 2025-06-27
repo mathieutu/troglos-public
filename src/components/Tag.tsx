@@ -6,10 +6,7 @@ interface Props {
 
 export const Tag = ({ tag }: Props) => {
   return (
-    <Link
-      href={`/comptes-rendus/tags/${tag.slug}`}
-      className="link mr-3 text-sm font-medium uppercase"
-    >
+    <Link href={`/sorties/tags/${tag.slug}`} className="link mr-3 text-sm font-medium uppercase">
       {tag.title}
     </Link>
   )

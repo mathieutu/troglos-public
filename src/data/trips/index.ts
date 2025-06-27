@@ -31,6 +31,7 @@ export type TripReport = {
   tags: Tag[]
   author: User
   users: User[]
+  externalAttendees: boolean
   title: string
   slug: string
 }
