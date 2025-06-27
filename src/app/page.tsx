@@ -8,6 +8,7 @@ import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 export default async function Home() {
   const MAX_DISPLAY = 6
 
+  const tripsToDisplay = tripsReports.slice(0, MAX_DISPLAY)
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -41,11 +42,18 @@ export default async function Home() {
           <h2 className="text-xl leading-9 font-bold tracking-tight text-gray-900 sm:text-2xl sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100">
             Les dernières sorties du Clan
           </h2>
-          <ul className="md:grid md:grid-cols-2 md:gap-x-8">
-            {tripsReports.slice(0, MAX_DISPLAY).map((trip) => (
-              <TripsListItem key={trip.id} trip={trip} />
-            ))}
-          </ul>
+          <div className="md:grid md:grid-cols-2 md:gap-8">
+            <ul className="flex flex-col">
+              <TripsListItem trip={tripsToDisplay[0]} />
+              <TripsListItem trip={tripsToDisplay[2]} />
+              <TripsListItem trip={tripsToDisplay[4]} />
+            </ul>
+            <ul className="flex flex-col">
+              <TripsListItem trip={tripsToDisplay[1]} />
+              <TripsListItem trip={tripsToDisplay[3]} />
+              <TripsListItem trip={tripsToDisplay[5]} />
+            </ul>
+          </div>
         </div>
       </div>
       <div className="flex justify-end text-base leading-6 font-medium">
