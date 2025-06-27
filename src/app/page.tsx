@@ -1,7 +1,7 @@
 import { Link } from '@/components/Link'
 import { tripsReports } from '@/data/trips'
 import { Card } from '@/components/Card'
-import caving from '@/assets/images/guiers.png'
+import caving from '@/assets/images/caving/guiers.png'
 import canyoning from '@/assets/images/canyon/purcaraccia-1.jpg'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import { TRIPS_PER_PAGE } from '@/config/config'

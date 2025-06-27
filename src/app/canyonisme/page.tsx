@@ -1,12 +1,10 @@
 import { ScrollTopAndComment } from '@/components/ScrollTopAndComment'
 import { SectionContainer } from '@/components/SectionContainer'
-import { Bleed } from '@/components/Bleed'
-import { PageTitle } from '@/components/PageTitle'
 import { Link } from '@/components/Link'
-import Image from 'next/image'
 import banner from '@/assets/images/canyon/purcaraccia-2.jpg'
 import { tripsReports } from '@/data/trips'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
+import { PageHeader } from '@/components/PageHeader'
 
 export default function CanyoningPage() {
   return (
@@ -14,16 +12,7 @@ export default function CanyoningPage() {
       <ScrollTopAndComment />
       <article className="color-canyon">
         <div>
-          <div className="space-y-1 pb-10 dark:border-gray-700">
-            <Bleed>
-              <div className="relative aspect-2/1 w-full">
-                <Image src={banner} alt="" fill className="rounded-lg object-cover object-bottom" />
-              </div>
-            </Bleed>
-            <div className="relative pt-10">
-              <PageTitle>Le Canyonisme</PageTitle>
-            </div>
-          </div>
+          <PageHeader imageSrc={banner} title="Le Canyonisme" />
           <div className="prose prose-lg dark:prose-invert max-w-none py-4">
             <h2 className="">Texte à faire !!</h2>
             <p>

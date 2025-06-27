@@ -1,4 +1,3 @@
-import { PageTitle } from '@/components/PageTitle'
 import { SectionContainer } from '@/components/SectionContainer'
 import { Tag } from '@/components/Tag'
 import { ScrollTopAndComment } from '@/components/ScrollTopAndComment'
@@ -6,7 +5,8 @@ import { TripReport } from '@/data/trips'
 import { formatDateFr, formatDurationMinutes } from '@/utils/dates'
 import { Link } from '@/components/Link'
 import Image from 'next/image'
-import avatarGroup from '@/assets/images/img.png'
+import avatarGroup from '@/assets/images/avatar-groups.png'
+import { PageTitle } from '@/components/PageHeader'
 
 interface LayoutProps {
   trip: TripReport

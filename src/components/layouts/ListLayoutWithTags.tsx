@@ -7,10 +7,10 @@ import { useMemo } from 'react'
 import { formatDateFr } from '@/utils/dates'
 import { tags, tripsReports, Tag as TagType, TripReport } from '@/data/trips'
 import { Bleed } from '@/components/Bleed'
-import banner from '@/assets/images/marcel.jpg'
+import banner from '@/assets/images/caving/marcel.jpg'
 import Image from 'next/image'
-import { PageTitle } from '@/components/PageTitle'
 import { TRIPS_PER_PAGE } from '@/config/config'
+import { PageHeader } from '@/components/PageHeader'
 
 interface PaginationProps {
   totalPages: number
@@ -138,16 +138,7 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
   return (
     <>
       <div>
-        <div className="space-y-1 pb-10 text-center dark:border-gray-700">
-          <Bleed>
-            <div className="relative aspect-2/1 w-full">
-              <Image src={banner} alt="" fill className="rounded-lg object-cover" />
-            </div>
-          </Bleed>
-          <div className="relative pt-10">
-            <PageTitle>Les sorties du Clan</PageTitle>
-          </div>
-        </div>
+        <PageHeader imageSrc={banner} title="Les sorties du Clan" />
         <div className="flex sm:space-x-24">
           <div className="hidden h-full max-w-[300px] min-w-[300px] flex-wrap rounded-sm pt-5 shadow-md sm:flex dark:shadow-gray-800/40">
             <div className="px-6 py-4">
