@@ -9,36 +9,26 @@ type CardProps = {
   href?: string
 }
 export const Card = ({ title, description, imgSrc, href }: CardProps) => (
-  <div className="max-w-[544px] p-4">
+  <div className="relative m-4 max-w-[544px]">
     <div
       className={`${
         imgSrc && 'h-full'
-      } bg-primary-100/40 border-primary-700/30 overflow-hidden rounded-md border-2`}
+      } bg-primary-100/40 border-primary-700/30 hover:bg-primary-200/40 overflow-hidden rounded-md border-2`}
     >
-      {imgSrc &&
-        (href ? (
-          <Link href={href} aria-label={`Link to ${title}`}>
-            <Image
-              alt={title}
-              src={imgSrc}
-              className="object-cover object-center md:h-36 lg:h-48"
-              width={544}
-              height={306}
-            />
-          </Link>
-        ) : (
-          <Image
-            alt={title}
-            src={imgSrc}
-            className="object-cover object-center md:h-36 lg:h-48"
-            width={544}
-            height={306}
-          />
-        ))}
+      {imgSrc && (
+        <Image
+          alt={title}
+          src={imgSrc}
+          className="object-cover object-center md:h-36 lg:h-48"
+          width={544}
+          height={306}
+        />
+      )}
       <div className="p-6">
         <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight text-gray-950">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
+              <span className="absolute inset-0" />
               {title}
             </Link>
           ) : (
