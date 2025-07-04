@@ -20,40 +20,34 @@ export default async function Home() {
         <div className="py-12">
           <div className="-m-4 flex flex-wrap justify-center">
             <div className="color-caving md:w-1/2">
-              <Card
-                title="🦇 Spéléologie"
-                imgSrc={caving}
-                href="/speleologie"
-              >
-                Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration, chacun·e trouvera ce qu'iel recherche. TBD !!
+              <Card title="🦇 Spéléologie" imgSrc={caving} href="/speleologie">
+                Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration,
+                chacun·e trouvera ce qu'iel recherche. TBD !!
               </Card>
             </div>
             <div className="color-canyon md:w-1/2">
-              <Card
-                title="🐟 Canyonisme"
-                imgSrc={canyoning}
-                href="/canyonisme"
-              >
-                Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En période estivale, on adore se jeter dans les vasques fraîches ! TBD !!
+              <Card title="🐟 Canyonisme" imgSrc={canyoning} href="/canyonisme">
+                Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En
+                période estivale, on adore se jeter dans les vasques fraîches ! TBD !!
               </Card>
+            </div>
           </div>
-        </div>
-        <div className="py-12">
-          <h2 className="text-xl leading-9 font-bold tracking-tight text-gray-900 sm:text-2xl sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100">
-            Les dernières sorties du Clan
-          </h2>
-          <div className="md:grid md:grid-cols-2 md:gap-8">
-            <ul className="flex flex-col">
-              <TripsListItem trip={tripsToDisplay[0]} />
-              <TripsListItem trip={tripsToDisplay[2]} />
-              <TripsListItem trip={tripsToDisplay[4]} />
-            </ul>
-            <ul className="flex flex-col">
-              <TripsListItem trip={tripsToDisplay[1]} />
-              <TripsListItem trip={tripsToDisplay[3]} />
-              <TripsListItem trip={tripsToDisplay[5]} />
-            </ul>
-          </div>
+          <div className="py-12">
+            <h2 className="text-xl leading-9 font-bold tracking-tight text-gray-900 sm:text-2xl sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100">
+              Les dernières sorties du Clan
+            </h2>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <ul className="flex flex-col">
+                <TripsListItem trip={tripsToDisplay[0]} />
+                <TripsListItem trip={tripsToDisplay[2]} />
+                <TripsListItem trip={tripsToDisplay[4]} />
+              </ul>
+              <ul className="flex flex-col">
+                <TripsListItem trip={tripsToDisplay[1]} />
+                <TripsListItem trip={tripsToDisplay[3]} />
+                <TripsListItem trip={tripsToDisplay[5]} />
+              </ul>
+            </div>
           </div>
         </div>
       </div>

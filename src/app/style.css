@@ -57,17 +57,17 @@
   --color-brown-900: oklch(0.2 0.06 45);
   --color-brown-950: oklch(0.12 0.05 45);
 
-  --color-primary-50: var(--color-yellow-50);
-  --color-primary-100: var(--color-yellow-100);
-  --color-primary-200: var(--color-yellow-200);
-  --color-primary-300: var(--color-yellow-300);
-  --color-primary-400: var(--color-yellow-400);
-  --color-primary-500: var(--color-yellow-500);
-  --color-primary-600: var(--color-yellow-600);
-  --color-primary-700: var(--color-yellow-700);
-  --color-primary-800: var(--color-yellow-800);
-  --color-primary-900: var(--color-yellow-900);
-  --color-primary-950: var(--color-yellow-950);
+  --color-primary-50: var(--color-zinc-50);
+  --color-primary-100: var(--color-zinc-100);
+  --color-primary-200: var(--color-zinc-200);
+  --color-primary-300: var(--color-zinc-300);
+  --color-primary-400: var(--color-zinc-400);
+  --color-primary-500: var(--color-zinc-500);
+  --color-primary-600: var(--color-zinc-600);
+  --color-primary-700: var(--color-zinc-700);
+  --color-primary-800: var(--color-zinc-800);
+  --color-primary-900: var(--color-zinc-900);
+  --color-primary-950: var(--color-zinc-950);
 
   --color-canyon-50: var(--color-teal-50);
   --color-canyon-100: var(--color-teal-100);
@@ -135,7 +135,7 @@
 
 @layer components {
   .link {
-    @apply text-primary-500 hover:text-primary-600 dark:hover:text-primary-400;
+    @apply text-primary-500 hover:text-primary-400;
   }
 }
 

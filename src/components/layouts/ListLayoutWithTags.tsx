@@ -57,7 +57,7 @@ export const TripsListItem = ({ trip }: { trip: TripReport }) => {
             </div>
           </div>
           <div className="relative">
-            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+            <div className="prose max-w-none leading-5 text-gray-500 dark:text-gray-400">
               {trip.quickSummary}
             </div>
           </div>

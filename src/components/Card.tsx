@@ -14,7 +14,7 @@ export const Card = ({ title, children, imgSrc, href }: CardProps) => (
     <div
       className={`${
         imgSrc && 'h-full'
-      } bg-primary-200/20 border-primary-400/30 hover:bg-primary-300/25 transition-all duration-200 overflow-hidden rounded-lg border backdrop-blur-sm`}
+      } ${href && 'hover:bg-primary-300/25'} bg-primary-200/20 border-primary-400/30 overflow-hidden rounded-lg border backdrop-blur-sm transition-all duration-200`}
     >
       {imgSrc && (
         <Image
@@ -36,7 +36,7 @@ export const Card = ({ title, children, imgSrc, href }: CardProps) => (
             title
           )}
         </span>
-        <p className="prose mb-3 max-w-none text-slate-200">{children}</p>
+        <div className="prose prose-invert mb-3 max-w-none text-slate-200">{children}</div>
         {href && (
           <Link
             href={href}
