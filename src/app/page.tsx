@@ -22,19 +22,20 @@ export default async function Home() {
             <div className="color-caving md:w-1/2">
               <Card
                 title="🦇 Spéléologie"
-                description="Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration, chacun·e trouvera ce qu’iel recherche. TBD !!"
                 imgSrc={caving}
                 href="/speleologie"
-              />
+              >
+                Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration, chacun·e trouvera ce qu'iel recherche. TBD !!
+              </Card>
             </div>
             <div className="color-canyon md:w-1/2">
               <Card
                 title="🐟 Canyonisme"
-                description="Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En période estivale, on adore se jeter dans les vasques fraîches ! TBD !!"
                 imgSrc={canyoning}
                 href="/canyonisme"
-              />
-            </div>
+              >
+                Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En période estivale, on adore se jeter dans les vasques fraîches ! TBD !!
+              </Card>
           </div>
         </div>
         <div className="py-12">
@@ -52,6 +53,7 @@ export default async function Home() {
               <TripsListItem trip={tripsToDisplay[3]} />
               <TripsListItem trip={tripsToDisplay[5]} />
             </ul>
+          </div>
           </div>
         </div>
       </div>
