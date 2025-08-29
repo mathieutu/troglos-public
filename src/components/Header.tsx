@@ -78,7 +78,7 @@ export const Header = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className="m-1 font-medium text-gray-900 transition-colors duration-200 dark:text-gray-100"
+                className={`m-1 font-medium transition-colors duration-200 ${hoveredIndex === index ? 'text-primary-500' : 'text-gray-100'}`}
                 onMouseEnter={() => {
                   setHoveredIndex(index)
                   updateUnderlinePosition(index)
@@ -89,7 +89,7 @@ export const Header = () => {
             ))}
             {/* Ligne de soulignement qui se déplace */}
             <div
-              className="absolute bottom-0 h-0.5 bg-white transition-all duration-300 ease-out"
+              className={`absolute bottom-0 h-0.5 transition-all duration-300 ease-out ${hoveredIndex !== null ? 'bg-primary-500' : 'bg-gray-100'}`}
               style={{
                 width: `${underlineStyle.width}px`,
                 left: `${underlineStyle.left}px`,

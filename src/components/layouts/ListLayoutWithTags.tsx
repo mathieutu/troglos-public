@@ -7,7 +7,6 @@ import { useMemo } from 'react'
 import { formatDateFr } from '@/utils/dates'
 import { tags, tripsReports, Tag as TagType, TripReport } from '@/data/trips'
 import banner from '@/assets/images/caving/marcel.jpg'
-import { TRIPS_PER_PAGE } from '@/config/config'
 import { PageHeader } from '@/components/PageHeader'
 
 interface PaginationProps {
@@ -17,10 +16,10 @@ interface PaginationProps {
 
 export const TripsListItem = ({ trip }: { trip: TripReport }) => {
   return (
-    <li className="py-5">
-      <article
-        className={`flex flex-col space-y-2 xl:space-y-0 ${trip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'}`}
-      >
+    <li
+      className={`${trip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'} group relative`}
+    >
+      <article className={`flex flex-col space-y-2 xl:space-y-0`}>
         <dl>
           <dt className="sr-only">Date</dt>
           <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
@@ -29,7 +28,7 @@ export const TripsListItem = ({ trip }: { trip: TripReport }) => {
             </time>
           </dd>
         </dl>
-        <div className="space-y-3">
+        <div className="">
           <div>
             <h2 className="text-2xl leading-8 font-bold tracking-tight">
               <Link href={`/sorties/${trip.slug}`} className="text-gray-900 dark:text-gray-100">
@@ -43,26 +42,17 @@ export const TripsListItem = ({ trip }: { trip: TripReport }) => {
                   <Tag key={tag.slug} tag={tag} />
                 ))}
               </div>
-              {trip.description && (
-                <div className="text-right text-base leading-6 font-medium">
-                  <Link
-                    href={`/sorties/${trip.slug}`}
-                    className="link"
-                    aria-label={`Lire "${trip.title}"`}
-                  >
-                    Lire &rarr;
-                  </Link>
-                </div>
-              )}
             </div>
           </div>
-          <div className="relative">
-            <div className="prose max-w-none leading-5 text-gray-500 dark:text-gray-400">
-              {trip.quickSummary}
-            </div>
+          <div className="prose mt-1 line-clamp-2 max-w-none text-sm leading-5 text-gray-400">
+            {trip.quickSummary}
           </div>
         </div>
       </article>
+      <Link href={`/sorties/${trip.slug}`} className="link" aria-label={`Lire "${trip.title}"`}>
+        <div className="absolute inset-0 block">{/*ensure tap for mobile*/}</div>
+        <div className="bg-primary-200/10 border-primary-400/30 absolute inset-0 -m-2 hidden rounded-lg border group-hover:block group-focus:block">{/*ensure hover on desktop*/}</div>
+      </Link>
     </li>
   )
 }
@@ -78,36 +68,37 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
   return (
     <div className="space-y-2 pt-6 pb-8 md:space-y-5">
       <nav className="flex justify-between">
-        {!prevPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-            Précédent
-          </button>
-        )}
-        {prevPage && (
+        {prevPage ? (
           <Link
             href={currentPage - 1 === 1 ? `/${basePath}/` : `/${basePath}/page/${currentPage - 1}`}
             rel="prev"
+            className="hover:text-primary-500"
           >
             Précédent
           </Link>
+        ) : (
+          <span className="cursor-auto opacity-50">Précédent</span>
         )}
         <span>
           {currentPage} sur {totalPages}
         </span>
-        {!nextPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
-            Suivant
-          </button>
-        )}
-        {nextPage && (
-          <Link href={`/${basePath}/page/${currentPage + 1}`} rel="next">
+        {nextPage ? (
+          <Link
+            href={`/${basePath}/page/${currentPage + 1}`}
+            rel="next"
+            className="hover:text-primary-500"
+          >
             Suivant
           </Link>
+        ) : (
+          <span className="cursor-auto opacity-50">Suivant</span>
         )}
       </nav>
     </div>
   )
 }
+
+const TRIPS_PER_PAGE = 10
 
 interface ListLayoutProps {
   currentTag?: TagType
@@ -138,11 +129,11 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
       <div>
         <PageHeader imageSrc={banner} title="Les sorties du Clan" />
         <div className="flex sm:space-x-24">
-          <div className="hidden h-full max-w-[300px] min-w-[300px] flex-wrap rounded-sm pt-5 shadow-md sm:flex dark:shadow-gray-800/40">
-            <div className="px-6 py-4">
+          <div className="hidden h-full max-w-[300px] min-w-[300px] flex-wrap sm:flex">
+            <div className="">
               <Link
                 href={`/sorties`}
-                className="hover:text-primary-500 dark:hover:text-primary-500 font-bold text-gray-700 uppercase dark:text-gray-300"
+                className="hover:text-primary-500 font-bold text-gray-300 uppercase"
               >
                 Toutes les sorties
               </Link>
@@ -157,7 +148,7 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
                       ) : (
                         <Link
                           href={`/sorties/tags/${tag.slug}`}
-                          className="hover:text-primary-500 dark:hover:text-primary-500 px-3 py-2 text-sm font-medium text-gray-500 uppercase dark:text-gray-300"
+                          className="hover:text-primary-500 px-3 py-2 text-sm font-medium text-gray-300 uppercase"
                           aria-label={`View posts tagged ${tag.title}`}
                         >
                           {`${tag.title} (${tag.count})`}
@@ -170,7 +161,7 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
             </div>
           </div>
           <div>
-            <ul>
+            <ul className="grid gap-6">
               {filteredTrips.map((trip) => (
                 <TripsListItem key={trip.id} trip={trip} />
               ))}

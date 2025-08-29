@@ -17,8 +17,8 @@ export default function ContactPage() {
                 <div className="space-y-8">
                   <div>
                     <p className="text-lg leading-relaxed text-gray-300">
-                      Vous avez des questions ? Vous souhaitez nous rejoindre ? N&apos;hésitez pas à nous
-                      contacter !
+                      Vous avez des questions ? Vous souhaitez nous rejoindre ? N&apos;hésitez pas à
+                      nous contacter !
                     </p>
                   </div>
 
@@ -167,35 +167,41 @@ export default function ContactPage() {
             <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
               Où nous croiser ?
             </h2>
-            <div className="grid gap-8 md:grid-cols-2">        
+            <div className="grid gap-8 md:grid-cols-2">
               <Card title="Réunions">
                 <div className="">
                   <p>
-                    Nous nous réunissons tous les <strong>premiers mercredi du mois</strong> à 20h, au local des Troglos.
+                    Nous nous réunissons tous les <strong>premiers mercredi du mois</strong> à 20h,
+                    au local des Troglos.
                   </p>
-                  
-                    <p>Nous y discutons des sorties passées, à venir, des projets du club et de la vie associative.</p>
+
                   <p>
-                  Les réunions sont ouvertes à tous, venez nous rencontrer !
+                    Nous y discutons des sorties passées, à venir, des projets du club et de la vie
+                    associative.
                   </p>
+                  <p>Les réunions sont ouvertes à tous, venez nous rencontrer !</p>
                 </div>
               </Card>
-              
+
               <Card title="Entrainement">
                 <div className="space-y-2">
                   <p>
-                    Sous réserve d'encadrants, nous proposons des entraînements à la progression sur corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
+                    Sous réserve d'encadrants, nous proposons des entraînements à la progression sur
+                    corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
                   </p>
-                  <p> Ils ont lieu dans le Gymnase Nelson Paillou, 69008 Lyon, et nécessitent une inscription préalable.</p>
                   <p>
-                    Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent de se perfectionner dans un cadre convivial.
+                    {' '}
+                    Ils ont lieu dans le Gymnase Nelson Paillou, 69008 Lyon, et nécessitent une
+                    inscription préalable.
+                  </p>
+                  <p>
+                    Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent
+                    de se perfectionner dans un cadre convivial.
                   </p>
                 </div>
               </Card>
             </div>
           </section>
-
-        
 
           <section className="text-center">
             <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">

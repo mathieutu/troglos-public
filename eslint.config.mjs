@@ -16,8 +16,8 @@ const eslintConfig = [
   {
     rules: {
       'react/no-unescaped-entities': ['error', { forbid: ['>', '"', '}'] }],
-    }
-  }
+    },
+  },
 ]
 
 export default eslintConfig

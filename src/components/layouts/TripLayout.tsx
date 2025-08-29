@@ -5,7 +5,6 @@ import { TripReport } from '@/data/trips'
 import { formatDateFr, formatDurationMinutes } from '@/utils/dates'
 import { Link } from '@/components/Link'
 import Image from 'next/image'
-import avatarGroup from '@/assets/images/avatar-groups.png'
 import { PageTitle } from '@/components/PageHeader'
 
 interface LayoutProps {
@@ -19,10 +18,10 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
     <SectionContainer>
       <ScrollTopAndComment />
       <article className={trip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'}>
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <div className="xl:divide-y xl:divide-gray-700">
           <header className="pt-6">
             <div className="space-y-1 text-center">
-              <dl className="item-center flex justify-center gap-2 text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+              <dl className="item-center flex justify-center gap-2 text-base leading-6 font-medium dark:text-gray-400">
                 <div>
                   <dt className="sr-only">Date de la sortie</dt>
                   <dd className="">
@@ -66,15 +65,11 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
                     ))}
                     {trip.externalAttendees && (
                       <li className="flex items-center space-x-2">
-                        <Image
-                          src={avatarGroup}
-                          width={38}
-                          height={38}
-                          alt=""
-                          className="h-10 w-10 rounded-full"
-                        />
                         <div className="text-sm leading-5 font-medium whitespace-nowrap">
                           <span className="text-gray-900 dark:text-gray-100">
+                            <span className="align-middle text-3xl">
+                              {trip.placeType === 'canyon' ? '🐟' : '🦇'}
+                            </span>{' '}
                             des participants externes
                           </span>
                         </div>
@@ -92,13 +87,6 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
                 dangerouslySetInnerHTML={{ __html: trip.description }}
               />
               <div className="flex items-center justify-end space-x-2">
-                <Image
-                  src={trip.author.avatarUrl}
-                  width={38}
-                  height={38}
-                  alt=""
-                  className="h-10 w-10 rounded-full"
-                />
                 <dl className="text-sm leading-5 font-medium whitespace-nowrap">
                   <dt className="sr-only">Auteur</dt>
                   <dd className="text-gray-900 dark:text-gray-100">{trip.author.firstName}</dd>
@@ -109,9 +97,7 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
               <div className="divide-gray-200 text-sm leading-5 font-medium xl:divide-y dark:divide-gray-700">
                 {trip.tags && (
                   <div className="py-4 xl:py-8">
-                    <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                      Tags
-                    </h2>
+                    <h2 className="text-xs tracking-wide text-gray-400 uppercase">Tags</h2>
                     <div className="flex flex-wrap">
                       {trip.tags.map((tag) => (
                         <Tag key={tag.slug} tag={tag} />
@@ -123,28 +109,36 @@ export default function TripLayout({ trip, nextTrip, prevTrip }: LayoutProps) {
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {nextTrip && nextTrip.slug && (
                       <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                        <h2 className="text-xs tracking-wide text-gray-400 uppercase">
                           Compte-rendu suivant
                         </h2>
-                        <div className="link">
+                        <div
+                          className={`link ${nextTrip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'}`}
+                        >
                           <Link href={`/sorties/${nextTrip.slug}`}>{nextTrip.title}</Link>
                         </div>
                       </div>
                     )}
                     {prevTrip && prevTrip.slug && (
                       <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                        <h2 className="text-xs tracking-wide text-gray-400 uppercase">
                           Compte-rendu précédent
                         </h2>
-                        <div className="link">
+                        <div
+                          className={`link ${prevTrip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'}`}
+                        >
                           <Link href={`/sorties/${prevTrip.slug}`}>{prevTrip.title}</Link>
                         </div>
                       </div>
                     )}
                   </div>
                 )}
-                <div className="pt-4 xl:pt-8">
-                  <Link href="/sorties" className="link" aria-label="Toutes les sorties">
+                <div className="color-reset pt-4 xl:pt-8">
+                  <Link
+                    href="/sorties"
+                    className="hover:text-primary-500 text-white"
+                    aria-label="Toutes les sorties"
+                  >
                     &larr; Toutes les sorties
                   </Link>
                 </div>

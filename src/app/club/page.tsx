@@ -1,7 +1,7 @@
 import { PageHeader } from '@/components/PageHeader'
 import { Link } from '@/components/Link'
 import { Card } from '@/components/Card'
-import clubBanner from '@/assets/images/avatar-groups.png'
+import clubBanner from '@/assets/images/canyon/purcaraccia-1.jpg'
 
 export default function ClubPage() {
   return (
@@ -40,16 +40,16 @@ export default function ClubPage() {
               </h2>
               <div className="grid gap-8 md:grid-cols-2">
                 <Card title="🌿 Respect de l'environnement">
-                  Nous pratiquons nos activités dans le respect total de l'environnement naturel,
-                  en préservant les écosystèmes fragiles des grottes et des canyons.
+                  Nous pratiquons nos activités dans le respect total de l'environnement naturel, en
+                  préservant les écosystèmes fragiles des grottes et des canyons.
                 </Card>
                 <Card title="🤝 Esprit d'équipe">
                   La solidarité et l'entraide sont au cœur de nos pratiques. Chaque sortie est une
                   aventure collective où chacun·e veille sur les autres.
                 </Card>
                 <Card title="🎯 Sécurité">
-                  La sécurité est notre priorité absolue. Nous formons régulièrement nos membres
-                  aux techniques de progression et de secours.
+                  La sécurité est notre priorité absolue. Nous formons régulièrement nos membres aux
+                  techniques de progression et de secours.
                 </Card>
                 <Card title="📚 Transmission">
                   Nous aimons partager nos connaissances et notre passion avec les nouveaux
