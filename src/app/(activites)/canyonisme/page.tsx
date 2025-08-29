@@ -36,7 +36,7 @@ export default function CanyoningPage() {
                 Toutes les sorties &rarr;
               </Link>
             </div>
-            <ul className="md:grid md:grid-cols-2 md:gap-8 mt-4">
+            <ul className="mt-4 md:grid md:grid-cols-2 md:gap-8">
               {tripsReports
                 .filter((trip) => trip.placeType === 'canyon')
                 .slice(0, 4)

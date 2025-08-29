@@ -36,7 +36,7 @@ export default function CavingPage() {
                 Toutes les sorties &rarr;
               </Link>
             </div>
-            <ul className="grid md:grid-cols-2 md:gap-8 gap-6 mt-6">
+            <ul className="mt-6 grid gap-6 md:grid-cols-2 md:gap-8">
               {tripsReports
                 .filter((trip) => trip.placeType === 'cave')
                 .slice(0, 4)

@@ -14,7 +14,13 @@ interface PaginationProps {
   currentPage: number
 }
 
-export const TripsListItem = ({ trip }: { trip: TripReport }) => {
+export const TripsListItem = ({
+  trip,
+  handleHover = true,
+}: {
+  trip: TripReport
+  handleHover?: boolean
+}) => {
   return (
     <li
       className={`${trip.placeType === 'canyon' ? 'color-canyon' : 'color-caving'} group relative`}
@@ -51,7 +57,11 @@ export const TripsListItem = ({ trip }: { trip: TripReport }) => {
       </article>
       <Link href={`/sorties/${trip.slug}`} className="link" aria-label={`Lire "${trip.title}"`}>
         <div className="absolute inset-0 block">{/*ensure tap for mobile*/}</div>
-        <div className="bg-primary-200/10 border-primary-400/30 absolute inset-0 -m-2 hidden rounded-lg border group-hover:block group-focus:block">{/*ensure hover on desktop*/}</div>
+        {handleHover && (
+          <div className="from-primary-200/10 border-primary-400/30 absolute inset-0 -m-4 hidden rounded-lg border bg-gradient-to-r to-transparent group-hover:block group-focus:block">
+            {/*ensure hover on desktop*/}
+          </div>
+        )}
       </Link>
     </li>
   )
