@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import { useAutoRotatingSelection } from '@/utils/hooks'
 import { Header } from '@/components/Header'
 import canyoning01 from '@/assets/images/photos/canyoning_01.jpg'
 import canyoning02 from '@/assets/images/photos/canyoning_02.jpg'
@@ -40,8 +38,10 @@ import caving22 from '@/assets/images/photos/caving_22.jpg'
 import caving23 from '@/assets/images/photos/caving_23.jpg'
 import caving25 from '@/assets/images/photos/caving_25.jpg'
 import caving26 from '@/assets/images/photos/caving_26.jpg'
+import { useEffect, useState } from 'react'
+import { ImageCrossFade } from '@/components/ImageCrossFade'
 
-const carouselItems = [
+const items = [
   { src: canyoning03, className: 'color-canyon' },
   { src: canyoning10, className: 'color-canyon' },
   { src: caving17, className: 'color-caving' },
@@ -82,27 +82,31 @@ const carouselItems = [
 ]
 
 export const HomeCarousel = () => {
-  const { currentIndex, previous, next } = useAutoRotatingSelection(carouselItems, 5000)
-  const { className } = carouselItems[currentIndex]
+  const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * items.length))
+  const currentItem = items[currentIndex]
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setCurrentIndex((currentIndex + 1) % items.length), 3500)
+    return () => clearTimeout(timeout)
+  }, [currentIndex])
+
+  const next = () => setCurrentIndex((currentIndex + 1) % items.length)
+  const previous = () => setCurrentIndex((currentIndex - 1 + items.length) % items.length)
 
   return (
-    <section className={`w-screen ${className} mb-[100vh]`}>
+    <section className={`w-screen ${currentItem.className} mb-[100vh]`} suppressHydrationWarning>
       <div className="absolute inset-0 h-screen">
         <div className="relative h-screen w-full overflow-hidden">
-          {/* Render all images with individual opacity control */}
           <div className="bg-primary-400 absolute inset-0">
-            {carouselItems.map((item, index) => (
-              <Image
-                key={index}
-                src={item.src}
-                alt=""
-                fill
-                className={`object-cover transition-opacity duration-700 ease-in-out ${
-                  currentIndex === index ? 'opacity-100' : 'opacity-0'
-                }`}
-                priority={index < 3} // Only prioritize first few images
-              />
-            ))}
+            <ImageCrossFade
+              src={currentItem.src}
+              alt=""
+              fill
+              className={`object-cover`}
+              priority
+              suppressHydrationWarning
+              sizes="100vw"
+            />
           </div>
 
           <div className="from-primary-950/80 via-primary-950/50 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b to-transparent transition-colors duration-700 ease-in-out">
