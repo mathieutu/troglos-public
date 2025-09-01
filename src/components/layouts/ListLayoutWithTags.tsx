@@ -6,7 +6,7 @@ import { Tag } from '@/components/Tag'
 import { useMemo } from 'react'
 import { formatDateFr } from '@/utils/dates'
 import { tags, tripsReports, Tag as TagType, TripReport } from '@/data/trips'
-import banner from '@/assets/images/caving/marcel.jpg'
+import banner from '@/assets/images/photos/caving_26.jpg'
 import { PageHeader } from '@/components/PageHeader'
 
 interface PaginationProps {

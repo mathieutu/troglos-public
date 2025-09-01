@@ -1,7 +1,7 @@
 import { ScrollTopAndComment } from '@/components/ScrollTopAndComment'
 import { SectionContainer } from '@/components/SectionContainer'
 import { Link } from '@/components/Link'
-import banner from '@/assets/images/canyon/purcaraccia-2.jpg'
+import banner from '@/assets/images/photos/canyoning_11.jpg'
 import { tripsReports } from '@/data/trips'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import { PageHeader } from '@/components/PageHeader'

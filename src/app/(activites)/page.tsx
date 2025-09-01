@@ -1,7 +1,7 @@
 import { Link } from '@/components/Link'
 import { tripsReports } from '@/data/trips'
-import caving from '@/assets/images/caving/guiers.png'
-import canyoning from '@/assets/images/canyon/purcaraccia-1.jpg'
+import caving from '@/assets/images/photos/caving_25.jpg'
+import canyoning from '@/assets/images/photos/canyoning_10.jpg'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import Image from 'next/image'
 import { HomeCarousel } from '@/app/(activites)/HomeCarousel'
@@ -14,11 +14,9 @@ export default async function Home() {
     <>
       <HomeCarousel />
 
-      {/* Section Activités avec design moderne */}
-      <section className="relative py-20">
+      <section className="relative flex py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Spéléologie */}
+          <div className="grid gap-12 lg:grid-cols-2">
             <div className="group from-caving-900/80 border-caving-500/20 relative overflow-hidden rounded-2xl border bg-gradient-to-br to-slate-900/80 backdrop-blur-sm">
               <div className="absolute inset-0">
                 <Image
@@ -28,27 +26,31 @@ export default async function Home() {
                   className="object-cover object-center opacity-30 transition-opacity duration-500 group-hover:opacity-50"
                 />
               </div>
-              <div className="relative z-10 p-8 lg:p-12">
-                <div className="mb-6 text-6xl">🦇</div>
-                <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Spéléologie</h2>
-                <p className="mb-8 text-lg leading-relaxed text-gray-200">
-                  Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration,
-                  chacun·e trouvera ce qu'iel recherche dans les profondeurs de la terre.
-                </p>
-                <Link
-                  href="/speleologie"
-                  className="bg-caving-500 hover:bg-caving-400 inline-flex transform items-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105"
-                >
-                  Découvrir la spéléo
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+              <div className="relative z-10 flex h-full flex-col justify-between p-8 lg:p-12">
+                <div>
+                  <div className="mb-6 text-6xl">🦇</div>
+                  <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Spéléologie</h2>
+                  <p className="mb-8 text-lg leading-relaxed text-gray-200">
+                    Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration,
+                    chacun·e trouvera ce qu'iel recherche dans les profondeurs de la terre.
+                  </p>
+                </div>
+                <div>
+                  <Link
+                    href="/speleologie"
+                    className="bg-caving-500 hover:bg-caving-400 inline-flex transform items-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105"
+                  >
+                    Découvrir la spéléo
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -62,27 +64,31 @@ export default async function Home() {
                   className="object-cover object-center opacity-30 transition-opacity duration-500 group-hover:opacity-50"
                 />
               </div>
-              <div className="relative z-10 p-8 lg:p-12">
-                <div className="mb-6 text-6xl">🐟</div>
-                <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Canyonisme</h2>
-                <p className="mb-8 text-lg leading-relaxed text-gray-200">
-                  Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En
-                  période estivale, on adore se jeter dans les vasques fraîches !
-                </p>
-                <Link
-                  href="/canyonisme"
-                  className="bg-canyon-500 hover:bg-canyon-400 inline-flex transform items-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105"
-                >
-                  Découvrir le canyon
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+              <div className="relative z-10 flex h-full flex-col justify-between p-8 lg:p-12">
+                <div>
+                  <div className="mb-6 text-6xl">🐟</div>
+                  <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Canyonisme</h2>
+                  <p className="mb-8 text-lg leading-relaxed text-gray-200">
+                    Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En
+                    période estivale, on adore se jeter dans les vasques fraîches ! !
+                  </p>
+                </div>
+                <div>
+                  <Link
+                    href="/canyonisme"
+                    className="bg-canyon-500 hover:bg-canyon-400 inline-flex transform items-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105"
+                  >
+                    Découvrir le canyon
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -1,101 +1,153 @@
 'use client'
 
 import Image from 'next/image'
-
-import canyonBanner1 from '@/assets/images/canyon/IMG_1021.jpeg'
-import canyonBanner2 from '@/assets/images/canyon/IMG_1046.jpeg'
-import canyonBanner3 from '@/assets/images/canyon/IMG_1052.jpeg'
-import canyonBanner4 from '@/assets/images/canyon/P5261268.jpg'
-import canyonBanner5 from '@/assets/images/canyon/P5261320.jpg'
-import canyonBanner6 from '@/assets/images/canyon/purcaraccia-1.jpg'
-import canyonBanner7 from '@/assets/images/canyon/IMG_0948.jpg'
-import canyonBanner11 from '@/assets/images/canyon/IMG_0981.jpg'
-import canyonBanner8 from '@/assets/images/canyon/IMG_0986.jpg'
-import canyonBanner9 from '@/assets/images/canyon/IMG_0992.jpg'
-import canyonBanner10 from '@/assets/images/canyon/signal-2024-08-18-14-07-25-930.jpg'
-
-import cavingBanner1 from '@/assets/images/caving/2025-02-01 13.29.42.jpg'
-import cavingBanner2 from '@/assets/images/caving/20240830.jpg'
-import cavingBanner3 from '@/assets/images/caving/20241111_141003.jpg'
-import cavingBanner4 from '@/assets/images/caving/Alex 5.jpg'
-import cavingBanner5 from '@/assets/images/caving/fitoja.jpg'
-import cavingBanner6 from '@/assets/images/caving/Gaetan 69.jpg'
-import cavingBanner7 from '@/assets/images/caving/guiers.png'
-import cavingBanner8 from '@/assets/images/caving/IMG-20241109-WA0007.jpg'
-import cavingBanner10 from '@/assets/images/caving/IMG-20241111-WA0027.jpg'
-import cavingBanner11 from '@/assets/images/caving/IMG_20241231_200233.jpg'
-import cavingBanner13 from '@/assets/images/caving/IMG_20241231_233057.jpg'
-import cavingBanner14 from '@/assets/images/caving/IMG_20250101_111038.jpg'
-import cavingBanner15 from '@/assets/images/caving/marcel.jpg'
-import cavingBanner16 from '@/assets/images/caving/Morgan 11.jpg'
-import cavingBanner17 from '@/assets/images/caving/Morgan 17.jpg'
-import cavingBanner26 from '@/assets/images/caving/PXL_20241031_205616617.NIGHT.jpg'
-import cavingBanner18 from '@/assets/images/caving/20250713_105100.jpg'
-import cavingBanner19 from '@/assets/images/caving/20250713_164705.jpg'
-import cavingBanner20 from '@/assets/images/caving/20250714_110800.jpg'
-import cavingBanner21 from '@/assets/images/caving/20250714_113313.jpg'
-import cavingBanner22 from '@/assets/images/caving/20250714_121015.jpg'
-import cavingBanner23 from '@/assets/images/caving/20250720_163613.jpg'
-import cavingBanner24 from '@/assets/images/caving/20250803_123253.jpg'
-import cavingBanner25 from '@/assets/images/caving/20250803_123835.jpg'
-
 import { useAutoRotatingSelection } from '@/utils/hooks'
 import { Header } from '@/components/Header'
+import canyoning01 from '@/assets/images/photos/canyoning_01.jpg'
+import canyoning02 from '@/assets/images/photos/canyoning_02.jpg'
+import canyoning03 from '@/assets/images/photos/canyoning_03.jpg'
+import canyoning04 from '@/assets/images/photos/canyoning_04.jpg'
+import canyoning05 from '@/assets/images/photos/canyoning_05.jpg'
+import canyoning06 from '@/assets/images/photos/canyoning_06.jpg'
+import canyoning07 from '@/assets/images/photos/canyoning_07.jpg'
+import canyoning08 from '@/assets/images/photos/canyoning_08.jpg'
+import canyoning09 from '@/assets/images/photos/canyoning_09.jpg'
+import canyoning10 from '@/assets/images/photos/canyoning_10.jpg'
+import canyoning11 from '@/assets/images/photos/canyoning_11.jpg'
+import canyoning12 from '@/assets/images/photos/canyoning_12.jpg'
+import caving01 from '@/assets/images/photos/caving_01.jpg'
+import caving02 from '@/assets/images/photos/caving_02.jpg'
+import caving03 from '@/assets/images/photos/caving_03.jpg'
+import caving04 from '@/assets/images/photos/caving_04.jpg'
+import caving05 from '@/assets/images/photos/caving_05.jpg'
+import caving06 from '@/assets/images/photos/caving_06.jpg'
+import caving07 from '@/assets/images/photos/caving_07.jpg'
+import caving08 from '@/assets/images/photos/caving_08.jpg'
+import caving09 from '@/assets/images/photos/caving_09.jpg'
+import caving10 from '@/assets/images/photos/caving_10.jpg'
+import caving11 from '@/assets/images/photos/caving_11.jpg'
+import caving12 from '@/assets/images/photos/caving_12.jpg'
+import caving13 from '@/assets/images/photos/caving_13.jpg'
+import caving14 from '@/assets/images/photos/caving_14.jpg'
+import caving15 from '@/assets/images/photos/caving_15.jpg'
+import caving16 from '@/assets/images/photos/caving_16.jpg'
+import caving17 from '@/assets/images/photos/caving_17.jpg'
+import caving18 from '@/assets/images/photos/caving_18.jpg'
+import caving19 from '@/assets/images/photos/caving_19.jpg'
+import caving20 from '@/assets/images/photos/caving_20.jpg'
+import caving21 from '@/assets/images/photos/caving_21.jpg'
+import caving22 from '@/assets/images/photos/caving_22.jpg'
+import caving23 from '@/assets/images/photos/caving_23.jpg'
+import caving25 from '@/assets/images/photos/caving_25.jpg'
+import caving26 from '@/assets/images/photos/caving_26.jpg'
+
 const carouselItems = [
-  { src: cavingBanner4, className: 'color-caving' },
-  { src: cavingBanner16, className: 'color-caving' },
-  { src: cavingBanner10, className: 'color-caving' },
-  { src: cavingBanner22, className: 'color-caving' },
-  { src: cavingBanner18, className: 'color-caving' },
-  { src: cavingBanner3, className: 'color-caving' },
-  { src: cavingBanner6, className: 'color-caving' },
-  { src: cavingBanner24, className: 'color-caving' },
-  { src: canyonBanner1, className: 'color-canyon' },
-  { src: cavingBanner11, className: 'color-caving' },
-  { src: cavingBanner7, className: 'color-caving' },
-  { src: cavingBanner19, className: 'color-caving' },
-  { src: cavingBanner2, className: 'color-caving' },
-  { src: canyonBanner11, className: 'color-canyon' },
-  { src: canyonBanner9, className: 'color-canyon' },
-  { src: canyonBanner3, className: 'color-canyon' },
-  { src: cavingBanner8, className: 'color-caving' },
-  { src: canyonBanner10, className: 'color-canyon' },
-  { src: canyonBanner4, className: 'color-canyon' },
-  { src: canyonBanner5, className: 'color-canyon' },
-  { src: cavingBanner14, className: 'color-caving' },
-  { src: cavingBanner5, className: 'color-caving' },
-  { src: cavingBanner23, className: 'color-caving' },
-  { src: canyonBanner6, className: 'color-canyon' },
-  { src: canyonBanner8, className: 'color-canyon' },
-  { src: cavingBanner15, className: 'color-caving' },
-  { src: cavingBanner17, className: 'color-caving' },
-  { src: cavingBanner1, className: 'color-caving' },
-  { src: cavingBanner20, className: 'color-caving' },
-  { src: canyonBanner7, className: 'color-canyon' },
-  { src: cavingBanner21, className: 'color-caving' },
-  { src: cavingBanner26, className: 'color-caving' },
-  { src: cavingBanner25, className: 'color-caving' },
-  { src: cavingBanner13, className: 'color-caving' },
-  { src: canyonBanner2, className: 'color-canyon' },
+  { src: canyoning03, className: 'color-canyon' },
+  { src: canyoning10, className: 'color-canyon' },
+  { src: caving17, className: 'color-caving' },
+  { src: caving13, className: 'color-caving' },
+  { src: canyoning02, className: 'color-canyon' },
+  { src: canyoning11, className: 'color-canyon' },
+  { src: caving15, className: 'color-caving' },
+  { src: canyoning12, className: 'color-canyon' },
+  { src: caving14, className: 'color-caving' },
+  { src: caving19, className: 'color-caving' },
+  { src: caving06, className: 'color-caving' },
+  { src: caving01, className: 'color-caving' },
+  { src: caving22, className: 'color-caving' },
+  { src: caving08, className: 'color-caving' },
+  { src: canyoning05, className: 'color-canyon' },
+  { src: caving23, className: 'color-caving' },
+  { src: caving02, className: 'color-caving' },
+  { src: canyoning09, className: 'color-canyon' },
+  { src: caving20, className: 'color-caving' },
+  { src: caving18, className: 'color-caving' },
+  { src: canyoning04, className: 'color-canyon' },
+  { src: caving12, className: 'color-caving' },
+  { src: caving16, className: 'color-caving' },
+  { src: canyoning08, className: 'color-canyon' },
+  { src: canyoning07, className: 'color-canyon' },
+  { src: caving21, className: 'color-caving' },
+  { src: caving03, className: 'color-caving' },
+  { src: caving09, className: 'color-caving' },
+  { src: caving10, className: 'color-caving' },
+  { src: caving26, className: 'color-caving' },
+  { src: caving25, className: 'color-caving' },
+  { src: canyoning01, className: 'color-canyon' },
+  { src: canyoning06, className: 'color-canyon' },
+  { src: caving05, className: 'color-caving' },
+  { src: caving11, className: 'color-caving' },
+  { src: caving04, className: 'color-caving' },
+  { src: caving07, className: 'color-caving' },
 ]
 
 export const HomeCarousel = () => {
-  const [currentCarouselItem] = useAutoRotatingSelection(carouselItems)
+  const { currentIndex, previous, next } = useAutoRotatingSelection(carouselItems, 5000)
+  const { className } = carouselItems[currentIndex]
 
   return (
-    <section className={`w-screen ${currentCarouselItem.className} mb-[100vh]`}>
+    <section className={`w-screen ${className} mb-[100vh]`}>
       <div className="absolute inset-0 h-screen">
-        <div className="relative h-screen w-full">
-          <Image src={currentCarouselItem.src} alt="" fill className="object-cover" />
-          <div className="from-primary-950/80 via-primary-950/50 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b to-transparent">
-            <h1 className="text-center text-4xl font-extrabold text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
-              <span className="text-caving-400 drop-shadow-lg">Spéléologie</span> et{' '}
-              <span className="text-canyon-400 drop-shadow-lg">Canyonisme</span>
+        <div className="relative h-screen w-full overflow-hidden">
+          {/* Render all images with individual opacity control */}
+          <div className="bg-primary-400 absolute inset-0">
+            {carouselItems.map((item, index) => (
+              <Image
+                key={index}
+                src={item.src}
+                alt=""
+                fill
+                className={`object-cover transition-opacity duration-700 ease-in-out ${
+                  currentIndex === index ? 'opacity-100' : 'opacity-0'
+                }`}
+                priority={index < 3} // Only prioritize first few images
+              />
+            ))}
+          </div>
+
+          <div className="from-primary-950/80 via-primary-950/50 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b to-transparent transition-colors duration-700 ease-in-out">
+            <h1 className="text-center font-extrabold text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
+              <div className="flex items-baseline gap-4">
+                <span className="text-caving-400 drop-shadow-lg">Spéléologie</span>
+                <span className="text-5xl">et</span>
+                <span className="text-canyon-400 drop-shadow-lg">Canyonisme</span>
+              </div>
+              <div className="text-5xl drop-shadow-lg">à Lyon</div>
             </h1>
-            <span className="text-3xl font-extrabold">à Lyon</span>
           </div>
           <div className="absolute -top-5 w-full px-10">
             <Header />
+          </div>
+          <div className="absolute right-6 bottom-6 z-20 flex gap-2">
+            <button
+              onClick={previous}
+              className="rounded-full border border-white/20 bg-white/10 p-1.5 text-white backdrop-blur-sm transition-all duration-200 hover:border-white/30 hover:bg-white/20"
+              aria-label="Slide précédent"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
+            <button
+              onClick={next}
+              className="rounded-full border border-white/20 bg-white/10 p-1.5 text-white backdrop-blur-sm transition-all duration-200 hover:border-white/30 hover:bg-white/20"
+              aria-label="Slide suivant"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

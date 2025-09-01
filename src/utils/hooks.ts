@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export function useAutoRotatingSelection<T>(
   items: T[],
@@ -11,22 +11,51 @@ export function useAutoRotatingSelection<T>(
   const [isRunning, setIsRunning] = useState(autoStart)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
+  // Function to clear the current interval
+  const clearCurrentInterval = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+  }, [])
+
+  // Function to start the interval
+  const startInterval = useCallback(() => {
+    if (isRunning && items.length > 1) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length)
+      }, intervalMs)
+    }
+  }, [isRunning, items.length, intervalMs])
+
+  // Function to reset the interval (restart the timer)
+  const resetInterval = useCallback(() => {
+    clearCurrentInterval()
+    startInterval()
+  }, [clearCurrentInterval, startInterval])
+
   // Function to move to next item
-  const next = useCallback(
-    () => setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length),
-    [items.length]
-  )
+  const next = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length)
+    resetInterval()
+  }, [items.length, resetInterval])
 
   // Function to move to previous item
-  const previous = () =>
+  const previous = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length)
+    resetInterval()
+  }, [items.length, resetInterval])
 
   // Function to go to specific index
-  const goTo = (index: number) => {
-    if (index >= 0 && index < items.length) {
-      setCurrentIndex(index)
-    }
-  }
+  const goTo = useCallback(
+    (index: number) => {
+      if (index >= 0 && index < items.length) {
+        setCurrentIndex(index)
+        resetInterval()
+      }
+    },
+    [items.length, resetInterval]
+  )
 
   // Function to start the auto rotation
   const start = () => setIsRunning(true)
@@ -35,25 +64,17 @@ export function useAutoRotatingSelection<T>(
   const stop = () => setIsRunning(false)
 
   // Function to toggle auto rotation
-  const toggle = () => setIsRunning(!isRunning)
+  const toggle = () => setIsRunning((current) => !current)
 
   // Effect to handle the auto rotation
   useEffect(() => {
-    if (isRunning && items.length > 1) {
-      intervalRef.current = setInterval(next, intervalMs)
-    } else {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
-    }
+    clearCurrentInterval()
+    startInterval()
 
     return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-      }
+      clearCurrentInterval()
     }
-  }, [isRunning, intervalMs, items.length, next])
+  }, [isRunning, intervalMs, items.length, clearCurrentInterval, startInterval])
 
   // Reset index if items array changes and current index is out of bounds
   useEffect(() => {
@@ -71,17 +92,14 @@ export function useAutoRotatingSelection<T>(
     }
   }, [])
 
-  return [
-    items[currentIndex],
-    {
-      currentIndex,
-      isRunning,
-      next,
-      previous,
-      goTo,
-      start,
-      stop,
-      toggle,
-    },
-  ] as const
+  return {
+    currentIndex,
+    isRunning,
+    next,
+    previous,
+    goTo,
+    start,
+    stop,
+    toggle,
+  }
 }

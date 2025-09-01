@@ -1,7 +1,7 @@
 import { ScrollTopAndComment } from '@/components/ScrollTopAndComment'
 import { SectionContainer } from '@/components/SectionContainer'
 import { Link } from '@/components/Link'
-import banner from '@/assets/images/caving/fitoja.jpg'
+import banner from '@/assets/images/photos/caving_23.jpg'
 import { tripsReports } from '@/data/trips'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import { PageHeader } from '@/components/PageHeader'

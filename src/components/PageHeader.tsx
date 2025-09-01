@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { ReactNode } from 'react'
 
 const PageBanner = ({ src }: { src: string | StaticImport }) => (
-  <Bleed>
+  <Bleed full>
     <div className="relative aspect-5/2 w-full">
       <Image src={src} alt="" fill className="rounded-lg object-cover" />
     </div>
