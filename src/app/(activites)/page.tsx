@@ -15,7 +15,7 @@ export default async function Home() {
       <HomeCarousel />
 
       <section className="relative flex py-20">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl sm:px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="group from-caving-900/80 border-caving-500/20 relative overflow-hidden rounded-2xl border bg-gradient-to-br to-slate-900/80 backdrop-blur-sm">
               <div className="absolute inset-0">

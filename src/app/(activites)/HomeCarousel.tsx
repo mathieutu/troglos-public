@@ -110,13 +110,12 @@ export const HomeCarousel = () => {
           </div>
 
           <div className="from-primary-950/80 via-primary-950/50 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b to-transparent transition-colors duration-700 ease-in-out">
-            <h1 className="text-center font-extrabold text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
-              <div className="flex items-baseline gap-4">
-                <span className="text-caving-400 drop-shadow-lg">Spéléologie</span>
-                <span className="text-5xl">et</span>
-                <span className="text-canyon-400 drop-shadow-lg">Canyonisme</span>
+            <h1 className="text-center text-5xl font-extrabold text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
+              <div className="flex-wrap items-baseline justify-center gap-4 sm:flex">
+                <span className="text-caving-400">Spéléologie</span> et{' '}
+                <span className="text-canyon-400">Canyonisme</span>
               </div>
-              <div className="text-5xl drop-shadow-lg">à Lyon</div>
+              <div className="text-3xl">à Lyon</div>
             </h1>
           </div>
           <div className="absolute -top-5 w-full px-10">
