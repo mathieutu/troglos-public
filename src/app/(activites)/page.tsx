@@ -1,4 +1,4 @@
-import { Link } from '@/components/Link'
+import { Link, PrimaryLink } from '@/components/Link'
 import { tripsReports } from '@/data/trips'
 import caving from '@/assets/images/photos/caving_25.jpg'
 import canyoning from '@/assets/images/photos/canyoning_10.jpg'
@@ -148,10 +148,7 @@ export default async function Home() {
 
           {/* CTA vers toutes les sorties */}
           <div className="mt-16 text-center">
-            <Link
-              href="/sorties"
-              className="bg-primary-500/80 hover:bg-primary-600 inline-flex items-center gap-3 rounded-2xl px-10 py-4 font-bold text-white shadow-xl transition-all duration-300"
-            >
+            <PrimaryLink href="/sorties">
               Voir tous les comptes-rendus
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -161,7 +158,7 @@ export default async function Home() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </Link>
+            </PrimaryLink>
           </div>
         </div>
       </section>

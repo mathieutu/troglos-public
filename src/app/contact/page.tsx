@@ -1,7 +1,7 @@
 import { PageHeader } from '@/components/PageHeader'
 import { Card } from '@/components/Card'
 import { Link } from '@/components/Link'
-import contactBanner from '@/assets/images/caving/fitoja.jpg'
+import contactBanner from '@/assets/images/photos/caving_25.jpg'
 
 export default function ContactPage() {
   return (

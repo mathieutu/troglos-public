@@ -1,11 +1,11 @@
 import { PageHeader } from '@/components/PageHeader'
 import { Link } from '@/components/Link'
 import { Card } from '@/components/Card'
-import initiationBanner from '@/assets/images/caving/marcel.jpg'
-import cavingImage from '@/assets/images/caving/guiers.png'
-import canyonImage from '@/assets/images/canyon/purcaraccia-2.jpg'
+import initiationBanner from '@/assets/images/photos/caving_26.jpg'
+import cavingImage from '@/assets/images/photos/caving_25.jpg'
+import canyonImage from '@/assets/images/photos/canyoning_02.jpg'
 
-export default function InitiationsPage() {
+export default function NousRejoindrePage() {
   return (
     <>
       <PageHeader imageSrc={initiationBanner} title="Nous rejoindre" />

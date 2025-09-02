@@ -1,119 +1,169 @@
 import { PageHeader } from '@/components/PageHeader'
-import { Link } from '@/components/Link'
+import { Link, PrimaryLink } from '@/components/Link'
 import { Card } from '@/components/Card'
-import clubBanner from '@/assets/images/canyon/purcaraccia-1.jpg'
+import clubBanner from '@/assets/images/photos/caving_24.jpg'
 
 export default function ClubPage() {
   return (
     <>
       <PageHeader imageSrc={clubBanner} title="Le Clan Spéléo des Troglodytes" />
 
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
-            Qui sommes-nous ?
-          </h1>
-        </div>
+      <div className="prose-lg prose-invert max-w-none">
+        <section>
+          <p>
+            Le Clan Spéléo des Troglodytes est un club de spéléologie et de canyonisme basé à Lyon.
+            Fondé par des passionné·e·s de sports souterrains et d'eau vive, nous explorons depuis
+            plus de 60 ans les merveilles cachées de la région Auvergne-Rhône-Alpes et au-delà.
+          </p>
+          <p>
+            Notre club regroupe des spéléologues et des canyonistes de tous niveaux, des
+            débutant·e·s aux expert·e·s, uni·e·s par la même passion pour la découverte et
+            l'exploration du milieu. Nous comptons une cinquantaine de membres, dont 40% de femmes,
+            avec une moyenne d'âge de 35 ans (et une médiane à 34). Notre conseil d'administration
+            est, lui, paritaire. <em>(statistiques fin 2025)</em>.
+          </p>
+        </section>
 
-        <div className="py-12">
-          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-            <section className="mb-12">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
-                Notre histoire
-              </h2>
-              <p className="mb-6 text-lg leading-8">
-                Le Clan Spéléo des Troglodytes est un club de spéléologie et de canyonisme basé à
-                Lyon. Fondé par des passionné·e·s de sports souterrains et d'eau vive, nous
-                explorons depuis des années les merveilles cachées de la région Auvergne-Rhône-Alpes
-                et au-delà.
-              </p>
-              <p className="mb-6 text-lg leading-8">
-                Notre club regroupe des spéléologues et des canyonistes de tous niveaux, des
-                débutants aux experts, unis par la même passion pour la découverte et l'exploration
-                des mondes souterrains et aquatiques.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
-                Nos valeurs
-              </h2>
-              <div className="grid gap-8 md:grid-cols-2">
-                <Card title="🌿 Respect de l'environnement">
-                  Nous pratiquons nos activités dans le respect total de l'environnement naturel, en
-                  préservant les écosystèmes fragiles des grottes et des canyons.
-                </Card>
-                <Card title="🤝 Esprit d'équipe">
-                  La solidarité et l'entraide sont au cœur de nos pratiques. Chaque sortie est une
-                  aventure collective où chacun·e veille sur les autres.
-                </Card>
-                <Card title="🎯 Sécurité">
-                  La sécurité est notre priorité absolue. Nous formons régulièrement nos membres aux
-                  techniques de progression et de secours.
-                </Card>
-                <Card title="📚 Transmission">
-                  Nous aimons partager nos connaissances et notre passion avec les nouveaux
-                  arrivants, dans une ambiance conviviale et bienveillante.
-                </Card>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
-                Nos activités
-              </h2>
-              <div className="grid gap-8 md:grid-cols-2">
-                <div className="color-caving">
-                  <Card title="🦇 Spéléologie">
-                    <ul className="space-y-2">
-                      <li>• Initiation et découverte</li>
-                      <li>• Perfectionnement technique</li>
-                      <li>• Exploration de nouvelles cavités</li>
-                      <li>• Topographie souterraine</li>
-                      <li>• Stages de formation</li>
-                    </ul>
-                  </Card>
-                </div>
-                <div className="color-canyon">
-                  <Card title="🐟 Canyonisme">
-                    <ul className="space-y-2">
-                      <li>• Descente de canyons aquatiques</li>
-                      <li>• Initiation aux techniques de corde</li>
-                      <li>• Sorties découverte</li>
-                      <li>• Perfectionnement technique</li>
-                      <li>• Exploration de nouveaux itinéraires</li>
-                    </ul>
-                  </Card>
-                </div>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
-                Rejoignez-nous !
-              </h2>
-              <p className="mb-6 text-lg leading-8">
-                Vous êtes curieux·se de découvrir le monde souterrain ou les sports d'eau vive ?
-                Vous cherchez un club convivial pour partager votre passion ? Le Clan Spéléo des
-                Troglodytes vous accueille à bras ouverts !
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/nous-rejoindre"
-                  className="bg-primary-600 hover:bg-primary-700 inline-flex items-center rounded-md border border-transparent px-6 py-3 text-base font-medium text-white"
-                >
-                  Découvrir nos initiations
-                </Link>
-                <Link
-                  href="/sorties"
-                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                >
-                  Voir nos sorties
-                </Link>
-              </div>
-            </section>
+        <section>
+          <h2>Nos valeurs</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="flex flex-col">
+              <Card
+                title={
+                  <div className="flex justify-between">
+                    <span>Esprit d'équipe</span>🤝
+                  </div>
+                }
+                style={
+                  {
+                    '--card-bg': 'var(--color-blue-300)',
+                    '--card-border': 'var(--color-blue-500)',
+                  } as React.CSSProperties
+                }
+              >
+                La solidarité et l'entraide sont au cœur de nos pratiques. Nous avons pour coutume
+                de dire que nos disciplines sont des sports collectifs. Chaque sortie est une
+                aventure de groupe où chacun·e veille sur les autres.
+              </Card>
+              <Card
+                title={
+                  <div className="flex justify-between">
+                    <span>Sécurité</span>🎯
+                  </div>
+                }
+                style={
+                  {
+                    '--card-bg': 'var(--color-red-300)',
+                    '--card-border': 'var(--color-red-500)',
+                  } as React.CSSProperties
+                }
+              >
+                La sécurité est notre priorité absolue. Les techniques de progression et de secours
+                font partie intégrante de la formation de nos membres. Notre matériel est
+                scrupuleusement suivi selon les normes en vigueur.
+              </Card>
+              <Card
+                title={
+                  <div className="flex justify-between">
+                    <span>Implication fédérale</span>🏛️
+                  </div>
+                }
+                style={
+                  {
+                    '--card-bg': 'var(--color-purple-300)',
+                    '--card-border': 'var(--color-purple-500)',
+                  } as React.CSSProperties
+                }
+              >
+                Actif dans le Spéléo Secours, le Comité Départemental, ou encore la Fédération
+                Française de Spéléologie, le clan contribue activement au développement et à la
+                promotion de nos disciplines.
+              </Card>
+            </div>
+            <div className="flex flex-col">
+              <Card
+                title={
+                  <div className="flex justify-between">
+                    <span>Inclusion et diversité</span>🌈
+                  </div>
+                }
+                style={
+                  {
+                    '--card-bg': 'var(--color-pink-300)',
+                    '--card-border': 'var(--color-pink-500)',
+                  } as React.CSSProperties
+                }
+              >
+                Le Clan est fier d'accueillir toutes et tous, sans distinction d'âge, de genre,
+                d'origine ou de niveau. Nous pensons que la diversité enrichit nos expériences et
+                renforce notre communauté.
+              </Card>
+              <Card
+                title={
+                  <div className="flex justify-between">
+                    <span>Transmission</span>📚
+                  </div>
+                }
+                style={
+                  {
+                    '--card-bg': 'var(--color-orange-300)',
+                    '--card-border': 'var(--color-orange-500)',
+                  } as React.CSSProperties
+                }
+              >
+                Le Clan est reconnu pour sa formation. Nous aimons partager nos connaissances et
+                notre passion avec les nouveaux arrivants, dans une ambiance conviviale et
+                bienveillante.
+              </Card>
+              <Card
+                title={
+                  <div className="flex justify-between">
+                    <span>Respect de l'environnement</span>🌿
+                  </div>
+                }
+                style={
+                  {
+                    '--card-bg': 'var(--color-green-300)',
+                    '--card-border': 'var(--color-green-500)',
+                  } as React.CSSProperties
+                }
+              >
+                Nous pratiquons nos activités dans le respect de l'environnement naturel, en
+                préservant le plus possible les écosystèmes fragiles des grottes et des canyons.
+                Beaucoup de nos membres ne sont pas véhiculés, et les déplacements se font
+                généralement en covoiturage.
+              </Card>
+            </div>
           </div>
-        </div>
+        </section>
+        <section>
+          <h2>Fonctionnement interne</h2>
+          <p>
+            Le Clan se réunit mensuellement, habituellement le premier mercredi du mois à 20h30, au{' '}
+            <Link href="/contact">local du club</Link>. Ces réunions permettent de faire le point
+            sur la vie du club, de préparer les sorties à venir et d'échanger sur les différents
+            projets en cours. Elles sont ouvertes à tous·tes, n'hésitez pas à passer nous voir !
+          </p>
+          <p>
+            En plus d'un bureau standard, notre organisation s'appuie sur plusieurs commissions
+            spécialisées : Formation Spéléo, Formation Canyon, Exploration, Science et
+            Environnement, Matériel et Sécurité, Communication et Événementiel, ainsi
+            qu'Informatique et Bibliothèque. Chaque commission est constituée de membres volontaires
+            qui planifient et coordonnent les activités de leur domaine de compétence.
+          </p>
+        </section>
+
+        <section>
+          <h2>Rejoignez-nous !</h2>
+          <p>
+            Vous êtes curieux·se de découvrir le monde souterrain ou les sports d'eau vive ? Vous
+            cherchez un club convivial pour partager votre passion ? Le Clan Spéléo des Troglodytes
+            vous accueille à bras ouverts !
+          </p>
+        </section>
+      </div>
+      <div className="flex gap-4">
+        <PrimaryLink href="/nous-rejoindre">Découvrir nos initiations</PrimaryLink>
       </div>
     </>
   )

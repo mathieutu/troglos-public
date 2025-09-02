@@ -80,7 +80,11 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
       <nav className="flex justify-between">
         {prevPage ? (
           <Link
-            href={currentPage - 1 === 1 ? `/${basePath}/` : `/${basePath}/page/${currentPage - 1}`}
+            href={
+              currentPage - 1 === 1
+                ? `/${basePath}#trips-list`
+                : `/${basePath}/page/${currentPage - 1}#trips-list`
+            }
             rel="prev"
             className="hover:text-primary-500"
           >
@@ -94,7 +98,7 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
         </span>
         {nextPage ? (
           <Link
-            href={`/${basePath}/page/${currentPage + 1}`}
+            href={`/${basePath}/page/${currentPage + 1}#trips-list`}
             rel="next"
             className="hover:text-primary-500"
           >
@@ -117,69 +121,81 @@ interface ListLayoutProps {
 }
 export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutProps) => {
   const filteredTrips = useMemo(() => {
-    let tripsToDisplay = tripsReports
-
     if (currentTag) {
-      tripsToDisplay = tripsToDisplay.filter((trip) =>
-        trip.tags.some((tag) => tag.slug === currentTag.slug)
-      )
+      return tripsReports.filter((trip) => trip.tags.some((tag) => tag.slug === currentTag.slug))
     }
 
-    if (currentPage) {
-      const startIndex = (currentPage - 1) * TRIPS_PER_PAGE
-      tripsToDisplay = tripsToDisplay.slice(startIndex, startIndex + TRIPS_PER_PAGE)
-    }
-    return tripsToDisplay
-  }, [currentTag, currentPage])
+    return tripsReports
+  }, [currentTag])
 
-  const totalPages = Math.ceil(tripsReports.length / TRIPS_PER_PAGE)
+  const totalPages = Math.ceil(filteredTrips.length / TRIPS_PER_PAGE)
+
+  const paginatedTrips = useMemo(() => {
+    const startIndex = (currentPage - 1) * TRIPS_PER_PAGE
+    return filteredTrips.slice(startIndex, startIndex + TRIPS_PER_PAGE)
+  }, [filteredTrips, currentPage])
 
   return (
-    <>
+    <div>
+      <PageHeader imageSrc={banner} title="Les sorties du Clan" />
       <div>
-        <PageHeader imageSrc={banner} title="Les sorties du Clan" />
-        <div className="flex sm:space-x-24">
-          <div className="hidden h-full max-w-[300px] min-w-[300px] flex-wrap sm:flex">
-            <div className="">
-              <Link
-                href={`/sorties`}
-                className="hover:text-primary-500 font-bold text-gray-300 uppercase"
-              >
-                Toutes les sorties
-              </Link>
-              <ul>
-                {tags.map((tag) => {
-                  return (
-                    <li key={tag.title} className="my-3">
-                      {currentTag?.slug === tag.slug ? (
-                        <h3 className="text-primary-500 inline px-3 py-2 text-sm font-bold uppercase">
-                          {`${tag.title} (${tag.count})`}
-                        </h3>
-                      ) : (
-                        <Link
-                          href={`/sorties/tags/${tag.slug}`}
-                          className="hover:text-primary-500 px-3 py-2 text-sm font-medium text-gray-300 uppercase"
-                          aria-label={`View posts tagged ${tag.title}`}
-                        >
-                          {`${tag.title} (${tag.count})`}
-                        </Link>
-                      )}
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          </div>
-          <div>
-            <ul className="grid gap-6">
-              {filteredTrips.map((trip) => (
-                <TripsListItem key={trip.id} trip={trip} />
-              ))}
-            </ul>
-            {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} />}
-          </div>
+        <div className="prose-invert prose-lg max-w-none py-4">
+          <p>
+            Les membres du club organisent régulièrement des sorties en rivière et sous terre. Si
+            des débutants y participent, la sortie est encadrée par un encadrant breveté pour
+            assurer la sécurité et transmettre les techniques de base.
+          </p>
+          <p>
+            Des entraînements ont également lieu chaque jeudi soir en gymnase pour travailler les
+            techniques de progression, d'équipement et de secours.
+          </p>
+          <p>
+            Découvrez ci-dessous nos derniers comptes-rendus de sorties et laissez-vous inspirer par
+            nos aventures !
+          </p>
         </div>
       </div>
-    </>
+      <div className="mt-6 flex scroll-mt-6 sm:space-x-24" id="trips-list">
+        <div className="hidden h-full max-w-[300px] min-w-[300px] flex-wrap sm:flex">
+          <div className="">
+            <Link
+              href={`/sorties#trips-list`}
+              className="hover:text-primary-500 font-bold text-gray-300 uppercase"
+            >
+              Toutes les sorties
+            </Link>
+            <ul>
+              {tags.map((tag) => {
+                return (
+                  <li key={tag.title} className="my-3">
+                    {currentTag?.slug === tag.slug ? (
+                      <h3 className="text-primary-500 inline px-3 py-2 text-sm font-bold uppercase">
+                        {`${tag.title} (${tag.count})`}
+                      </h3>
+                    ) : (
+                      <Link
+                        href={`/sorties/tags/${tag.slug}#trips-list`}
+                        className="hover:text-primary-500 px-3 py-2 text-sm font-medium text-gray-300 uppercase"
+                        aria-label={`View posts tagged ${tag.title}`}
+                      >
+                        {`${tag.title} (${tag.count})`}
+                      </Link>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <ul className="grid gap-6">
+            {paginatedTrips.map((trip) => (
+              <TripsListItem key={trip.id} trip={trip} />
+            ))}
+          </ul>
+          {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} />}
+        </div>
+      </div>
+    </div>
   )
 }
