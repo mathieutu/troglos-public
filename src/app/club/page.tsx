@@ -22,6 +22,7 @@ export default function ClubPage() {
             avec une moyenne d'âge de 35 ans (et une médiane à 34). Notre conseil d'administration
             est, lui, paritaire. <em>(statistiques fin 2025)</em>.
           </p>
+          <p>Tous les membres sont bénévoles.</p>
         </section>
 
         <section>
@@ -29,11 +30,8 @@ export default function ClubPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col">
               <Card
-                title={
-                  <div className="flex justify-between">
-                    <span>Esprit d'équipe</span>🤝
-                  </div>
-                }
+                title="Esprit d'équipe"
+                icon="🤝"
                 style={
                   {
                     '--card-bg': 'var(--color-blue-300)',
@@ -46,11 +44,8 @@ export default function ClubPage() {
                 aventure de groupe où chacun·e veille sur les autres.
               </Card>
               <Card
-                title={
-                  <div className="flex justify-between">
-                    <span>Sécurité</span>🎯
-                  </div>
-                }
+                title="Sécurité"
+                icon="🛡️"
                 style={
                   {
                     '--card-bg': 'var(--color-red-300)',
@@ -63,11 +58,8 @@ export default function ClubPage() {
                 scrupuleusement suivi selon les normes en vigueur.
               </Card>
               <Card
-                title={
-                  <div className="flex justify-between">
-                    <span>Implication fédérale</span>🏛️
-                  </div>
-                }
+                title="Implication fédérale"
+                icon="🏛️"
                 style={
                   {
                     '--card-bg': 'var(--color-purple-300)',
@@ -82,11 +74,8 @@ export default function ClubPage() {
             </div>
             <div className="flex flex-col">
               <Card
-                title={
-                  <div className="flex justify-between">
-                    <span>Inclusion et diversité</span>🌈
-                  </div>
-                }
+                title="Inclusion et diversité"
+                icon="🌈"
                 style={
                   {
                     '--card-bg': 'var(--color-pink-300)',
@@ -99,11 +88,8 @@ export default function ClubPage() {
                 renforce notre communauté.
               </Card>
               <Card
-                title={
-                  <div className="flex justify-between">
-                    <span>Transmission</span>📚
-                  </div>
-                }
+                title="Transmission"
+                icon="📚"
                 style={
                   {
                     '--card-bg': 'var(--color-orange-300)',
@@ -116,11 +102,8 @@ export default function ClubPage() {
                 bienveillante.
               </Card>
               <Card
-                title={
-                  <div className="flex justify-between">
-                    <span>Respect de l'environnement</span>🌿
-                  </div>
-                }
+                title="Respect de l'environnement"
+                icon="🌿"
                 style={
                   {
                     '--card-bg': 'var(--color-green-300)',

@@ -1,151 +1,251 @@
 import { PageHeader } from '@/components/PageHeader'
-import { Link } from '@/components/Link'
+import { PrimaryLink } from '@/components/Link'
 import { Card } from '@/components/Card'
-import initiationBanner from '@/assets/images/photos/caving_26.jpg'
-import cavingImage from '@/assets/images/photos/caving_25.jpg'
-import canyonImage from '@/assets/images/photos/canyoning_02.jpg'
+import banner from '@/assets/images/photos/caving_02.jpg'
 
 export default function NousRejoindrePage() {
   return (
     <>
-      <PageHeader imageSrc={initiationBanner} title="Nous rejoindre" />
+      <PageHeader imageSrc={banner} title="Nous rejoindre" />
 
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <p className="text-lg leading-8 text-gray-500 dark:text-gray-400">
-            Que vous soyez débutant·e ou expérimenté·e, nous avons des activités adaptées à tous les
-            niveaux. Rejoignez-nous pour vivre des aventures inoubliables !
+      <div className="prose-lg prose-invert max-w-none">
+        <section>
+          <p>
+            Rejoins des spéléologues et canyonistes pour vivre de calcaire et d'eau fraîche ! Tu as
+            toujours rêvé d'explorer les mystères des profondeurs de la Terre ou de t'immerger dans
+            les remous de la rivière ? Notre club de spéléologie et canyonisme est là pour toi !
           </p>
-        </div>
+          <p>
+            Nous acceptons les débutant·e·s souhaitant se former à la pratique avec plaisir. Avant
+            toute inscription au club, il est demandé de réaliser au minimum une initiation avec le
+            clan pour découvrir nos activités et notre esprit d'équipe.
+          </p>
+          <p>
+            Une condition physique normale suffit. Nous adaptons les sorties au niveau du groupe et
+            privilégions la découverte à la performance. L'important est d'avoir l'esprit aventureux
+            !
+          </p>
+        </section>
 
-        <div className="py-12">
-          <section className="mb-16">
-            <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Nos initiations
-            </h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              <div className="color-caving">
-                <Card title="🦇 Initiation Spéléologie" imgSrc={cavingImage} href="/contact">
-                  Découvrez le monde souterrain lors d'une première sortie encadrée. Matériel
-                  fourni, aucune expérience requise !
-                </Card>
-              </div>
-              <div className="color-canyon">
-                <Card title="🐟 Initiation Canyonisme" imgSrc={canyonImage} href="/contact">
-                  Plongez dans l'univers des canyons aquatiques. Descentes en rappel, toboggans
-                  naturels et vasques rafraîchissantes !
-                </Card>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-16">
-            <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Comment nous rejoindre ?
-            </h2>
-            <div className="grid gap-8 md:grid-cols-3">
-              <Card title="1️⃣ Contactez-nous" href="/contact">
-                Prenez contact avec nous pour discuter de vos envies et de votre niveau. Nous vous
-                orienterons vers l'activité qui vous correspond le mieux.
+        <section>
+          <h2>Nos journées d'initiation</h2>
+          <p>
+            Des sorties découvertes sont organisées toute l'année, sur demande et selon les
+            disponibilités des encadrants bénévoles. Les encadrants proposent des sorties
+            régulièrement, et tu pourras t'inscrire à celle qui t'intéresse.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4">
+              <Card
+                title="Point de ralliement"
+                icon="📍"
+                style={
+                  {
+                    '--card-bg': 'var(--color-orange-300)',
+                    '--card-border': 'var(--color-orange-500)',
+                  } as React.CSSProperties
+                }
+              >
+                Nous nous retrouvons au local du club où nous préparons ensemble le matériel. Cela
+                permet également d'optimiser le transport en voiture (environ 1h de trajet depuis
+                Lyon pour accéder aux grottes et canyons d'initiation).
               </Card>
-              <Card title="2️⃣ Participez à une sortie" href="/sorties">
-                Rejoignez-nous pour une sortie d'initiation ou une activité adaptée à votre niveau.
-                C'est l'occasion parfaite pour découvrir notre club !
-              </Card>
-              <Card title="3️⃣ Adhérez au club" href="/club">
-                Si l'expérience vous plaît, vous pouvez devenir membre du club et profiter de toutes
-                nos activités et de notre matériel.
-              </Card>
-            </div>
-          </section>
-
-          <section className="mb-16">
-            <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Informations pratiques
-            </h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              <Card title="💰 Tarifs">
-                <ul className="space-y-2">
-                  <li>• Sortie découverte : 25€</li>
-                  <li>• Adhésion annuelle : 60€</li>
-                  <li>• Sortie membre : 10€</li>
-                  <li>• Stage perfectionnement : 40€</li>
+              <Card
+                title="Ce dont tu as besoin"
+                icon="🎒"
+                style={
+                  {
+                    '--card-bg': 'var(--color-red-300)',
+                    '--card-border': 'var(--color-red-500)',
+                  } as React.CSSProperties
+                }
+              >
+                <ul className="not-prose list-inside list-disc">
+                  <li>Vêtements confortables et résistants</li>
+                  <li>
+                    Une combi neoprene pour le canyonisme{' '}
+                    <small className="text-xs italic">
+                      (nous t'accompagnons pour en louer une)
+                    </small>
+                  </li>
+                  <li>Chaussures de randonnée robustes</li>
+                  <li>Esprit aventureux !</li>
                 </ul>
-                <p className="mt-4 text-sm opacity-75">
-                  * Matériel technique fourni pour les initiations
+                <p>Le reste sera prêté par le club.</p>
+              </Card>
+            </div>
+            <div className="grid gap-4">
+              <Card
+                title="Ce que tu découvriras"
+                icon="📚"
+                style={
+                  {
+                    '--card-bg': 'var(--color-blue-300)',
+                    '--card-border': 'var(--color-blue-500)',
+                  } as React.CSSProperties
+                }
+              >
+                <ul className="not-prose list-inside list-disc">
+                  <li>Les bases de la spéléologie et du canyonisme</li>
+                  <li>L'utilisation de l'équipement et les techniques de progression</li>
+                  <li>Des formations géologiques, des animaux</li>
+                  <li>
+                    Les principes de sécurité essentiels pour des aventures en toute confiance
+                  </li>
+                </ul>
+              </Card>
+
+              <Card
+                title="Participation financière"
+                icon="💰"
+                style={
+                  {
+                    '--card-bg': 'var(--color-emerald-300)',
+                    '--card-border': 'var(--color-emerald-500)',
+                  } as React.CSSProperties
+                }
+              >
+                <p>
+                  Les encadrants sont bénévoles, mais il faudra néanmoins prévoir un budget d'une
+                  trentaine d'euros (tarifs spécifiques pour jeunes, étudiants et demandeurs
+                  d'emploi) pour les frais de prêt de matériel et d'assurance, plus le
+                  covoiturage.{' '}
                 </p>
               </Card>
-              <Card title="🎒 Matériel">
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-gray-100">
-                      Fourni par le club :
-                    </h4>
-                    <p className="text-sm">
-                      Casque, baudrier, longes, descendeur, éclairage, combinaison
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-gray-100">À apporter :</h4>
-                    <p className="text-sm">
-                      Vêtements chauds, chaussures de sport, gants, sac étanche
-                    </p>
-                  </div>
-                </div>
-              </Card>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="mb-16">
-            <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Foire aux questions
-            </h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              <Card title="❓ Faut-il avoir de l'expérience pour commencer ?">
-                Absolument pas ! Nos sorties découverte sont spécialement conçues pour les
-                débutants. Nos encadrants expérimentés vous accompagneront pas à pas.
-              </Card>
-              <Card title="🏃‍♂️ Y a-t-il des conditions physiques particulières ?">
-                Une condition physique normale suffit pour la plupart de nos activités. Nous
-                adaptons les sorties au niveau du groupe et privilégions la découverte à la
-                performance.
-              </Card>
-              <Card title="📅 Quelle est la fréquence des sorties ?">
-                Nous organisons des sorties tous les week-ends, et parfois en semaine. Vous pouvez
-                consulter notre calendrier et vous inscrire aux sorties qui vous intéressent.
-              </Card>
-              <Card title="🤔 Peut-on essayer avant de s'engager ?">
-                Bien sûr ! Nous encourageons les personnes intéressées à participer à une ou deux
-                sorties découverte avant de prendre leur adhésion. C'est le meilleur moyen de voir
-                si notre club vous correspond.
-              </Card>
-            </div>
-          </section>
+        <section>
+          <h2>Et sinon ?</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card
+              title="Entrainement hebdomadaire"
+              icon="🪢"
+              style={
+                {
+                  '--card-bg': 'var(--color-purple-300)',
+                  '--card-border': 'var(--color-purple-500)',
+                } as React.CSSProperties
+              }
+            >
+              <p>
+                Sous réserve d'encadrants, nous proposons des entraînements à la progression sur
+                corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
+              </p>
+              <p>
+                Ils ont lieu dans le Gymnase Nelson Paillou à Moulin à Vent, et nécessitent une
+                inscription préalable.
+              </p>
+              <p>
+                Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent de se
+                perfectionner dans un cadre convivial.
+              </p>
+            </Card>
+            <Card
+              title="Réunions mensuelles"
+              icon="📅"
+              style={
+                {
+                  '--card-bg': 'var(--color-pink-300)',
+                  '--card-border': 'var(--color-pink-500)',
+                } as React.CSSProperties
+              }
+            >
+              <p>
+                Rejoins-nous pour nos réunions chaque premier mercredi du mois à 20h30 au local du
+                club (18 rue Volney, 69008 Lyon). C'est l'occasion idéale pour découvrir la vie du
+                clan et être tenu·e au courant des prochaines sorties !
+              </p>
+            </Card>
+          </div>
+        </section>
 
-          <section className="text-center">
-            <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Prêt·e à nous rejoindre ?
-            </h2>
-            <p className="mb-8 text-lg text-gray-500 dark:text-gray-400">
-              N'hésitez pas à nous contacter pour toute question ou pour vous inscrire à une sortie
-              !
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link
-                href="/contact"
-                className="bg-primary-600 hover:bg-primary-700 inline-flex items-center rounded-md border border-transparent px-6 py-3 text-base font-medium text-white"
-              >
-                Nous contacter
-              </Link>
-              <Link
-                href="/sorties"
-                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-              >
-                Voir les prochaines sorties
-              </Link>
-            </div>
-          </section>
-        </div>
+        <section>
+          <h2>Comment nous rejoindre ?</h2>
+          <div className="grid w-full gap-8">
+            <Card
+              title="Contacte-nous"
+              href="/contact"
+              linkTitle="Nous contacter"
+              icon={
+                <span className="flex size-8 items-center justify-center rounded-full bg-green-500 text-base">
+                  1
+                </span>
+              }
+              style={
+                {
+                  '--card-bg': 'var(--color-green-300)',
+                  '--card-border': 'var(--color-green-500)',
+                  '--card-bg-hover': 'var(--color-green-400)',
+                  'max-width': '100%',
+                } as React.CSSProperties
+              }
+            >
+              Prends contact avec nous pour discuter de tes envies et de ton niveau. Nous
+              t'orienterons vers l'activité qui te correspond le mieux et t'informerons des
+              prochaines sorties découverte.
+            </Card>
+            <Card
+              title="Participe à une initiation"
+              icon={
+                <span className="flex size-8 items-center justify-center rounded-full bg-yellow-600 text-base">
+                  2
+                </span>
+              }
+              href="/sorties/tags/initiation#trips-list"
+              linkTitle="Voir les dernières sorties"
+              style={
+                {
+                  '--card-bg': 'var(--color-yellow-300)',
+                  '--card-border': 'var(--color-yellow-500)',
+                  '--card-bg-hover': 'var(--color-yellow-400)',
+                  'max-width': '100%',
+                } as React.CSSProperties
+              }
+            >
+              Rejoins-nous pour une sortie découverte obligatoire avant l'adhésion. C'est l'occasion
+              parfaite de découvrir nos disciplines et l'esprit du clan dans un cadre sécurisé.
+            </Card>
+            <Card
+              title="Adhère au club"
+              href="/club"
+              linkTitle="En savoir plus sur le club"
+              icon={
+                <span className="flex size-8 items-center justify-center rounded-full bg-indigo-600 text-base">
+                  3
+                </span>
+              }
+              style={
+                {
+                  '--card-bg': 'var(--color-indigo-300)',
+                  '--card-border': 'var(--color-indigo-500)',
+                  '--card-bg-hover': 'var(--color-indigo-400)',
+                  'max-width': '100%',
+                } as React.CSSProperties
+              }
+            >
+              Si l'expérience te plaît, tu peux devenir membre du clan et profiter de toutes nos
+              activités, formations et de l'accès à notre matériel. Il faut compter environ 150 €
+              l'année pour une personne, en comprenant la cotisation club, la licence à la
+              fédération française et un premier niveau d'assurance personnelle.
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <h2>Prêt·e pour l'aventure ?</h2>
+          <p>
+            Tu rêves d'explorer les mystères des profondeurs ou de t'immerger dans les remous des
+            rivières ? Rejoins la Clan des Troglos et découvre un monde fascinant fait de calcaire
+            et d'eau fraîche ! N'hésite pas à nous contacter pour connaître les prochaines
+            initiations ou passer nous voir lors d'un entraînement.
+          </p>
+        </section>
+      </div>
+
+      <div className="">
+        <PrimaryLink href="/contact">Nous contacter</PrimaryLink>
       </div>
     </>
   )
