@@ -1,6 +1,5 @@
 'use client'
 
-import { Header } from '@/components/Header'
 import canyoning01 from '@/assets/images/photos/canyoning_01.jpg'
 import canyoning02 from '@/assets/images/photos/canyoning_02.jpg'
 import canyoning03 from '@/assets/images/photos/canyoning_03.jpg'
@@ -40,6 +39,7 @@ import caving25 from '@/assets/images/photos/caving_25.jpg'
 import caving26 from '@/assets/images/photos/caving_26.jpg'
 import { useEffect, useState } from 'react'
 import { ImageCrossFade } from '@/components/ImageCrossFade'
+import { FullWidth } from '@/components/FullWidth'
 
 const items = [
   { src: canyoning03, className: 'color-canyon' },
@@ -94,20 +94,18 @@ export const HomeCarousel = () => {
   const previous = () => setCurrentIndex((currentIndex - 1 + items.length) % items.length)
 
   return (
-    <section className={`w-screen ${currentItem.className} mb-[100vh]`} suppressHydrationWarning>
-      <div className="absolute inset-0 h-screen">
-        <div className="relative h-screen w-full overflow-hidden">
-          <div className="bg-primary-400 absolute inset-0">
-            <ImageCrossFade
-              src={currentItem.src}
-              alt=""
-              fill
-              className={`object-cover`}
-              priority
-              suppressHydrationWarning
-              sizes="100vw"
-            />
-          </div>
+    <section className={currentItem.className} suppressHydrationWarning>
+      <FullWidth>
+        <div className="relative h-screen overflow-hidden">
+          <ImageCrossFade
+            src={currentItem.src}
+            alt=""
+            fill
+            className={`object-cover`}
+            priority
+            suppressHydrationWarning
+            sizes="100vw"
+          />
 
           <div className="from-primary-950/80 via-primary-950/50 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b to-transparent transition-colors duration-700 ease-in-out">
             <h1 className="text-center text-5xl font-extrabold text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
@@ -117,9 +115,6 @@ export const HomeCarousel = () => {
               </div>
               <div className="text-3xl">à Lyon</div>
             </h1>
-          </div>
-          <div className="absolute -top-5 w-full px-10">
-            <Header />
           </div>
           <div className="absolute right-6 bottom-6 z-20 flex gap-2">
             <button
@@ -153,7 +148,7 @@ export const HomeCarousel = () => {
             </button>
           </div>
         </div>
-      </div>
+      </FullWidth>
     </section>
   )
 }

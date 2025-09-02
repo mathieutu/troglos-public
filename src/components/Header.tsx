@@ -51,7 +51,7 @@ export const Header = () => {
   }, [activeIndex])
 
   return (
-    <header className="isolate flex w-full items-center justify-between py-10">
+    <header className="absolute top-0 isolate z-10 flex w-full items-center justify-between px-10 pt-5 pb-10">
       <Link href="/" aria-label="Clan Spéléo des Troglodytes">
         <div className="flex items-center justify-between">
           <div className="mr-3">

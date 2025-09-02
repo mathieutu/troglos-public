@@ -1,14 +1,14 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
-import { Bleed } from '@/components/Bleed'
+import { FullWidth } from '@/components/FullWidth'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 
 const PageBanner = ({ src }: { src: string | StaticImport }) => (
-  <Bleed full>
+  <FullWidth>
     <div className="relative aspect-5/2 w-full">
-      <Image src={src} alt="" fill className="rounded-lg object-cover" />
+      <Image src={src} alt="" fill className="object-cover" />
     </div>
-  </Bleed>
+  </FullWidth>
 )
 
 export function PageTitle({ children }: { children: ReactNode }) {
@@ -26,7 +26,7 @@ export const PageHeader = ({
   imageSrc: string | StaticImport
   title: string
 }) => (
-  <div className="space-y-1 pb-10 dark:border-gray-700">
+  <div className="pb-10">
     <PageBanner src={imageSrc} />
     <div className="relative pt-10">
       <PageTitle>{title}</PageTitle>

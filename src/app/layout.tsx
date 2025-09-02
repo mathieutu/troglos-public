@@ -23,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${spaceGrotesk.variable} scroll-smooth`}>
-      <body className="dark pl-[calc(100vw-100%)] text-white antialiased">
+      <body className="dark overflow-x-hidden text-white antialiased">
+        <Header />
         <SectionContainer>
-          <Header />
           <main className="mb-auto">{children}</main>
           <Footer />
         </SectionContainer>
