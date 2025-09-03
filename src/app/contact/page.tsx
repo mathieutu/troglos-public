@@ -1,7 +1,7 @@
 import { PageHeader } from '@/components/PageHeader'
 import { Card } from '@/components/Card'
 import { Link } from '@/components/Link'
-import contactBanner from '@/assets/images/photos/caving_25.jpg'
+import contactBanner from '@/assets/images/photos/other_04.jpg'
 
 export default function ContactPage() {
   return (
@@ -17,8 +17,8 @@ export default function ContactPage() {
                 <div className="space-y-8">
                   <div>
                     <p className="text-lg leading-relaxed text-gray-300">
-                      Vous avez des questions ? Vous souhaitez nous rejoindre ? N&apos;hésitez pas à
-                      nous contacter !
+                      Tu as des questions&nbsp;? Tu souhaites nous rejoindre&nbsp;? N&apos;hésite
+                      pas à nous contacter&nbsp;!
                     </p>
                   </div>
 
@@ -47,10 +47,14 @@ export default function ContactPage() {
                           </svg>
                         </div>
                       </div>
-                      <div>
-                        <p className="font-medium text-white">Clan Spéléo des Troglodytes</p>
-                        <p className="text-gray-300">18 Rue Volney, 69008 Lyon</p>
-                      </div>
+                      <Link href="https://maps.app.goo.gl/ezzbEnmuuSUmBYtr6" className="group">
+                        <p className="group-hover:text-primary-500 font-medium text-white transition-colors">
+                          Clan Spéléo des Troglodytes
+                        </p>
+                        <p className="group-hover:text-primary-500 text-gray-300 transition-colors">
+                          18 Rue Volney, 69008 Lyon
+                        </p>
+                      </Link>
                     </div>
 
                     <div className="flex items-start space-x-4">
@@ -74,7 +78,7 @@ export default function ContactPage() {
                       <div>
                         <Link
                           href="mailto:contact@troglos.fr"
-                          className="font-medium text-white transition-colors hover:text-gray-300"
+                          className="hover:text-primary-500 font-medium text-white transition-colors"
                         >
                           contact@troglos.fr
                         </Link>
@@ -152,7 +156,7 @@ export default function ContactPage() {
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full rounded-lg bg-gray-600 px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none"
+                        className="hover:bg-primary-600 w-full cursor-pointer rounded-lg bg-gray-600 px-6 py-3 font-medium text-white transition-colors duration-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none"
                       >
                         Envoyer le message
                       </button>
@@ -168,62 +172,41 @@ export default function ContactPage() {
               Où nous croiser ?
             </h2>
             <div className="grid gap-8 md:grid-cols-2">
-              <Card title="Réunions">
-                <div className="">
-                  <p>
-                    Nous nous réunissons tous les <strong>premiers mercredi du mois</strong> à 20h,
-                    au local des Troglos.
-                  </p>
-
-                  <p>
-                    Nous y discutons des sorties passées, à venir, des projets du club et de la vie
-                    associative.
-                  </p>
-                  <p>Les réunions sont ouvertes à tous, venez nous rencontrer !</p>
-                </div>
-              </Card>
-
-              <Card title="Entrainement">
-                <div className="space-y-2">
-                  <p>
-                    Sous réserve d'encadrants, nous proposons des entraînements à la progression sur
-                    corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
-                  </p>
-                  <p>
-                    {' '}
-                    Ils ont lieu dans le Gymnase Nelson Paillou, 69008 Lyon, et nécessitent une
-                    inscription préalable.
-                  </p>
-                  <p>
-                    Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent
-                    de se perfectionner dans un cadre convivial.
-                  </p>
-                </div>
-              </Card>
-            </div>
-          </section>
-
-          <section className="text-center">
-            <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Vous avez encore des questions ?
-            </h2>
-            <p className="mb-8 text-lg text-gray-500 dark:text-gray-400">
-              N'hésitez pas à consulter notre FAQ ou à participer à une de nos réunions
-              hebdomadaires !
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link
-                href="/nous-rejoindre"
-                className="bg-primary-600 hover:bg-primary-700 inline-flex items-center rounded-md border border-transparent px-6 py-3 text-base font-medium text-white"
+              <Card
+                title="Entrainement hebdomadaire"
+                icon="🪢"
+                style={{
+                  '--card-bg': 'var(--color-purple-300)',
+                  '--card-border': 'var(--color-purple-500)',
+                }}
               >
-                Voir la FAQ
-              </Link>
-              <Link
-                href="/sorties"
-                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                <p>
+                  Sous réserve d'encadrants, nous proposons des entraînements à la progression sur
+                  corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
+                </p>
+                <p>
+                  Ils ont lieu dans le Gymnase Nelson Paillou à Moulin à Vent, et nécessitent une
+                  inscription préalable.
+                </p>
+                <p>
+                  Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent de
+                  se perfectionner dans un cadre convivial.
+                </p>
+              </Card>
+              <Card
+                title="Réunions mensuelles"
+                icon="📅"
+                style={{
+                  '--card-bg': 'var(--color-pink-300)',
+                  '--card-border': 'var(--color-pink-500)',
+                }}
               >
-                Voir les sorties
-              </Link>
+                <p>
+                  Rejoins-nous pour nos réunions chaque premier mercredi du mois à 20h30 au local du
+                  club (18 rue Volney, 69008 Lyon). C'est l'occasion idéale pour découvrir la vie du
+                  clan et être tenu·e au courant des prochaines sorties !
+                </p>
+              </Card>
             </div>
           </section>
         </div>

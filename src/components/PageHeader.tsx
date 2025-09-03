@@ -7,6 +7,7 @@ const PageBanner = ({ src }: { src: string | StaticImport }) => (
   <FullWidth>
     <div className="relative aspect-5/2 w-full">
       <Image src={src} alt="" fill className="object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-transparent to-transparent" />
     </div>
   </FullWidth>
 )
