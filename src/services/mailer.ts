@@ -3,17 +3,19 @@
 import { Mailer } from 'nodemailer-react'
 import { ContactEmail, type ContactFields } from '@/components/ContactEmail'
 
-const { MAIL_HOST, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD } = process.env
+const { MAIL_USERNAME, MAIL_PASSWORD } = process.env
 
-if (!MAIL_HOST || !MAIL_PORT || !MAIL_USERNAME || !MAIL_PASSWORD) {
-  throw new Error('Mail env vars needed (MAIL_HOST, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD).')
+if (!MAIL_USERNAME || !MAIL_PASSWORD) {
+  throw new Error('Mail env vars needed (MAIL_USERNAME, MAIL_PASSWORD).')
 }
 
 const mailer = Mailer(
   {
     transport: {
-      host: MAIL_HOST,
-      port: Number(MAIL_PORT),
+      // SMTP For dev
+      // host: MAIL_HOST,
+      // port: Number(MAIL_PORT),
+      service: 'gmail',
       auth: {
         user: MAIL_USERNAME,
         pass: MAIL_PASSWORD,
@@ -29,4 +31,4 @@ const mailer = Mailer(
 )
 
 export const sendContactEmail = async (contact: ContactFields) =>
-  mailer.send('ContactEmail', contact, { to: 'contact@troglos.fr', replyTo: contact.email })
+  mailer.send('ContactEmail', contact, { to: 'mathieu@troglos.fr', replyTo: contact.email })
