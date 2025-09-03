@@ -2,8 +2,29 @@ import { PageHeader } from '@/components/PageHeader'
 import { Card } from '@/components/Card'
 import { Link } from '@/components/Link'
 import contactBanner from '@/assets/images/photos/other_04.jpg'
+import { ContactForm } from '@/app/contact/ContactForm'
+import { sendContactEmail } from '@/services/mailer'
 
 export default function ContactPage() {
+  const sendEmailAction = async (_currentState: unknown, formData: FormData) => {
+    'use server'
+
+    const emailFields = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      message: formData.get('message') as string,
+    }
+
+    try {
+      await sendContactEmail(emailFields)
+      return 'success'
+    } catch (error) {
+      console.error('Failed to send contact email:', error)
+      return 'error'
+    }
+  }
+
   return (
     <>
       <PageHeader imageSrc={contactBanner} title="Nous contacter" />
@@ -89,79 +110,7 @@ export default function ContactPage() {
 
                 {/* Section du formulaire */}
                 <div className="space-y-6">
-                  <form className="space-y-6">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="mb-2 block text-sm font-medium text-gray-300"
-                      >
-                        Nom*
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="w-full rounded-lg border border-gray-600 bg-slate-400/5 px-4 py-3 text-white placeholder-gray-400 transition-all focus:border-transparent focus:ring-2 focus:ring-gray-500 focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-2 block text-sm font-medium text-gray-300"
-                      >
-                        Email*
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full rounded-lg border border-gray-600 bg-slate-400/5 px-4 py-3 text-white placeholder-gray-400 transition-all focus:border-transparent focus:ring-2 focus:ring-gray-500 focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="mb-2 block text-sm font-medium text-gray-300"
-                      >
-                        Téléphone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        className="w-full rounded-lg border border-gray-600 bg-slate-400/5 px-4 py-3 text-white placeholder-gray-400 transition-all focus:border-transparent focus:ring-2 focus:ring-gray-500 focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="mb-2 block text-sm font-medium text-gray-300"
-                      >
-                        Message*
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        required
-                        className="w-full resize-none rounded-lg border border-gray-600 bg-slate-400/5 px-4 py-3 text-white placeholder-gray-400 transition-all focus:border-transparent focus:ring-2 focus:ring-gray-500 focus:outline-none"
-                      />
-                    </div>
-
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        className="hover:bg-primary-600 w-full cursor-pointer rounded-lg bg-gray-600 px-6 py-3 font-medium text-white transition-colors duration-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none"
-                      >
-                        Envoyer le message
-                      </button>
-                    </div>
-                  </form>
+                  <ContactForm sendEmailAction={sendEmailAction} />
                 </div>
               </div>
             </div>
