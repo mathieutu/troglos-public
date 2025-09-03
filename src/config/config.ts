@@ -12,4 +12,4 @@ export const footerNavLinks = [
   { href: '/contact', title: 'Contact' },
 ]
 
-export const TRIPS_PER_PAGE = 6
+export const TRIPS_PER_PAGE = 10
