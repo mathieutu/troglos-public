@@ -142,8 +142,8 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
         <div className="prose-invert prose-lg max-w-none py-4">
           <p>
             Les membres du club organisent régulièrement des sorties en rivière et sous terre. Si
-            des débutants y participent, la sortie est encadrée par un encadrant breveté pour
-            assurer la sécurité et transmettre les techniques de base.
+            des débutants y participent, un·e encadrant·e breveté·e sera présent·e pour assurer la
+            sécurité et transmettre les techniques de base.
           </p>
           <p>
             Des entraînements ont également lieu chaque jeudi soir en gymnase pour travailler les

@@ -3,6 +3,7 @@ export const headerNavLinks = [
   { href: '/sorties', title: 'Sorties' },
   { href: '/club', title: 'Le club' },
   { href: '/nous-rejoindre', title: 'Nous rejoindre' },
+  { href: '/contact', title: 'Contact' },
 ]
 
 export const footerNavLinks = [

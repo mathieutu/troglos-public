@@ -72,7 +72,7 @@ export const Header = () => {
           />
           <nav
             ref={navRef}
-            className="no-scrollbar relative z-10 hidden max-w-40 items-center gap-x-4 overflow-x-auto sm:flex md:max-w-72 lg:max-w-96"
+            className="no-scrollbar relative z-10 hidden items-center gap-x-4 sm:flex"
           >
             {headerNavLinks.map((link, index) => (
               <Link
