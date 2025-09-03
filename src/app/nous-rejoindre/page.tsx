@@ -39,12 +39,10 @@ export default function NousRejoindrePage() {
               <Card
                 title="Point de ralliement"
                 icon="📍"
-                style={
-                  {
-                    '--card-bg': 'var(--color-orange-300)',
-                    '--card-border': 'var(--color-orange-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-orange-300)',
+                  '--card-border': 'var(--color-orange-500)',
+                }}
               >
                 Nous nous retrouvons au local du club où nous préparons ensemble le matériel. Cela
                 permet également d'optimiser le transport en voiture (environ 1h de trajet depuis
@@ -53,12 +51,10 @@ export default function NousRejoindrePage() {
               <Card
                 title="Ce dont tu as besoin"
                 icon="🎒"
-                style={
-                  {
-                    '--card-bg': 'var(--color-red-300)',
-                    '--card-border': 'var(--color-red-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-red-300)',
+                  '--card-border': 'var(--color-red-500)',
+                }}
               >
                 <ul className="not-prose list-inside list-disc">
                   <li>Vêtements confortables et résistants</li>
@@ -78,12 +74,10 @@ export default function NousRejoindrePage() {
               <Card
                 title="Ce que tu découvriras"
                 icon="📚"
-                style={
-                  {
-                    '--card-bg': 'var(--color-blue-300)',
-                    '--card-border': 'var(--color-blue-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-blue-300)',
+                  '--card-border': 'var(--color-blue-500)',
+                }}
               >
                 <ul className="not-prose list-inside list-disc">
                   <li>Les bases de la spéléologie et du canyonisme</li>
@@ -98,12 +92,10 @@ export default function NousRejoindrePage() {
               <Card
                 title="Participation financière"
                 icon="💰"
-                style={
-                  {
-                    '--card-bg': 'var(--color-emerald-300)',
-                    '--card-border': 'var(--color-emerald-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-emerald-300)',
+                  '--card-border': 'var(--color-emerald-500)',
+                }}
               >
                 <p>
                   Les encadrants sont bénévoles, mais il faudra néanmoins prévoir un budget d'une
@@ -122,12 +114,10 @@ export default function NousRejoindrePage() {
             <Card
               title="Entrainement hebdomadaire"
               icon="🪢"
-              style={
-                {
-                  '--card-bg': 'var(--color-purple-300)',
-                  '--card-border': 'var(--color-purple-500)',
-                } as React.CSSProperties
-              }
+              style={{
+                '--card-bg': 'var(--color-purple-300)',
+                '--card-border': 'var(--color-purple-500)',
+              }}
             >
               <p>
                 Sous réserve d'encadrants, nous proposons des entraînements à la progression sur
@@ -145,12 +135,10 @@ export default function NousRejoindrePage() {
             <Card
               title="Réunions mensuelles"
               icon="📅"
-              style={
-                {
-                  '--card-bg': 'var(--color-pink-300)',
-                  '--card-border': 'var(--color-pink-500)',
-                } as React.CSSProperties
-              }
+              style={{
+                '--card-bg': 'var(--color-pink-300)',
+                '--card-border': 'var(--color-pink-500)',
+              }}
             >
               <p>
                 Rejoins-nous pour nos réunions chaque premier mercredi du mois à 20h30 au local du
@@ -173,14 +161,12 @@ export default function NousRejoindrePage() {
                   1
                 </span>
               }
-              style={
-                {
-                  '--card-bg': 'var(--color-green-300)',
-                  '--card-border': 'var(--color-green-500)',
-                  '--card-bg-hover': 'var(--color-green-400)',
-                  'max-width': '100%',
-                } as React.CSSProperties
-              }
+              style={{
+                '--card-bg': 'var(--color-green-200)',
+                '--card-border': 'var(--color-green-500)',
+                '--card-bg-hover': 'var(--color-green-300)',
+                maxWidth: '100%',
+              }}
             >
               Prends contact avec nous pour discuter de tes envies et de ton niveau. Nous
               t'orienterons vers l'activité qui te correspond le mieux et t'informerons des
@@ -195,14 +181,12 @@ export default function NousRejoindrePage() {
               }
               href="/sorties/tags/initiation#trips-list"
               linkTitle="Voir les dernières sorties"
-              style={
-                {
-                  '--card-bg': 'var(--color-yellow-300)',
-                  '--card-border': 'var(--color-yellow-500)',
-                  '--card-bg-hover': 'var(--color-yellow-400)',
-                  'max-width': '100%',
-                } as React.CSSProperties
-              }
+              style={{
+                '--card-bg': 'var(--color-yellow-200)',
+                '--card-border': 'var(--color-yellow-500)',
+                '--card-bg-hover': 'var(--color-yellow-300)',
+                maxWidth: '100%',
+              }}
             >
               Rejoins-nous pour une sortie découverte obligatoire avant l'adhésion. C'est l'occasion
               parfaite de découvrir nos disciplines et l'esprit du clan dans un cadre sécurisé.
@@ -216,14 +200,12 @@ export default function NousRejoindrePage() {
                   3
                 </span>
               }
-              style={
-                {
-                  '--card-bg': 'var(--color-indigo-300)',
-                  '--card-border': 'var(--color-indigo-500)',
-                  '--card-bg-hover': 'var(--color-indigo-400)',
-                  'max-width': '100%',
-                } as React.CSSProperties
-              }
+              style={{
+                '--card-bg': 'var(--color-indigo-200)',
+                '--card-border': 'var(--color-indigo-500)',
+                '--card-bg-hover': 'var(--color-indigo-300)',
+                maxWidth: '100%',
+              }}
             >
               Si l'expérience te plaît, tu peux devenir membre du clan et profiter de toutes nos
               activités, formations et de l'accès à notre matériel. Il faut compter environ 150 €
@@ -238,7 +220,7 @@ export default function NousRejoindrePage() {
           <p>
             Tu rêves d'explorer les mystères des profondeurs ou de t'immerger dans les remous des
             rivières ? Rejoins la Clan des Troglos et découvre un monde fascinant fait de calcaire
-            et d'eau fraîche ! N'hésite pas à nous contacter pour connaître les prochaines
+            et d'eau fraîche ! N'hésite pas à nous contacter pour être au courant des prochaines
             initiations ou passer nous voir lors d'un entraînement.
           </p>
         </section>
