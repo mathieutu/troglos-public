@@ -8,6 +8,7 @@ import { formatDateFr } from '@/utils/dates'
 import { tags, tripsReports, Tag as TagType, TripReport } from '@/data/trips'
 import banner from '@/assets/images/photos/caving_26.jpg'
 import { PageHeader } from '@/components/PageHeader'
+import { TRIPS_PER_PAGE } from '@/config/config'
 
 interface PaginationProps {
   totalPages: number
@@ -111,8 +112,6 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
     </div>
   )
 }
-
-const TRIPS_PER_PAGE = 10
 
 interface ListLayoutProps {
   currentTag?: TagType
