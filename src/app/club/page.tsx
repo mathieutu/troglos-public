@@ -1,7 +1,7 @@
 import { PageHeader } from '@/components/PageHeader'
 import { Link, PrimaryLink } from '@/components/Link'
 import { Card } from '@/components/Card'
-import clubBanner from '@/assets/images/photos/caving_24.jpg'
+import clubBanner from '@/assets/images/photos/other_02.jpg'
 
 export default function ClubPage() {
   return (
@@ -27,17 +27,15 @@ export default function ClubPage() {
 
         <section>
           <h2>Nos valeurs</h2>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-x-8 md:grid-cols-2">
             <div className="flex flex-col">
               <Card
                 title="Esprit d'équipe"
                 icon="🤝"
-                style={
-                  {
-                    '--card-bg': 'var(--color-blue-300)',
-                    '--card-border': 'var(--color-blue-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-blue-300)',
+                  '--card-border': 'var(--color-blue-500)',
+                }}
               >
                 La solidarité et l'entraide sont au cœur de nos pratiques. Nous avons pour coutume
                 de dire que nos disciplines sont des sports collectifs. Chaque sortie est une
@@ -46,12 +44,10 @@ export default function ClubPage() {
               <Card
                 title="Sécurité"
                 icon="🛡️"
-                style={
-                  {
-                    '--card-bg': 'var(--color-red-300)',
-                    '--card-border': 'var(--color-red-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-red-300)',
+                  '--card-border': 'var(--color-red-500)',
+                }}
               >
                 La sécurité est notre priorité absolue. Les techniques de progression et de secours
                 font partie intégrante de la formation de nos membres. Notre matériel est
@@ -60,12 +56,10 @@ export default function ClubPage() {
               <Card
                 title="Implication fédérale"
                 icon="🏛️"
-                style={
-                  {
-                    '--card-bg': 'var(--color-purple-300)',
-                    '--card-border': 'var(--color-purple-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-purple-300)',
+                  '--card-border': 'var(--color-purple-500)',
+                }}
               >
                 Actif dans le Spéléo Secours, le Comité Départemental, ou encore la Fédération
                 Française de Spéléologie, le clan contribue activement au développement et à la
@@ -76,12 +70,10 @@ export default function ClubPage() {
               <Card
                 title="Inclusion et diversité"
                 icon="🌈"
-                style={
-                  {
-                    '--card-bg': 'var(--color-pink-300)',
-                    '--card-border': 'var(--color-pink-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-pink-300)',
+                  '--card-border': 'var(--color-pink-500)',
+                }}
               >
                 Le Clan est fier d'accueillir toutes et tous, sans distinction d'âge, de genre,
                 d'origine ou de niveau. Nous pensons que la diversité enrichit nos expériences et
@@ -90,12 +82,10 @@ export default function ClubPage() {
               <Card
                 title="Transmission"
                 icon="📚"
-                style={
-                  {
-                    '--card-bg': 'var(--color-orange-300)',
-                    '--card-border': 'var(--color-orange-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-orange-300)',
+                  '--card-border': 'var(--color-orange-500)',
+                }}
               >
                 Le Clan est reconnu pour sa formation. Nous aimons partager nos connaissances et
                 notre passion avec les nouveaux arrivants, dans une ambiance conviviale et
@@ -104,12 +94,10 @@ export default function ClubPage() {
               <Card
                 title="Respect de l'environnement"
                 icon="🌿"
-                style={
-                  {
-                    '--card-bg': 'var(--color-green-300)',
-                    '--card-border': 'var(--color-green-500)',
-                  } as React.CSSProperties
-                }
+                style={{
+                  '--card-bg': 'var(--color-green-300)',
+                  '--card-border': 'var(--color-green-500)',
+                }}
               >
                 Nous pratiquons nos activités dans le respect de l'environnement naturel, en
                 préservant le plus possible les écosystèmes fragiles des grottes et des canyons.
