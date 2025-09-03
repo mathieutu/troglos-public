@@ -12,6 +12,14 @@ import canyoning09 from '@/assets/images/photos/canyoning_09.jpg'
 import canyoning10 from '@/assets/images/photos/canyoning_10.jpg'
 import canyoning11 from '@/assets/images/photos/canyoning_11.jpg'
 import canyoning12 from '@/assets/images/photos/canyoning_12.jpg'
+import canyoning13 from '@/assets/images/photos/canyoning_13.jpg'
+import canyoning14 from '@/assets/images/photos/canyoning_14.jpg'
+import canyoning15 from '@/assets/images/photos/canyoning_15.jpg'
+import canyoning16 from '@/assets/images/photos/canyoning_16.jpg'
+import canyoning17 from '@/assets/images/photos/canyoning_17.jpg'
+import canyoning18 from '@/assets/images/photos/canyoning_18.jpg'
+import canyoning19 from '@/assets/images/photos/canyoning_19.jpg'
+
 import caving01 from '@/assets/images/photos/caving_01.jpg'
 import caving02 from '@/assets/images/photos/caving_02.jpg'
 import caving03 from '@/assets/images/photos/caving_03.jpg'
@@ -37,48 +45,69 @@ import caving22 from '@/assets/images/photos/caving_22.jpg'
 import caving23 from '@/assets/images/photos/caving_23.jpg'
 import caving25 from '@/assets/images/photos/caving_25.jpg'
 import caving26 from '@/assets/images/photos/caving_26.jpg'
+import caving27 from '@/assets/images/photos/caving_27.jpg'
+
+import other01 from '@/assets/images/photos/other_01.jpg'
+import other02 from '@/assets/images/photos/other_02.jpg'
+import other03 from '@/assets/images/photos/other_03.jpg'
+import other04 from '@/assets/images/photos/other_04.jpg'
+import other05 from '@/assets/images/photos/caving_05.jpg'
+
 import { useEffect, useState } from 'react'
 import { ImageCrossFade } from '@/components/ImageCrossFade'
 import { FullWidth } from '@/components/FullWidth'
 
 const items = [
-  { src: canyoning03, className: 'color-canyon' },
-  { src: canyoning10, className: 'color-canyon' },
-  { src: caving17, className: 'color-caving' },
-  { src: caving13, className: 'color-caving' },
-  { src: canyoning02, className: 'color-canyon' },
-  { src: canyoning11, className: 'color-canyon' },
-  { src: caving15, className: 'color-caving' },
-  { src: canyoning12, className: 'color-canyon' },
-  { src: caving14, className: 'color-caving' },
-  { src: caving19, className: 'color-caving' },
-  { src: caving06, className: 'color-caving' },
-  { src: caving01, className: 'color-caving' },
-  { src: caving22, className: 'color-caving' },
-  { src: caving08, className: 'color-caving' },
-  { src: canyoning05, className: 'color-canyon' },
-  { src: caving23, className: 'color-caving' },
+  { src: caving11, className: 'color-caving' },
+  { src: caving16, className: 'color-caving' },
+  { src: canyoning18, className: 'color-canyon' },
   { src: caving02, className: 'color-caving' },
-  { src: canyoning09, className: 'color-canyon' },
-  { src: caving20, className: 'color-caving' },
+  { src: canyoning11, className: 'color-canyon' },
+  { src: caving10, className: 'color-caving' },
+  { src: caving19, className: 'color-caving' },
+  { src: canyoning08, className: 'color-canyon' },
+  { src: caving07, className: 'color-caving' },
+  { src: canyoning17, className: 'color-canyon' },
+  { src: caving06, className: 'color-caving' },
+  { src: canyoning19, className: 'color-canyon' },
   { src: caving18, className: 'color-caving' },
   { src: canyoning04, className: 'color-canyon' },
-  { src: caving12, className: 'color-caving' },
-  { src: caving16, className: 'color-caving' },
-  { src: canyoning08, className: 'color-canyon' },
-  { src: canyoning07, className: 'color-canyon' },
-  { src: caving21, className: 'color-caving' },
-  { src: caving03, className: 'color-caving' },
-  { src: caving09, className: 'color-caving' },
-  { src: caving10, className: 'color-caving' },
-  { src: caving26, className: 'color-caving' },
-  { src: caving25, className: 'color-caving' },
-  { src: canyoning01, className: 'color-canyon' },
-  { src: canyoning06, className: 'color-canyon' },
-  { src: caving05, className: 'color-caving' },
-  { src: caving11, className: 'color-caving' },
+  { src: caving17, className: 'color-caving' },
+  { src: caving14, className: 'color-caving' },
+  { src: canyoning02, className: 'color-canyon' },
+  { src: caving08, className: 'color-caving' },
+  { src: canyoning10, className: 'color-canyon' },
   { src: caving04, className: 'color-caving' },
-  { src: caving07, className: 'color-caving' },
+  { src: caving22, className: 'color-caving' },
+  { src: caving05, className: 'color-caving' },
+  { src: canyoning13, className: 'color-canyon' },
+  { src: other05, className: '' },
+  { src: caving25, className: 'color-caving' },
+  { src: canyoning05, className: 'color-canyon' },
+  { src: other03, className: '' },
+  { src: caving23, className: 'color-caving' },
+  { src: canyoning06, className: 'color-canyon' },
+  { src: caving12, className: 'color-caving' },
+  { src: caving15, className: 'color-caving' },
+  { src: canyoning14, className: 'color-canyon' },
+  { src: other01, className: '' },
+  { src: caving13, className: 'color-caving' },
+  { src: canyoning09, className: 'color-canyon' },
+  { src: caving03, className: 'color-caving' },
+  { src: canyoning12, className: 'color-canyon' },
+  { src: caving27, className: 'color-caving' },
+  { src: other04, className: '' },
+  { src: caving26, className: 'color-caving' },
+  { src: canyoning16, className: 'color-canyon' },
+  { src: caving01, className: 'color-caving' },
+  { src: canyoning03, className: 'color-canyon' },
+  { src: caving09, className: 'color-caving' },
+  { src: caving20, className: 'color-caving' },
+  { src: canyoning01, className: 'color-canyon' },
+  { src: caving21, className: 'color-caving' },
+  { src: canyoning15, className: 'color-canyon' },
+  { src: other02, className: '' },
+  { src: canyoning07, className: 'color-canyon' },
 ]
 
 export const HomeCarousel = () => {
