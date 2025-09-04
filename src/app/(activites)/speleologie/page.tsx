@@ -14,13 +14,37 @@ export default function CavingPage() {
         <div>
           <PageHeader imageSrc={banner} title="La Spéléologie" />
           <div className="prose prose-lg dark:prose-invert max-w-none py-4">
-            <h2 className="">Texte à faire !!</h2>
             <p>
               La spéléologie est l&apos;exploration des cavités souterraines, qu&apos;elles soient
-              naturelles ou artificielles. Elle permet de découvrir des paysages souterrains
-              fascinants, d&apos;étudier la géologie et la biodiversité des milieux souterrains, et
-              de pratiquer des activités sportives comme la descente en rappel, la randonnée
-              souterraine ou encore la spéléologie scientifique.
+              naturelles ou artificielles. Elle permet de découvrir des paysages fascinants,
+              d&apos;étudier la géologie et la biodiversité des milieux souterrains.
+            </p>
+
+            <p>
+              En tant que pratique sportive, la spéléologie se distingue des autres sports de
+              montagne par son environnement unique et ses contraintes spécifiques. Elle nous plonge
+              dans l&apos;obscurité totale où l&apos;éclairage artificiel devient vital, dans des
+              espaces parfois gigantesques, ou très exigus. La dimension tridimensionnelle est
+              omniprésente : on progresse aussi bien verticalement qu&apos;horizontalement, en
+              rampant, ou en opposition selon la morphologie des galeries. Cela demande une bonne
+              condition physique, de l&apos;endurance, de la souplesse et de la coordination.
+            </p>
+
+            <p>
+              La spéléologie est probablement le sport qui demande le plus de manipulation de corde,
+              tant pour la progression que pour l&apos;équipement. Les Single Rope Techniques (SRT)
+              sont au cœur de notre discipline : en verticale, les spéléologues vivent littéralement
+              sur la corde. Contrairement à l&apos;escalade où la corde est une sécurité, ici elle
+              devient notre moyen de transport principal. Maîtriser les techniques de descente en
+              rappel, de remontée sur bloqueurs, et savoir équiper une cavité avec précision sont
+              des compétences fondamentales qui s&apos;acquièrent progressivement.
+            </p>
+
+            <p>
+              La spéléologie est enfin une aventure humaine. Elle se pratique en équipe, où la
+              solidarité, la confiance et la communication sont essentielles pour assurer la
+              sécurité de chacun. Chaque sortie est une expérience unique, riche en émotions et en
+              découvertes, qui renforce les liens entre les participants.
             </p>
           </div>
 
