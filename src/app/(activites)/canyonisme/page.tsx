@@ -14,13 +14,35 @@ export default function CanyoningPage() {
         <div>
           <PageHeader imageSrc={banner} title="Le Canyonisme" />
           <div className="prose prose-lg dark:prose-invert max-w-none py-4">
-            <h2 className="">Texte à faire !!</h2>
             <p>
-              Le canyonisme est une activité de pleine nature qui consiste à descendre des canyons,
-              des rivières ou des gorges en utilisant des techniques de randonnée, d&apos;escalade
-              et de nage. C&apos;est une activité ludique et sportive qui permet de découvrir des
-              paysages naturels magnifiques, de se rafraîchir dans les vasques naturelles et de
-              pratiquer des activités aquatiques comme la nage, le saut et la descente en rappel.
+              Le canyonisme est une activité de pleine nature qui consiste à descendre des torrents
+              et des gorges en combinant marche, nage, glissades, sauts et descentes en rappel.
+              Cette discipline offre une approche unique des paysages aquatiques, permettant de
+              découvrir des lieux souvent inaccessibles par d&apos;autres moyens.
+            </p>
+
+            <p>
+              En tant que pratique sportive, le canyonisme se distingue par sa polyvalence et son
+              adaptabilité aux conditions naturelles. Contrairement à d&apos;autres sports de
+              montagne, il faut composer avec les éléments : débit d&apos;eau, température,
+              météorologie. Cette activité sollicite l&apos;ensemble du corps et demande une bonne
+              condition physique générale, de l&apos;agilité pour les passages techniques et une
+              aisance aquatique pour évoluer dans les vasques et les courants.
+            </p>
+
+            <p>
+              Le canyonisme utilise également les techniques de corde, mais de manière différente de
+              la spéléologie. Les descentes en rappel se font souvent dans l&apos;eau ou sous les
+              cascades, nécessitant des techniques spécifiques pour gérer les courants et la force
+              de l&apos;eau. La lecture du canyon et l&apos;évaluation des conditions
+              hydrométéorologiques sont des compétences essentielles pour la sécurité.
+            </p>
+
+            <p>
+              Le canyonisme est aussi une activité de groupe par excellence, où la cohésion et
+              l&apos;entraide prennent tout leur sens. Chaque participant contribue à la sécurité
+              collective, que ce soit pour sécuriser un saut, aider à la sortie d&apos;une vasque ou
+              partager les sensations de cette aventure aquatique unique.
             </p>
           </div>
 

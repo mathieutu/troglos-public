@@ -31,8 +31,9 @@ export default async function Home() {
                   <div className="mb-6 text-6xl">🦇</div>
                   <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Spéléologie</h2>
                   <p className="mb-8 text-lg leading-relaxed text-gray-200">
-                    Le cœur de nos activités. Initiation, découverte, perfectionnement, exploration,
-                    chacun·e trouvera ce qu'iel recherche dans les profondeurs de la terre.
+                    Notre passion première ! De la simple balade souterraine aux expéditions les
+                    plus ambitieuses, nous accompagnons tous les niveaux dans la découverte du monde
+                    caché.
                   </p>
                 </div>
                 <div>
@@ -69,8 +70,9 @@ export default async function Home() {
                   <div className="mb-6 text-6xl">🐟</div>
                   <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Canyonisme</h2>
                   <p className="mb-8 text-lg leading-relaxed text-gray-200">
-                    Faciles et ludiques, ou longs et techniques, il y en a pour tous les goûts. En
-                    période estivale, on adore se jeter dans les vasques fraîches ! !
+                    Des parcours accessibles aux descentes les plus engagées, chaque canyon offre
+                    son lot de sensations. L'été, rien ne vaut le plaisir de plonger dans les eaux
+                    cristallines !
                   </p>
                 </div>
                 <div>
