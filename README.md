@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clan Spéléo des Troglodytes
 
-## Getting Started
+Site web du Clan Spéléo des Troglodytes, un club de spéléologie et de canyonisme basé à Lyon. Le site présente les activités du club, les comptes-rendus de sorties, et permet aux visiteurs de découvrir la spéléologie et le canyonisme.
 
-First, run the development server:
+## 🏔️ À propos du site
+
+Ce site présente :
+
+- **Les activités** : spéléologie et canyonisme avec galeries photos
+- **Les sorties** : comptes-rendus détaillés des explorations avec système de tags
+- **Le club** : présentation de l'association et de ses membres
+- **Contact** : formulaire pour nous rejoindre ou poser des questions
+
+## 🛠️ Technologies utilisées
+
+- **Framework** : [Next.js](https://nextjs.org) avec App Router
+- **Language** : TypeScript
+- **Style** : [Tailwind CSS](https://tailwindcss.com)
+- **UI** : Headless UI pour les composants interactifs
+- **Email** : Nodemailer pour le formulaire de contact
+- **Images** : Next.js Image avec optimisation automatique
+
+## 🚀 Démarrage rapide
+
+### Prérequis
+
+- Node.js 18+
+- Yarn
+
+### Installation et lancement
 
 ```bash
-npm run dev
-# or
+# Cloner le repository
+git clone https://github.com/mathieutu/troglos-public.git
+cd troglos-public
+
+# Installer les dépendances
+yarn install
+
+# Générer les données et lancer le serveur de développement
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Structure du projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              # Pages Next.js (App Router)
+│   ├── (activites)/  # Page d'accueil et activités
+│   ├── club/         # Présentation du club
+│   ├── contact/      # Formulaire de contact
+│   ├── sorties/      # Comptes-rendus de sorties
+│   └── ...
+├── components/       # Composants réutilisables
+├── data/            # Données des sorties (JSON)
+├── assets/          # Images et ressources
+└── utils/           # Utilitaires
+```
 
-## Learn More
+## 📦 Données
 
-To learn more about Next.js, take a look at the following resources:
+Les comptes-rendus de sorties sont générés automatiquement via le script `fetchData.ts` qui écrit des fichiers JSON stockés dans `src/data/trips/`.
+Ils sont récupérés via l'API de https://app.troglos.fr et formatés pour être affichés dans les pages de sorties.
+Il faut donc redeployer le site après chaque publication de compte rendu.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Déploiement
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Le site est déployé sur [Vercel](https://vercel.com), mais peut être déployé sur n'importe quelle plateforme supportant Next.js.
 
-## Deploy on Vercel
+```bash
+yarn build && yarn start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 Licence
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ce projet est sous licence [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/#). Voir le fichier [LICENSE](LICENSE.md) pour plus de détails.
