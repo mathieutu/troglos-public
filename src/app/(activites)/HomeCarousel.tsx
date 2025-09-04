@@ -51,7 +51,7 @@ import other01 from '@/assets/images/photos/other_01.jpg'
 import other02 from '@/assets/images/photos/other_02.jpg'
 import other03 from '@/assets/images/photos/other_03.jpg'
 import other04 from '@/assets/images/photos/other_04.jpg'
-import other05 from '@/assets/images/photos/caving_05.jpg'
+import other05 from '@/assets/images/photos/other_05.jpg'
 
 import { useEffect, useState } from 'react'
 import { ImageCrossFade } from '@/components/ImageCrossFade'
@@ -115,7 +115,7 @@ export const HomeCarousel = () => {
   const currentItem = items[currentIndex]
 
   useEffect(() => {
-    const timeout = setTimeout(() => setCurrentIndex((currentIndex + 1) % items.length), 3500)
+    const timeout = setTimeout(() => setCurrentIndex((currentIndex + 1) % items.length), 5000)
     return () => clearTimeout(timeout)
   }, [currentIndex])
 
