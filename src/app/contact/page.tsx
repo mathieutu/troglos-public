@@ -4,6 +4,16 @@ import { Link } from '@/components/Link'
 import contactBanner from '@/assets/images/photos/other_04.jpg'
 import { ContactForm } from '@/app/contact/ContactForm'
 import { sendContactEmail } from '@/services/mailer'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Contact',
+  description:
+    'Contactez le Clan Spéléo des Troglodytes. Trouvez nos coordonnées, notre adresse et envoyez-nous un message pour toute question sur nos activités.',
+  path: '/contact',
+  keywords: ['contact', 'adresse', 'téléphone', 'email', 'local', 'Lyon'],
+})
 
 export default function ContactPage() {
   const sendEmailAction = async (_currentState: unknown, formData: FormData) => {

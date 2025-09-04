@@ -5,6 +5,16 @@ import banner from '@/assets/images/photos/canyoning_11.jpg'
 import { tripsReports } from '@/data/trips'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import { PageHeader } from '@/components/PageHeader'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Canyonisme - Descente de Canyons et Torrents',
+  description:
+    'Découvrez le canyonisme avec le Clan Spéléo des Troglodytes. Apprenez les techniques de descente en rappel, sauts et nage dans les plus beaux canyons.',
+  path: '/canyonisme',
+  keywords: ['canyonisme', 'canyon', 'rappel', 'sauts', 'nage', 'torrents', 'eau vive'],
+})
 
 export default function CanyoningPage() {
   return (

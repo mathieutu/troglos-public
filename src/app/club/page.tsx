@@ -2,6 +2,16 @@ import { PageHeader } from '@/components/PageHeader'
 import { Link, PrimaryLink } from '@/components/Link'
 import { Card } from '@/components/Card'
 import clubBanner from '@/assets/images/photos/other_02.jpg'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Le Club',
+  description:
+    "Découvrez le Clan Spéléo des Troglodytes, club de spéléologie et canyonisme basé à Lyon depuis plus de 60 ans. Une communauté de passionnés unis par l'exploration.",
+  path: '/club',
+  keywords: ['club', 'histoire', 'spéléologie', 'canyonisme', 'Lyon', 'association'],
+})
 
 export default function ClubPage() {
   return (

@@ -6,58 +6,49 @@ import { SectionContainer } from '@/components/SectionContainer'
 import { formatDateFr, formatDurationMinutes } from '@/utils/dates'
 import { PageTitle } from '@/components/PageHeader'
 import { Tag } from '@/components/Tag'
+import type { Metadata } from 'next'
+import { siteConfig } from '@/config/metadata'
 
-// export async function generateMetadata(props: {
-//   params: Promise<{ slug: string[] }>
-// }): Promise<Metadata | undefined> {
-//   const params = await props.params
-//   const slug = decodeURI(params.slug.join('/'))
-//   const trip = allBlogs.find((p) => p.slug === slug)
-//   const authorList = trip?.authors || ['default']
-//   const authorDetails = authorList.map((author) => {
-//     const authorResults = allAuthors.find((p) => p.slug === author)
-//     return coreContent(authorResults as Authors)
-//   })
-//   if (!trip) {
-//     return
-//   }
-//
-//   const publishedAt = new Date(trip.date).toISOString()
-//   const modifiedAt = new Date(trip.lastmod || trip.date).toISOString()
-//   const authors = authorDetails.map((author) => author.name)
-//   let imageList = [siteMetadata.socialBanner]
-//   if (trip.images) {
-//     imageList = typeof trip.images === 'string' ? [trip.images] : trip.images
-//   }
-//   const ogImages = imageList.map((img) => {
-//     return {
-//       url: img && img.includes('http') ? img : siteMetadata.siteUrl + img,
-//     }
-//   })
-//
-//   return {
-//     title: trip.title,
-//     description: trip.summary,
-//     openGraph: {
-//       title: trip.title,
-//       description: trip.summary,
-//       siteName: siteMetadata.title,
-//       locale: 'en_US',
-//       type: 'article',
-//       publishedTime: publishedAt,
-//       modifiedTime: modifiedAt,
-//       url: './',
-//       images: ogImages,
-//       authors: authors.length > 0 ? authors : [siteMetadata.author],
-//     },
-//     twitter: {
-//       card: 'summary_large_image',
-//       title: trip.title,
-//       description: trip.summary,
-//       images: imageList,
-//     },
-//   }
-// }
+export async function generateMetadata(props: {
+  params: Promise<{ trip: string }>
+}): Promise<Metadata | undefined> {
+  const params = await props.params
+  const trip = tripsReports.find((p) => p.slug === params.trip)
+
+  if (!trip) {
+    return
+  }
+
+  const publishedAt = new Date(trip.publishedAt).toISOString()
+  const placeTypeText = trip.placeType === 'canyon' ? 'canyon' : 'grotte'
+  const description = `Compte-rendu de notre sortie ${trip.placeType === 'canyon' ? 'canyonisme' : 'spéléologie'} au ${placeTypeText} ${trip.place.name}. ${trip.description || ''}`
+
+  return {
+    title: `${trip.place.name}, le ${formatDateFr(trip.tripDate)} - ${trip.placeType === 'canyon' ? 'Canyonisme' : 'Spéléologie'}`,
+    description,
+    keywords: [
+      trip.placeType === 'canyon' ? 'canyonisme' : 'spéléologie',
+      trip.place.city,
+      'sortie',
+      'compte-rendu',
+      ...trip.tags.map((tag) => tag.title),
+    ],
+    openGraph: {
+      title: `${trip.place} - ${trip.placeType === 'canyon' ? 'Canyonisme' : 'Spéléologie'}`,
+      description,
+      siteName: siteConfig.siteName,
+      locale: siteConfig.locale,
+      type: 'article',
+      publishedTime: publishedAt,
+      url: `/sorties/${trip.slug}`,
+    },
+    twitter: {
+      card: 'summary',
+      title: `${trip.place} - ${trip.placeType === 'canyon' ? 'Canyonisme' : 'Spéléologie'}`,
+      description,
+    },
+  }
+}
 
 export const dynamicParams = false
 

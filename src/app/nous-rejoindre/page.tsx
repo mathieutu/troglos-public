@@ -2,6 +2,16 @@ import { PageHeader } from '@/components/PageHeader'
 import { PrimaryLink } from '@/components/Link'
 import { Card } from '@/components/Card'
 import banner from '@/assets/images/photos/caving_02.jpg'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Nous Rejoindre - Initiations et Adhésions',
+  description:
+    "Rejoignez le Clan Spéléo des Troglodytes ! Découvrez nos initiations en spéléologie et canyonisme, les modalités d'adhésion et les formations pour débutants.",
+  path: '/nous-rejoindre',
+  keywords: ['rejoindre', 'initiation', 'adhésion', 'débutant', 'formation', 'inscription'],
+})
 
 export default function NousRejoindrePage() {
   return (

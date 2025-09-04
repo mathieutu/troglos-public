@@ -5,6 +5,24 @@ import banner from '@/assets/images/photos/caving_23.jpg'
 import { tripsReports } from '@/data/trips'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import { PageHeader } from '@/components/PageHeader'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Spéléologie - Exploration souterraine',
+  description:
+    'Découvrez la spéléologie avec le Clan Spéléo des Troglodytes. Explorez les grottes, apprenez les techniques de progression sur corde et découvrez le monde souterrain.',
+  path: '/speleologie',
+  keywords: [
+    'spéléologie',
+    'grottes',
+    'cavités',
+    'progression',
+    'corde',
+    'souterrain',
+    'exploration',
+  ],
+})
 
 export default function CavingPage() {
   return (

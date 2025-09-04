@@ -3,6 +3,16 @@
 import { tags } from '@/data/trips'
 import { Tag } from '@/components/Tag'
 import { Link } from '@/components/Link'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Tags - Parcourir par Catégories',
+  description:
+    'Explorez nos sorties de spéléologie et canyonisme par catégories : initiations, expéditions, formations et plus encore.',
+  path: '/sorties/tags',
+  keywords: ['tags', 'catégories', 'initiations', 'expéditions', 'formations'],
+})
 
 export default async function Page() {
   return (

@@ -5,6 +5,15 @@ import canyoning from '@/assets/images/photos/canyoning_10.jpg'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import Image from 'next/image'
 import { HomeCarousel } from '@/app/(activites)/HomeCarousel'
+import { generatePageMetadata } from '@/config/metadata'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Spéléologie et Canyonisme',
+  description:
+    'Découvrez nos activités de spéléologie et canyonisme. Explorez cavités et canyons avec le Clan Spéléo des Troglodytes.',
+  keywords: ['spéléologie', 'canyonisme', 'exploration', 'aventure'],
+})
 
 export default async function Home() {
   const cavingTrips = tripsReports.filter((trip) => trip.placeType === 'cave').slice(0, 3)
