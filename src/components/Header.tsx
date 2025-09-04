@@ -19,7 +19,7 @@ export const Header = () => {
   }>({ width: 0, left: 0, opacity: 0 })
 
   useEffect(() => {
-    const currentIndex = headerNavLinks.findIndex((link) => link.href === pathname)
+    const currentIndex = headerNavLinks.findLastIndex((link) => pathname.startsWith(link.href))
     if (currentIndex !== -1) {
       setActiveIndex(currentIndex)
     }
