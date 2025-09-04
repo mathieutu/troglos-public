@@ -70,6 +70,15 @@ export const defaultMetadata: Metadata = {
     siteName: siteConfig.siteName,
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [
+      {
+        url: `${siteConfig.url}/og-image.jpg`,
+        width: 1613,
+        height: 1207,
+        alt: '',
+        type: 'image/jpg',
+      },
+    ],
   },
   twitter: {
     card: 'summary',
@@ -110,6 +119,7 @@ export function generatePageMetadata({
       canonical: path,
     },
     openGraph: {
+      ...defaultMetadata.openGraph,
       title,
       description,
       url,
