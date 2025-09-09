@@ -72,6 +72,10 @@ export function Footer() {
           <Link href="/" className="hover:underline">
             Clan Spéléo des Troglodytes
           </Link>
+          <div>{` • `}</div>
+          <Link href="https://maps.app.goo.gl/ezzbEnmuuSUmBYtr6" className="hover:underline">
+            18 rue Volney, 69008 Lyon
+          </Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
           <Link className="hover:underline" href="https://github.com/mathieutu">
