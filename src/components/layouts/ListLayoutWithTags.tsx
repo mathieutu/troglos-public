@@ -149,7 +149,7 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
             techniques de progression, d'équipement et de secours.
           </p>
           <p>
-            Découvrez ci-dessous nos derniers comptes-rendus de sorties et laissez-vous inspirer par
+            Découvre ci-dessous nos derniers comptes-rendus de sorties et laisse-toi inspirer par
             nos aventures !
           </p>
         </div>

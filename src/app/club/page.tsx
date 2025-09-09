@@ -196,10 +196,10 @@ export default function ClubPage() {
         </section>
 
         <section>
-          <h2>Rejoignez-nous !</h2>
+          <h2>Rejoins-nous !</h2>
           <p>
-            Vous êtes curieux·se de découvrir le monde souterrain ou les sports d'eau vive ? Vous
-            cherchez un club convivial pour partager votre passion ?
+            Tu es curieux·se de découvrir le monde souterrain ou les sports d'eau vive ? Tu cherches
+            un club convivial pour partager ta passion ?
           </p>
         </section>
       </div>

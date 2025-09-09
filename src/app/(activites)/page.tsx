@@ -114,8 +114,8 @@ export default async function Home() {
               Les Dernières Aventures
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-300">
-              Découvrez les comptes-rendus de nos dernières sorties et laissez-vous inspirer pour
-              vos prochaines aventures
+              Découvre les comptes-rendus de nos dernières sorties et laisse-toi inspirer pour tes
+              prochaines aventures
             </p>
           </div>
 

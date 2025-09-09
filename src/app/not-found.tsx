@@ -1,10 +1,10 @@
-import { Link } from '@/components/Link'
+import { Link, PrimaryLink } from '@/components/Link'
 import { generatePageMetadata } from '@/config/metadata'
 
 export const metadata = generatePageMetadata({
   title: 'Page non trouvée - 404',
   description:
-    "La page que vous recherchez n'existe pas. Retournez à l'accueil pour découvrir nos activités de spéléologie et canyonisme.",
+    "La page que tu recherche n'existe pas. Retourne à l'accueil pour découvrir nos activités de spéléologie et canyonisme.",
   path: '/404',
   keywords: ['404', 'page non trouvée', 'erreur'],
 })
@@ -22,15 +22,10 @@ export default function NotFound() {
           Désolé nous n&apos;avons pas trouvé cette page.
         </p>
         <p className="mb-8">
-          Mais ne vous inquiétez pas, vous trouverez bien d&apos;autres choses sur notre page
+          Mais ne t'inquiète pas, tu trouveras bien d&apos;autres choses sur notre page
           d&apos;accueil.
         </p>
-        <Link
-          href="/"
-          className="focus:shadow-outline-primary bg-primary-600 hover:bg-primary-700 dark:hover:bg-primary-500 inline rounded-lg border border-transparent px-4 py-2 text-sm leading-5 font-medium text-white shadow-xs transition-colors duration-150 focus:outline-hidden"
-        >
-          Retour à l&apos;accueil
-        </Link>
+        <PrimaryLink href="/">Retour à l&apos;accueil</PrimaryLink>
       </div>
     </div>
   )
