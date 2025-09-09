@@ -2,8 +2,9 @@
 
 import { useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
-export const HideDetails = ({ children }: { children: React.ReactNode }) => {
+const NestedHiddenDetails = ({ children }: { children: React.ReactNode }) => {
   const searchParams = useSearchParams()
 
   const showDetails = searchParams.get('details') || localStorage.getItem('showDetails')
@@ -20,3 +21,8 @@ export const HideDetails = ({ children }: { children: React.ReactNode }) => {
 
   return children
 }
+export const HideDetails = ({ children }: { children: React.ReactNode }) => (
+  <Suspense fallback={null}>
+    <NestedHiddenDetails>{children}</NestedHiddenDetails>
+  </Suspense>
+)

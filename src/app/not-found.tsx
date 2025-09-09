@@ -1,4 +1,4 @@
-import { Link, PrimaryLink } from '@/components/Link'
+import { PrimaryLink } from '@/components/Link'
 import { generatePageMetadata } from '@/config/metadata'
 
 export const metadata = generatePageMetadata({
