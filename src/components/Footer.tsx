@@ -78,7 +78,7 @@ export function Footer() {
           </Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link className="hover:underline" href="https://github.com/mathieutu">
+          <Link className="hover:underline" href="https://mathieutu.dev">
             Mathieu TUDISCO
           </Link>
         </div>

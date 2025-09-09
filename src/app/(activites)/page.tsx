@@ -42,7 +42,7 @@ export default async function Home() {
                   <p className="mb-8 text-lg leading-relaxed text-gray-200">
                     Notre passion première ! De la simple balade souterraine aux expéditions les
                     plus ambitieuses, nous accompagnons tous les niveaux dans la découverte du monde
-                    caché.
+                    caché sous nos pieds.
                   </p>
                 </div>
                 <div>

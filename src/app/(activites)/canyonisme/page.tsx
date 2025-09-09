@@ -32,7 +32,7 @@ export default function CanyoningPage() {
             </p>
 
             <p>
-              En tant que pratique sportive, le canyonisme se distingue par sa polyvalence et son
+              En tant que pratique sportive, elle se distingue par sa polyvalence et son
               adaptabilité aux conditions naturelles. Contrairement à d&apos;autres sports de
               montagne, il faut composer avec les éléments : débit d&apos;eau, température,
               météorologie. Cette activité sollicite l&apos;ensemble du corps et demande une bonne
@@ -41,8 +41,8 @@ export default function CanyoningPage() {
             </p>
 
             <p>
-              Le canyonisme utilise également les techniques de corde, mais de manière différente de
-              la spéléologie. Les descentes en rappel se font souvent dans l&apos;eau ou sous les
+              Elle utilise également les techniques de corde, mais de manière différente de la
+              spéléologie. Les descentes en rappel se font souvent dans l&apos;eau ou sous les
               cascades, nécessitant des techniques spécifiques pour gérer les courants et la force
               de l&apos;eau. La lecture du canyon et l&apos;évaluation des conditions
               hydrométéorologiques sont des compétences essentielles pour la sécurité.

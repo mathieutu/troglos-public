@@ -39,23 +39,23 @@ export default function CavingPage() {
             </p>
 
             <p>
-              En tant que pratique sportive, la spéléologie se distingue des autres sports de
-              montagne par son environnement unique et ses contraintes spécifiques. Elle nous plonge
-              dans l&apos;obscurité totale où l&apos;éclairage artificiel devient vital, dans des
-              espaces parfois gigantesques, ou très exigus. La dimension tridimensionnelle est
-              omniprésente : on progresse aussi bien verticalement qu&apos;horizontalement, en
-              rampant, ou en opposition selon la morphologie des galeries. Cela demande une bonne
-              condition physique, de l&apos;endurance, de la souplesse et de la coordination.
+              En tant que pratique sportive, elle se distingue des autres sports de montagne par son
+              environnement unique et ses contraintes spécifiques. Elle nous plonge dans
+              l&apos;obscurité totale où l&apos;éclairage artificiel devient vital, dans des espaces
+              parfois gigantesques, ou très exigus. La dimension tridimensionnelle est omniprésente
+              : on progresse aussi bien verticalement qu&apos;horizontalement, en rampant, ou en
+              opposition selon la morphologie des galeries. Cela demande une bonne condition
+              physique, de l&apos;endurance, de la souplesse et de la coordination.
             </p>
 
             <p>
-              La spéléologie est probablement le sport qui demande le plus de manipulation de corde,
-              tant pour la progression que pour l&apos;équipement. Les Single Rope Techniques (SRT)
-              sont au cœur de notre discipline : en verticale, les spéléologues vivent littéralement
-              sur la corde. Contrairement à l&apos;escalade où la corde est une sécurité, ici elle
-              devient notre moyen de transport principal. Maîtriser les techniques de descente en
-              rappel, de remontée sur bloqueurs, et savoir équiper une cavité avec précision sont
-              des compétences fondamentales qui s&apos;acquièrent progressivement.
+              C'est probablement le sport qui demande le plus de manipulation de corde, tant pour la
+              progression que pour l&apos;équipement. Les Single Rope Techniques (SRT) sont au cœur
+              de notre discipline : en verticale, les spéléologues vivent littéralement sur la
+              corde. Contrairement à l&apos;escalade où la corde est une sécurité, ici elle devient
+              notre moyen de transport principal. Maîtriser les techniques de descente en rappel, de
+              remontée sur bloqueurs, et savoir équiper une cavité avec précision sont des
+              compétences fondamentales qui s&apos;acquièrent progressivement.
             </p>
 
             <p>

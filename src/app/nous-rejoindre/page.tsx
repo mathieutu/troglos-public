@@ -209,7 +209,7 @@ export default async function NousRejoindrePage() {
                 . Il est important de t'inscrire, au plus tôt dans la mesure du possible, pour que
                 nous adaptions le nombre d'encadrants et la quantité de matériel. Certaines séances
                 sont parfois annulées par manque d'encadrant bénévole. C'est alors annoncé sur
-                YaEntrainement, stay tuned !
+                YaEntrainement. Stay tuned !
               </p>
               <Image
                 src={yaentrainementQrCode}

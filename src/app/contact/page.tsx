@@ -107,12 +107,56 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <div>
-                        <Link
-                          href="mailto:contact@troglos.fr"
-                          className="hover:text-primary-500 font-medium text-white transition-colors"
-                        >
-                          contact@troglos.fr
-                        </Link>
+                        <ul>
+                          <li>
+                            <Link
+                              href="mailto:initiations@troglos.fr"
+                              className="hover:text-primary-500 text-white transition-colors"
+                            >
+                              <strong>initiations</strong>@troglos.fr
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="mailto:presidence@troglos.fr"
+                              className="hover:text-primary-500 text-white transition-colors"
+                            >
+                              <strong>presidence</strong>@troglos.fr
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="mailto:finances@troglos.fr"
+                              className="hover:text-primary-500 text-white transition-colors"
+                            >
+                              <strong>finances</strong>@troglos.fr
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="mailto:inscriptions@troglos.fr"
+                              className="hover:text-primary-500 text-white transition-colors"
+                            >
+                              <strong>inscriptions</strong>@troglos.fr
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="mailto:secretariat@troglos.fr"
+                              className="hover:text-primary-500 text-white transition-colors"
+                            >
+                              <strong>secretariat</strong>@troglos.fr
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="mailto:contact@troglos.fr"
+                              className="hover:text-primary-500 text-white transition-colors"
+                            >
+                              <strong>contact</strong>@troglos.fr
+                            </Link>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
