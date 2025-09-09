@@ -23,7 +23,7 @@ export default function CanyoningPage() {
       <article className="color-canyon">
         <div>
           <PageHeader imageSrc={banner} title="Le Canyonisme" />
-          <div className="prose prose-lg dark:prose-invert max-w-none py-4">
+          <div className="prose-lg prose-invert max-w-none py-4">
             <p>
               Le canyonisme est une activité de pleine nature qui consiste à descendre des torrents
               et des gorges en combinant marche, nage, glissades, sauts et descentes en rappel.

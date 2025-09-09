@@ -31,7 +31,7 @@ export default function CavingPage() {
       <article className="color-caving">
         <div>
           <PageHeader imageSrc={banner} title="La Spéléologie" />
-          <div className="prose prose-lg dark:prose-invert max-w-none py-4">
+          <div className="prose-lg prose-invert max-w-none py-4">
             <p>
               La spéléologie est l&apos;exploration des cavités souterraines, qu&apos;elles soient
               naturelles ou artificielles. Elle permet de découvrir des paysages fascinants,

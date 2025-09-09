@@ -1,9 +1,13 @@
 import { PageHeader } from '@/components/PageHeader'
-import { PrimaryLink } from '@/components/Link'
+import { Link, PrimaryLink } from '@/components/Link'
 import { Card } from '@/components/Card'
 import banner from '@/assets/images/photos/caving_02.jpg'
+import whatsappQrCode from '@/assets/images/whatsapp_initiations_qrcode.jpeg'
+import yaentrainementQrCode from '@/assets/images/yaentrainement_qrcode.png'
 import { generatePageMetadata } from '@/config/metadata'
 import { Metadata } from 'next'
+import Image from 'next/image'
+import { HideDetails } from '@/app/nous-rejoindre/HideDetails'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Nous Rejoindre - Initiations et Adhésions',
@@ -13,7 +17,7 @@ export const metadata: Metadata = generatePageMetadata({
   keywords: ['rejoindre', 'initiation', 'adhésion', 'débutant', 'formation', 'inscription'],
 })
 
-export default function NousRejoindrePage() {
+export default async function NousRejoindrePage() {
   return (
     <>
       <PageHeader imageSrc={banner} title="Nous rejoindre" />
@@ -39,11 +43,32 @@ export default function NousRejoindrePage() {
 
         <section>
           <h2>Nos journées d'initiation</h2>
-          <p>
-            Des sorties découvertes sont organisées toute l'année, sur demande et selon les
-            disponibilités des encadrants bénévoles. Les encadrants proposent des sorties
-            régulièrement, et tu pourras t'inscrire à celle qui t'intéresse.
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p>
+              Des sorties découvertes sont organisées toute l'année, sur demande et selon les
+              disponibilités des encadrants bénévoles. Les encadrants proposent des sorties
+              régulièrement, et tu pourras t'inscrire à celle qui t'intéresse.{' '}
+              <HideDetails>
+                Pour être informé·e des prochaines sorties, n'hésite pas à rejoindre le{' '}
+                <Link href="https://chat.whatsapp.com/C6oLYI2TfjSEak3r8WW0EH" className="link">
+                  {' '}
+                  groupe WhatsApp dédié
+                </Link>{' '}
+                en scannant le QR code ou en envoyant un mail à{' '}
+                <Link className="link" href="mailto:initiations@troglos.fr">
+                  initiations@troglos.fr
+                </Link>
+              </HideDetails>
+            </p>
+            <HideDetails>
+              <Image
+                src={whatsappQrCode}
+                alt="QR Code pour rejoindre le groupe WhatsApp des initiations"
+                className="h-32 w-32 md:h-40 md:w-40"
+              />
+            </HideDetails>
+          </div>
+
           <div className="grid gap-4 md:grid-cols-2">
             <div className="grid gap-4">
               <Card
@@ -54,9 +79,11 @@ export default function NousRejoindrePage() {
                   '--card-border': 'var(--color-orange-500)',
                 }}
               >
-                Nous nous retrouvons au local du club où nous préparons ensemble le matériel. Cela
-                permet également d'optimiser le transport en voiture (environ 1h de trajet depuis
-                Lyon pour accéder aux grottes et canyons d'initiation).
+                <p>
+                  Nous nous retrouvons au local du club où nous préparons ensemble le matériel. Cela
+                  permet également d'optimiser le transport en voiture (environ 1h de trajet depuis
+                  Lyon pour accéder aux grottes et canyons d'initiation).
+                </p>
               </Card>
               <Card
                 title="Ce dont tu as besoin"
@@ -66,17 +93,19 @@ export default function NousRejoindrePage() {
                   '--card-border': 'var(--color-red-500)',
                 }}
               >
-                <ul className="not-prose list-inside list-disc">
-                  <li>Vêtements confortables et résistants</li>
-                  <li>
-                    Une combi neoprene pour le canyonisme{' '}
-                    <small className="text-xs italic">
-                      (nous t'accompagnons pour en louer une)
-                    </small>
-                  </li>
-                  <li>Chaussures de randonnée robustes</li>
-                  <li>Esprit aventureux !</li>
-                </ul>
+                <p>
+                  <ul className="not-prose list-inside list-disc">
+                    <li>Vêtements confortables et résistants</li>
+                    <li>
+                      Une combi neoprene pour le canyonisme{' '}
+                      <small className="text-xs italic">
+                        (nous t'accompagnons pour en louer une)
+                      </small>
+                    </li>
+                    <li>Chaussures de randonnée robustes</li>
+                    <li>Esprit aventureux !</li>
+                  </ul>
+                </p>
                 <p>Le reste sera prêté par le club.</p>
               </Card>
             </div>
@@ -89,14 +118,16 @@ export default function NousRejoindrePage() {
                   '--card-border': 'var(--color-blue-500)',
                 }}
               >
-                <ul className="not-prose list-inside list-disc">
-                  <li>Les bases de la spéléologie et du canyonisme</li>
-                  <li>L'utilisation de l'équipement et les techniques de progression</li>
-                  <li>Des formations géologiques, des animaux</li>
-                  <li>
-                    Les principes de sécurité essentiels pour des aventures en toute confiance
-                  </li>
-                </ul>
+                <p>
+                  <ul className="not-prose list-inside list-disc">
+                    <li>Les bases de la spéléologie et du canyonisme</li>
+                    <li>L'utilisation de l'équipement et les techniques de progression</li>
+                    <li>Des formations géologiques, des animaux</li>
+                    <li>
+                      Les principes de sécurité essentiels pour des aventures en toute confiance
+                    </li>
+                  </ul>
+                </p>
               </Card>
 
               <Card
@@ -131,11 +162,14 @@ export default function NousRejoindrePage() {
             >
               <p>
                 Sous réserve d'encadrants, nous proposons des entraînements à la progression sur
-                corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
+                corde et à l'équipement <strong>tous les jeudis de 20h à 22h</strong>.
               </p>
               <p>
-                Ils ont lieu dans le Gymnase Nelson Paillou à Moulin à Vent, et nécessitent une
-                inscription préalable.
+                Ils ont lieu dans le{' '}
+                <Link href="https://maps.app.goo.gl/f6q3YUAQd27MvgnA9" className="link">
+                  Gymnase Nelson Paillou
+                </Link>{' '}
+                à Moulin à Vent, et nécessitent une inscription préalable.
               </p>
               <p>
                 Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent de se
@@ -152,11 +186,38 @@ export default function NousRejoindrePage() {
             >
               <p>
                 Rejoins-nous pour nos réunions chaque premier mercredi du mois à 20h30 au local du
-                club (18 rue Volney, 69008 Lyon). C'est l'occasion idéale pour découvrir la vie du
-                clan et être tenu·e au courant des prochaines sorties !
+                club (
+                <Link href="https://maps.app.goo.gl/ezzbEnmuuSUmBYtr6">
+                  18 rue Volney, 69008 Lyon
+                </Link>
+                ). On y parle des actualités du club et fédérales, des sorties effectuées ou à
+                venir, de sujets techniques ou scientifiques, etc.
               </p>
             </Card>
           </div>
+          <HideDetails>
+            <div className="flex items-center justify-between gap-4">
+              <p>
+                Les entrainements et réunions sont visibles sur la plateforme{' '}
+                <Link
+                  href="https://lestroglos.yaentrainement.fr/public_join?pass=afond"
+                  className="link"
+                >
+                  {' '}
+                  Yaentrainement
+                </Link>
+                . Il est important de t'inscrire, au plus tôt dans la mesure du possible, pour que
+                nous adaptions le nombre d'encadrants et la quantité de matériel. Certaines séances
+                sont parfois annulées par manque d'encadrant bénévole. C'est alors annoncé sur
+                YaEntrainement, stay tuned !
+              </p>
+              <Image
+                src={yaentrainementQrCode}
+                alt="QR Code pour s'inscrire à Yaentrainement"
+                className="h-32 w-32 md:h-40 md:w-40"
+              />
+            </div>
+          </HideDetails>
         </section>
 
         <section>
@@ -175,12 +236,13 @@ export default function NousRejoindrePage() {
                 '--card-bg': 'var(--color-green-200)',
                 '--card-border': 'var(--color-green-500)',
                 '--card-bg-hover': 'var(--color-green-300)',
-                maxWidth: '100%',
               }}
             >
-              Prends contact avec nous pour discuter de tes envies et de ton niveau. Nous
-              t'orienterons vers l'activité qui te correspond le mieux et t'informerons des
-              prochaines sorties découverte.
+              <p>
+                Prends contact avec nous pour discuter de tes envies et de ton niveau. Nous
+                t'orienterons vers l'activité qui te correspond le mieux et t'informerons des
+                prochaines sorties de découverte.
+              </p>
             </Card>
             <Card
               title="Participe à une initiation"
@@ -195,11 +257,13 @@ export default function NousRejoindrePage() {
                 '--card-bg': 'var(--color-yellow-200)',
                 '--card-border': 'var(--color-yellow-500)',
                 '--card-bg-hover': 'var(--color-yellow-300)',
-                maxWidth: '100%',
               }}
             >
-              Rejoins-nous pour une sortie découverte obligatoire avant l'adhésion. C'est l'occasion
-              parfaite de découvrir nos disciplines et l'esprit du clan dans un cadre sécurisé.
+              <p>
+                Rejoins-nous sur un entrainement en gymnase, viens nous voir en réunion Club, et
+                pour une sortie découverte obligatoire avant l'adhésion. C'est l'occasion parfaite
+                de découvrir nos disciplines et l'esprit du clan dans un cadre sécurisé.
+              </p>
             </Card>
             <Card
               title="Adhère au club"
@@ -214,13 +278,19 @@ export default function NousRejoindrePage() {
                 '--card-bg': 'var(--color-indigo-200)',
                 '--card-border': 'var(--color-indigo-500)',
                 '--card-bg-hover': 'var(--color-indigo-300)',
-                maxWidth: '100%',
               }}
             >
-              Si l'expérience te plaît, tu peux devenir membre du clan et profiter de toutes nos
-              activités, formations et de l'accès à notre matériel. Il faut compter environ 150 €
-              l'année pour une personne, en comprenant la cotisation club, la licence à la
-              fédération française et un premier niveau d'assurance personnelle.
+              <p>
+                Si l'expérience te plaît, tu peux devenir membre du clan et profiter de toutes nos
+                activités, formations et de l'accès à notre matériel. Il faut compter environ 150 €
+                l'année pour une personne, en comprenant la cotisation club, la licence à la
+                fédération française et un premier niveau d'assurance personnelle.
+              </p>
+              <p>
+                Le club continue à prêter le matériel aux nouveaux adhérents au long de leur
+                première année, et les accompagne pour l'achat de leur matériel (conseils, commandes
+                groupées avec réductions négociées, etc.).
+              </p>
             </Card>
           </div>
         </section>

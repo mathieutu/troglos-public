@@ -47,9 +47,11 @@ export default function ClubPage() {
                   '--card-border': 'var(--color-blue-500)',
                 }}
               >
-                La solidarité et l'entraide sont au cœur de nos pratiques. Nous avons pour coutume
-                de dire que nos disciplines sont des sports collectifs. Chaque sortie est une
-                aventure de groupe où chacun·e veille sur les autres.
+                <p>
+                  La solidarité et l'entraide sont au cœur de nos pratiques. Nous avons pour coutume
+                  de dire que nos disciplines sont des sports collectifs. Chaque sortie est une
+                  aventure de groupe où chacun·e veille sur les autres.
+                </p>
               </Card>
               <Card
                 title="Sécurité"
@@ -59,9 +61,11 @@ export default function ClubPage() {
                   '--card-border': 'var(--color-red-500)',
                 }}
               >
-                La sécurité est notre priorité absolue. Les techniques de progression et de secours
-                font partie intégrante de la formation de nos membres. Notre matériel est
-                scrupuleusement suivi selon les normes en vigueur.
+                <p>
+                  La sécurité est notre priorité absolue. Les techniques de progression et de
+                  secours font partie intégrante de la formation de nos membres. Notre matériel est
+                  scrupuleusement suivi selon les normes en vigueur.
+                </p>
               </Card>
               <Card
                 title="Implication fédérale"
@@ -71,9 +75,11 @@ export default function ClubPage() {
                   '--card-border': 'var(--color-purple-500)',
                 }}
               >
-                Actif dans le Spéléo Secours, le Comité Départemental, ou encore la Fédération
-                Française de Spéléologie, le clan contribue activement au développement et à la
-                promotion de nos disciplines.
+                <p>
+                  Actif dans le Spéléo Secours, le Comité Départemental, ou encore la Fédération
+                  Française de Spéléologie, le clan contribue activement au développement et à la
+                  promotion de nos disciplines.
+                </p>
               </Card>
             </div>
             <div className="flex flex-col">
@@ -85,9 +91,11 @@ export default function ClubPage() {
                   '--card-border': 'var(--color-pink-500)',
                 }}
               >
-                Le Clan est fier d'accueillir toutes et tous, sans distinction d'âge, de genre,
-                d'origine ou de niveau. Nous pensons que la diversité enrichit nos expériences et
-                renforce notre communauté.
+                <p>
+                  Le Clan est fier d'accueillir toutes et tous, sans distinction d'âge, de genre,
+                  d'origine ou de niveau. Nous pensons que la diversité enrichit nos expériences et
+                  renforce notre communauté.
+                </p>
               </Card>
               <Card
                 title="Transmission"
@@ -97,9 +105,11 @@ export default function ClubPage() {
                   '--card-border': 'var(--color-orange-500)',
                 }}
               >
-                Le Clan est reconnu pour sa formation. Nous aimons partager nos connaissances et
-                notre passion avec les nouveaux arrivants, dans une ambiance conviviale et
-                bienveillante.
+                <p>
+                  Le Clan est reconnu pour sa formation. Nous aimons partager nos connaissances et
+                  notre passion avec les nouveaux arrivants, dans une ambiance conviviale et
+                  bienveillante.
+                </p>
               </Card>
               <Card
                 title="Respect de l'environnement"
@@ -109,10 +119,12 @@ export default function ClubPage() {
                   '--card-border': 'var(--color-green-500)',
                 }}
               >
-                Nous pratiquons nos activités dans le respect de l'environnement naturel, en
-                préservant le plus possible les écosystèmes fragiles des grottes et des canyons.
-                Beaucoup de nos membres ne sont pas véhiculés, et les déplacements se font
-                généralement en covoiturage.
+                <p>
+                  Nous pratiquons nos activités dans le respect de l'environnement naturel, en
+                  préservant le plus possible les écosystèmes fragiles des grottes et des canyons.
+                  Beaucoup de nos membres ne sont pas véhiculés, et les déplacements se font
+                  généralement en covoiturage.
+                </p>
               </Card>
             </div>
           </div>
@@ -135,11 +147,59 @@ export default function ClubPage() {
         </section>
 
         <section>
+          <h2>Nos partenaires</h2>
+          <p>
+            Outre des liens tissés avec les autres clubs, nous avons plusieurs partenaires qui nous
+            assurent un soutien sous différentes formes :
+          </p>
+          <ul className="list-disc">
+            <li>
+              L'
+              <Link
+                className="link"
+                href="https://mairie8.lyon.fr/sport/loffice-des-sports-du-8eme/presentation-de-loffice-des-sports-du-8eme"
+              >
+                Office des Sports Lyon 8e
+              </Link>
+              , offrant un créneau hebdomadaire d’accès sur un mur d’escalade en gymnase.
+            </li>
+            <li>
+              La{' '}
+              <Link className="link" href="https://www.lyon.fr/">
+                Ville de Lyon
+              </Link>
+              , subventionnant financièrement l’association.
+            </li>
+            <li>
+              La{' '}
+              <Link className="link" href="https://www.auvergnerhonealpes.fr">
+                Région Auvergne Rhône Alpes
+              </Link>{' '}
+              qui accorde au club une aide régionale à l’équipement des clubs sportifs
+            </li>
+            <li>
+              La{' '}
+              <Link className="link" href="http://ffspeleo.fr/">
+                Fédération Française de Spéléologie
+              </Link>
+              , le{' '}
+              <Link className="link" href="http://www.csr-rhonealpes.fr/">
+                Comité Spéléologique Régional Auvergne Rhone-Alpes
+              </Link>{' '}
+              et le{' '}
+              <Link className="link" href="https://cdspeleo69.fr">
+                Comité Départemental de Spéléologie du Rhône et de la Métropole de Lyon
+              </Link>{' '}
+              qui coordonnent des actions interclubs, et subventionnent certains de nos projets
+            </li>
+          </ul>
+        </section>
+
+        <section>
           <h2>Rejoignez-nous !</h2>
           <p>
             Vous êtes curieux·se de découvrir le monde souterrain ou les sports d'eau vive ? Vous
-            cherchez un club convivial pour partager votre passion ? Le Clan Spéléo des Troglodytes
-            vous accueille à bras ouverts !
+            cherchez un club convivial pour partager votre passion ?
           </p>
         </section>
       </div>

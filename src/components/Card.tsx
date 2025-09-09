@@ -36,7 +36,7 @@ export const Card = ({
   )
 
   return (
-    <div className="relative m-4 max-w-[544px]" style={style}>
+    <div className="relative m-4" style={style}>
       <div
         className={`${
           imgSrc && 'h-full'
