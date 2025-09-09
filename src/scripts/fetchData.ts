@@ -3,8 +3,7 @@ import UniqueSlugger, { slug as simpleSlug } from 'github-slugger'
 import fs from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 
-import { resolve } from 'node:path'
-import { dirname } from 'path'
+import { dirname, resolve } from 'node:path'
 import type { Tag, TripReport } from '@/data/trips'
 
 export const SPORTS = {
@@ -60,28 +59,19 @@ const uniqBy = <T, K>(array: T[], keyFn: (item: T) => K): T[] => {
 const computeTripsAndTags = (rawTrips: Record<string, any>[]): [TripReport[], Tag[]] => {
   const tripSlugger = new UniqueSlugger()
 
-  const tags: Record<string, Tag> = {}
-
-  const addTag = (title: string) => {
+  const toTag = (title: string) => {
     const slug = simpleSlug(normalize(title))
-
-    tags[slug] = {
-      title,
-      count: (tags[slug]?.count || 0) + 1,
-      slug,
-    }
-
-    return tags[slug]
+    return { title, slug }
   }
 
   const trips = rawTrips.map((trip) => ({
     ...trip,
     tags: uniqBy(
       [
-        addTag(SPORTS[trip.placeType as TripReport['placeType']]),
-        addTag(trip.tripType),
-        addTag(trip.place.county.replace(/\s(.*)/, '')),
-        addTag(trip.place.region),
+        toTag(SPORTS[trip.placeType as TripReport['placeType']]),
+        toTag(trip.tripType),
+        toTag(trip.place.county.replace(/\s(.*)/, '')),
+        toTag(trip.place.region),
       ],
       (tag) => tag.slug
     ),
@@ -89,7 +79,19 @@ const computeTripsAndTags = (rawTrips: Record<string, any>[]): [TripReport[], Ta
     slug: tripSlugger.slug(`${formateDateIso(trip.tripDate)} ${normalize(trip.place.name)}`),
   })) as TripReport[]
 
-  return [trips, Object.values(tags).toSorted((a, b) => b.count - a.count)]
+  const tags: Tag[] = Object.values(
+    trips
+      .flatMap(({ tags }) => tags)
+      .reduce(
+        (acc, { slug, title }) => ({
+          ...acc,
+          [slug]: { title, slug, count: (acc[slug]?.count || 0) + 1 },
+        }),
+        {} as Record<string, Tag>
+      )
+  ).toSorted((a, b) => b.count - a.count)
+
+  return [trips, tags]
 }
 
 const [trips, tags] = computeTripsAndTags(await fetchTripsFromApi())
