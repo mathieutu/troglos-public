@@ -125,7 +125,7 @@ export const HomeCarousel = () => {
   return (
     <section className={currentItem.className} suppressHydrationWarning>
       <FullWidth>
-        <div className="relative h-screen overflow-hidden">
+        <div className="relative isolate h-screen overflow-hidden">
           <ImageCrossFade
             src={currentItem.src}
             alt=""

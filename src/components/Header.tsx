@@ -12,11 +12,21 @@ export const Header = () => {
   const navRef = useRef<HTMLElement>(null)
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
   const [underlineStyle, setUnderlineStyle] = useState<{
     width: number
     left: number
     opacity: number
   }>({ width: 0, left: 0, opacity: 0 })
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const currentIndex = headerNavLinks.findLastIndex((link) => pathname.startsWith(link.href))
@@ -51,7 +61,9 @@ export const Header = () => {
   }, [activeIndex])
 
   return (
-    <header className="absolute top-0 isolate z-10 flex w-full items-center justify-between px-10 pt-5 pb-10">
+    <header
+      className={`fixed top-0 isolate z-10 flex w-full items-center justify-between px-10 py-5 transition-all duration-700 ${isScrolled ? 'bg-background-950/30 shadow-lg backdrop-blur-sm' : ''}`}
+    >
       <Link href="/" aria-label="Clan Spéléo des Troglodytes">
         <div className="flex items-center justify-between">
           <div className="mr-3">
