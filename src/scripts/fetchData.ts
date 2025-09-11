@@ -71,7 +71,6 @@ const computeTripsAndTags = (rawTrips: Record<string, any>[]): [TripReport[], Ta
         toTag(SPORTS[trip.placeType as TripReport['placeType']]),
         toTag(trip.tripType),
         toTag(trip.place.county.replace(/\s(.*)/, '')),
-        toTag(trip.place.region),
       ],
       (tag) => tag.slug
     ),
