@@ -69,7 +69,7 @@ export default async function NousRejoindrePage() {
             </HideDetails>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid items-start gap-4 md:grid-cols-2">
             <div className="grid gap-4">
               <Card
                 title="Point de ralliement"
@@ -95,15 +95,16 @@ export default async function NousRejoindrePage() {
               >
                 <p>
                   <ul className="not-prose list-inside list-disc">
-                    <li>Vêtements confortables et résistants</li>
+                    <li>Des vêtements confortables, résistants et qui ne craignent plus rien</li>
                     <li>
                       Une combi neoprene pour le canyonisme{' '}
                       <small className="text-xs italic">
                         (nous t'accompagnons pour en louer une)
                       </small>
                     </li>
-                    <li>Chaussures de randonnée robustes</li>
-                    <li>Esprit aventureux !</li>
+                    <li>Des chaussures de randonnée robustes</li>
+                    <li>Un picnic compact et qui ne fait pas de miette</li>
+                    <li>Ton esprit le plus aventureux !</li>
                   </ul>
                 </p>
                 <p>Le reste sera prêté par le club.</p>
@@ -282,9 +283,10 @@ export default async function NousRejoindrePage() {
             >
               <p>
                 Si l'expérience te plaît, tu peux devenir membre du clan et profiter de toutes nos
-                activités, formations et de l'accès à notre matériel. Il faut compter environ 150 €
-                l'année pour une personne, en comprenant la cotisation club, la licence à la
-                fédération française et un premier niveau d'assurance personnelle.
+                activités, formations et de l'accès à notre matériel. Il faut compter environ
+                150&nbsp;€ l'année pour une personne, en comprenant la cotisation club, la licence à
+                la Fédération Française de Spéléologie (FFS) et un premier niveau d'assurance
+                personnelle.
               </p>
               <p>
                 Le club continue à prêter le matériel aux nouveaux adhérents au long de leur

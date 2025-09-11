@@ -78,14 +78,27 @@ export default function ContactPage() {
                           </svg>
                         </div>
                       </div>
-                      <Link href="https://maps.app.goo.gl/ezzbEnmuuSUmBYtr6" className="group">
-                        <p className="group-hover:text-primary-500 font-medium text-white transition-colors">
-                          Clan Spéléo des Troglodytes
+                      <div>
+                        <Link href="https://maps.app.goo.gl/ezzbEnmuuSUmBYtr6" className="group">
+                          <p className="group-hover:text-primary-500 font-medium text-white transition-colors">
+                            Clan Spéléo des Troglodytes
+                          </p>
+                          <p className="group-hover:text-primary-500 text-gray-300 transition-colors">
+                            18 Rue Volney, 69008 Lyon
+                          </p>
+                        </Link>
+                        <p>
+                          <Link
+                            className="hover:text-primary-500"
+                            href="https://drive.google.com/file/d/1bjQF-UEYVml_HuTRQDqta7OFSh7-J9tT/view"
+                          >
+                            🗺️{' '}
+                            <span className="underline decoration-dotted">
+                              Voir le plan d'accès
+                            </span>
+                          </Link>
                         </p>
-                        <p className="group-hover:text-primary-500 text-gray-300 transition-colors">
-                          18 Rue Volney, 69008 Lyon
-                        </p>
-                      </Link>
+                      </div>
                     </div>
 
                     <div className="flex items-start space-x-4">
@@ -114,38 +127,6 @@ export default function ContactPage() {
                               className="hover:text-primary-500 text-white transition-colors"
                             >
                               <strong>initiations</strong>@troglos.fr
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="mailto:presidence@troglos.fr"
-                              className="hover:text-primary-500 text-white transition-colors"
-                            >
-                              <strong>presidence</strong>@troglos.fr
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="mailto:finances@troglos.fr"
-                              className="hover:text-primary-500 text-white transition-colors"
-                            >
-                              <strong>finances</strong>@troglos.fr
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="mailto:inscriptions@troglos.fr"
-                              className="hover:text-primary-500 text-white transition-colors"
-                            >
-                              <strong>inscriptions</strong>@troglos.fr
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="mailto:secretariat@troglos.fr"
-                              className="hover:text-primary-500 text-white transition-colors"
-                            >
-                              <strong>secretariat</strong>@troglos.fr
                             </Link>
                           </li>
                           <li>

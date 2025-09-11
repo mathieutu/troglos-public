@@ -50,12 +50,23 @@ export default function CavingPage() {
 
             <p>
               C'est probablement le sport qui demande le plus de manipulation de corde, tant pour la
-              progression que pour l&apos;équipement. Les Single Rope Techniques (SRT) sont au cœur
-              de notre discipline : en verticale, les spéléologues vivent littéralement sur la
-              corde. Contrairement à l&apos;escalade où la corde est une sécurité, ici elle devient
-              notre moyen de transport principal. Maîtriser les techniques de descente en rappel, de
-              remontée sur bloqueurs, et savoir équiper une cavité avec précision sont des
-              compétences fondamentales qui s&apos;acquièrent progressivement.
+              progression que pour l&apos;équipement. En verticale, les spéléologues vivent
+              littéralement sur la corde. Contrairement à l&apos;escalade où la corde est une
+              sécurité, ici elle devient notre moyen de transport principal. Maîtriser les
+              techniques de descente en rappel, de remontée sur bloqueurs, et savoir équiper une
+              cavité avec précision sont des compétences fondamentales qui s&apos;acquièrent
+              progressivement.
+            </p>
+
+            <p>
+              Mais l'activité dépasse la simple performance physique et technique : elle ouvre
+              également de fascinantes perspectives scientifiques et culturelles. Géologie,
+              hydrologie, zoologie, archéologie, histoire, topographie... l’étude du monde
+              souterrain est aussi vaste que passionnante. Elle permet ainsi une ouverture d’esprit
+              et une relation avec le milieu naturel exceptionnelle. La curiosité est souvent la
+              première qualité des spéléologues. Elle leur permet de parcourir des dizaines de
+              kilomètres de galeries souterraines, dans l’espoir de tomber sur des trésors naturels
+              encore inexplorés.
             </p>
 
             <p>
