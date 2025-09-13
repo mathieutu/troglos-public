@@ -7,7 +7,7 @@ import { formatDateFr, formatDurationMinutes } from '@/utils/dates'
 import { PageTitle } from '@/components/PageHeader'
 import { Tag } from '@/components/Tag'
 import type { Metadata } from 'next'
-import { siteConfig } from '@/config/metadata'
+import { generatePageMetadata } from '@/config/metadata'
 
 export async function generateMetadata(props: {
   params: Promise<{ trip: string }>
@@ -20,12 +20,10 @@ export async function generateMetadata(props: {
   }
 
   const publishedAt = new Date(trip.publishedAt).toISOString()
-  const placeTypeText = trip.placeType === 'canyon' ? 'canyon' : 'grotte'
-  const description = `Compte-rendu de notre sortie ${trip.placeType === 'canyon' ? 'canyonisme' : 'spéléologie'} au ${placeTypeText} ${trip.place.name}. ${trip.description || ''}`
 
-  return {
+  return generatePageMetadata({
     title: `${trip.place.name}, le ${formatDateFr(trip.tripDate)} - ${trip.placeType === 'canyon' ? 'Canyonisme' : 'Spéléologie'}`,
-    description,
+    description: `"${trip.quickSummary}" par ${trip.author.firstName}.`,
     keywords: [
       trip.placeType === 'canyon' ? 'canyonisme' : 'spéléologie',
       trip.place.city,
@@ -33,21 +31,8 @@ export async function generateMetadata(props: {
       'compte-rendu',
       ...trip.tags.map((tag) => tag.title),
     ],
-    openGraph: {
-      title: `${trip.place} - ${trip.placeType === 'canyon' ? 'Canyonisme' : 'Spéléologie'}`,
-      description,
-      siteName: siteConfig.siteName,
-      locale: siteConfig.locale,
-      type: 'article',
-      publishedTime: publishedAt,
-      url: `/sorties/${trip.slug}`,
-    },
-    twitter: {
-      card: 'summary',
-      title: `${trip.place} - ${trip.placeType === 'canyon' ? 'Canyonisme' : 'Spéléologie'}`,
-      description,
-    },
-  }
+    publishedAt,
+  })
 }
 
 export const dynamicParams = false
@@ -136,13 +121,15 @@ export default async function Page(props: { params: Promise<{ trip: string }> })
           <div className="divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0 dark:divide-gray-700">
             <div className="py-8 xl:col-span-3 xl:col-start-2">
               <div
-                className="prose-invert max-w-none"
+                className="prose prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: trip.description }}
               />
               <div className="flex items-center justify-end space-x-2">
                 <dl className="text-sm leading-5 font-medium whitespace-nowrap">
-                  <dt className="sr-only">Auteur</dt>
-                  <dd className="text-gray-900 dark:text-gray-100">{trip.author.firstName}</dd>
+                  <dt className="inline">Publié par</dt>{' '}
+                  <dd className="inline text-gray-900 dark:text-gray-100">
+                    {trip.author.firstName}
+                  </dd>
                 </dl>
               </div>
             </div>

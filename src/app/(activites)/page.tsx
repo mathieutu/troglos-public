@@ -9,9 +9,9 @@ import { generatePageMetadata } from '@/config/metadata'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Spéléologie et Canyonisme',
+  title: 'Spéléologie et Canyonisme à Lyon',
   description:
-    'Découvrez nos activités de spéléologie et canyonisme. Explorez cavités et canyons avec le Clan Spéléo des Troglodytes.',
+    "Des aventures souterraines et en eau vive avec le Clan Spéléo des Troglodytes, un club de spéléologie et canyonisme basé à Lyon. Rejoignez-nous pour vivre de calcaire et d'eau fraiche !",
   keywords: ['spéléologie', 'canyonisme', 'exploration', 'aventure'],
 })
 

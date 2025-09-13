@@ -4,7 +4,7 @@ export const siteConfig = {
   name: 'Clan Spéléo des Troglodytes',
   description:
     'Club de passionné·e·s de spéléologie et de canyonisme basé à Lyon. Explorez les merveilles souterraines et les canyons avec nous.',
-  url: 'https://troglos.fr',
+  url: 'https://www.troglos.fr',
   siteName: 'Clan Spéléo des Troglodytes',
   locale: 'fr_FR',
   type: 'website',
@@ -13,7 +13,7 @@ export const siteConfig = {
 export const defaultMetadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
@@ -81,7 +81,7 @@ export const defaultMetadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
   },
@@ -103,18 +103,24 @@ export function generatePageMetadata({
   description,
   path = '',
   keywords = [],
+  publishedAt,
 }: {
   title: string
   description: string
   path?: string
   keywords?: string[]
+  publishedAt?: string
 }): Metadata {
   const url = `${siteConfig.url}${path}`
 
   return {
     title,
     description,
-    keywords: [...new Set(...(defaultMetadata.keywords as string[]), ...keywords)],
+    keywords: [
+      ...new Set(
+        [...keywords, ...(defaultMetadata.keywords as string[])].map((s) => s.toLowerCase().trim())
+      ),
+    ],
     alternates: {
       canonical: path,
     },
@@ -124,11 +130,12 @@ export function generatePageMetadata({
       description,
       url,
       siteName: siteConfig.siteName,
-      type: 'website',
+      type: 'article',
       locale: siteConfig.locale,
+      publishedTime: publishedAt,
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
     },
