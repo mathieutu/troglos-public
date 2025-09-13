@@ -66,13 +66,13 @@ export function Footer() {
           <SocialIcon kind="github" href="https://github.com/mathieutu/troglos-public" size={6} />
           <SocialIcon kind="facebook" href="https://www.facebook.com/troglos.fr" size={6} />
         </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{` • `}</div>
+        <div className="mb-2 flex flex-wrap justify-center gap-x-2 text-sm text-gray-400">
+          <span>{`© ${new Date().getFullYear()}`}</span>
+          <span>{` • `}</span>
           <Link href="/" className="hover:underline">
             Clan Spéléo des Troglodytes
           </Link>
-          <div>{` • `}</div>
+          <span>{` • `}</span>
           <Link href="https://maps.app.goo.gl/ezzbEnmuuSUmBYtr6" className="hover:underline">
             18 rue Volney, 69008 Lyon
           </Link>
