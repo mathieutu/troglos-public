@@ -39,7 +39,7 @@ export const TripsListItem = ({
           <div>
             <h2 className="text-2xl leading-8 font-bold tracking-tight">
               <Link href={`/sorties/${trip.slug}`} className="text-gray-900 dark:text-gray-100">
-                <span className="mr-4">{trip.placeType === 'canyon' ? '🐟' : '🦇'}</span>
+                <span className="mr-4">{trip.placeType === 'canyon' ? '🦎' : '🦇'}</span>
                 {trip.title}
               </Link>
             </h2>

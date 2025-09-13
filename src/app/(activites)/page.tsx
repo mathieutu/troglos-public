@@ -76,7 +76,7 @@ export default async function Home() {
               </div>
               <div className="relative z-10 flex h-full flex-col justify-between p-8 lg:p-12">
                 <div>
-                  <div className="mb-6 text-6xl">🐟</div>
+                  <div className="mb-6 text-6xl">🦎</div>
                   <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Canyonisme</h2>
                   <p className="mb-8 text-lg leading-relaxed text-gray-200">
                     Des parcours accessibles aux descentes les plus engagées, chaque canyon offre
@@ -123,7 +123,7 @@ export default async function Home() {
             {/* Sorties Canyon */}
             <div className="space-y-8">
               <h3 className="text-canyon-400 mb-6 flex items-center gap-3 text-2xl font-bold">
-                <span className="text-3xl">🐟</span>
+                <span className="text-3xl">🦎</span>
                 Dernières sorties Canyon
               </h3>
               <ul className="space-y-6">

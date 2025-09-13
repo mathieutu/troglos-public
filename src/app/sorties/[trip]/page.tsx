@@ -121,7 +121,7 @@ export default async function Page(props: { params: Promise<{ trip: string }> })
                         <div className="text-sm leading-5 font-medium whitespace-nowrap">
                           <span className="text-gray-900 dark:text-gray-100">
                             <span className="align-middle text-3xl">
-                              {trip.placeType === 'canyon' ? '🐟' : '🦇'}
+                              {trip.placeType === 'canyon' ? '🦎' : '🦇'}
                             </span>{' '}
                             des participants externes
                           </span>
