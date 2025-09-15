@@ -21,9 +21,10 @@ export default function NotFound() {
         <p className="mb-4 text-xl leading-normal font-bold md:text-2xl">
           Désolé nous n&apos;avons pas trouvé cette page.
         </p>
+        <p className="mb-8">Ce n'est probablement pas de ta faute, notre site est tout neuf !</p>
         <p className="mb-8">
-          Mais ne t'inquiète pas, tu trouveras bien d&apos;autres choses sur notre page
-          d&apos;accueil.
+          Mais ne t'inquiète pas, tu trouveras bien d&apos;autres choses sur celui-ci : nos
+          activités, nos sorties, comment nous rejoindre, etc.
         </p>
         <PrimaryLink href="/">Retour à l&apos;accueil</PrimaryLink>
       </div>
