@@ -31,4 +31,4 @@ const mailer = Mailer(
 )
 
 export const sendContactEmail = async (contact: ContactFields) =>
-  mailer.send('ContactEmail', contact, { to: 'mathieu@troglos.fr', replyTo: contact.email })
+  mailer.send('ContactEmail', contact, { to: 'contact@troglos.fr', replyTo: contact.email })
