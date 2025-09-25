@@ -154,7 +154,7 @@ export const ListLayoutWithTags = ({ currentPage = 1, currentTag }: ListLayoutPr
           </p>
         </div>
       </div>
-      <div className="mt-6 flex scroll-mt-6 sm:space-x-24" id="trips-list">
+      <div className="mt-6 flex scroll-mt-24 sm:space-x-24" id="trips-list">
         <div className="hidden h-full max-w-[300px] min-w-[300px] flex-wrap sm:flex">
           <div className="">
             <Link
