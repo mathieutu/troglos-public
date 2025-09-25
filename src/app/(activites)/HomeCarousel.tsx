@@ -145,6 +145,23 @@ export const HomeCarousel = () => {
               <div className="text-3xl">à Lyon</div>
             </h1>
           </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 transform">
+            <div className="flex flex-col items-center text-white/70">
+              <div className="animate-bounce">
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
           <div className="absolute right-6 bottom-6 z-20 flex gap-2">
             <button
               onClick={previous}
