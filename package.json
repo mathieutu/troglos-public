@@ -13,33 +13,33 @@
     "data:generate": "node --env-file-if-exists=.env --experimental-strip-types src/scripts/fetchData.ts"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.7",
+    "@headlessui/react": "^2.2.9",
     "body-scroll-lock": "^4.0.0-beta.0",
     "github-slugger": "^2.0.0",
-    "next": "^15.5.2",
+    "next": "^15.5.4",
     "nodemailer": "^7.0.6",
     "nodemailer-react": "^1.0.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/body-scroll-lock": "^3.1.2",
-    "@types/node": "^24.3.0",
-    "@types/nodemailer": "^7.0.1",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "eslint": "^9.34.0",
-    "eslint-config-next": "15.5.2",
+    "@types/node": "^24.6.2",
+    "@types/nodemailer": "^7.0.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.36.0",
+    "eslint-config-next": "15.5.4",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^4.1.12",
-    "typescript": "^5.9.2"
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.10.3"
 }
