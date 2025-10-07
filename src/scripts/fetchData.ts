@@ -64,19 +64,24 @@ const computeTripsAndTags = (rawTrips: Record<string, any>[]): [TripReport[], Ta
     return { title, slug }
   }
 
-  const trips = rawTrips.map((trip) => ({
-    ...trip,
-    tags: uniqBy(
-      [
-        toTag(SPORTS[trip.placeType as TripReport['placeType']]),
-        toTag(trip.tripType),
-        toTag(trip.place.county.replace(/\s(.*)/, '')),
-      ],
-      (tag) => tag.slug
-    ),
-    title: trip.place.name,
-    slug: tripSlugger.slug(`${formateDateIso(trip.tripDate)} ${normalize(trip.place.name)}`),
-  })) as TripReport[]
+  const trips = rawTrips
+    .map(
+      (trip) =>
+        ({
+          ...trip,
+          tags: uniqBy(
+            [
+              toTag(SPORTS[trip.placeType as TripReport['placeType']]),
+              toTag(trip.tripType),
+              toTag(trip.place.county.replace(/\s(.*)/, '')),
+            ],
+            (tag) => tag.slug
+          ),
+          title: trip.place.name,
+          slug: tripSlugger.slug(`${formateDateIso(trip.tripDate)} ${normalize(trip.place.name)}`),
+        }) as TripReport
+    )
+    .toSorted((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
 
   const tags: Tag[] = Object.values(
     trips

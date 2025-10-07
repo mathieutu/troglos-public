@@ -16,8 +16,11 @@ export const metadata: Metadata = generatePageMetadata({
 })
 
 export default async function Home() {
-  const cavingTrips = tripsReports.filter((trip) => trip.placeType === 'cave').slice(0, 3)
-  const canyoningTrips = tripsReports.filter((trip) => trip.placeType === 'canyon').slice(0, 3)
+  const sortedTrips = tripsReports.toSorted(
+    (a, b) => new Date(b.tripDate).getTime() - new Date(a.tripDate).getTime()
+  )
+  const cavingTrips = sortedTrips.filter((trip) => trip.placeType === 'cave').slice(0, 3)
+  const canyoningTrips = sortedTrips.filter((trip) => trip.placeType === 'canyon').slice(0, 3)
 
   return (
     <>
@@ -30,7 +33,7 @@ export default async function Home() {
               <div className="absolute inset-0">
                 <Image
                   src={caving}
-                  alt="Spéléologie"
+                  alt=""
                   fill
                   className="object-cover object-center opacity-30 transition-opacity duration-500 group-hover:opacity-50"
                 />
@@ -69,7 +72,7 @@ export default async function Home() {
               <div className="absolute inset-0">
                 <Image
                   src={canyoning}
-                  alt="Canyonisme"
+                  alt=""
                   fill
                   className="object-cover object-center opacity-30 transition-opacity duration-500 group-hover:opacity-50"
                 />
