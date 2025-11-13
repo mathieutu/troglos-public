@@ -123,6 +123,18 @@ export const ContactForm = ({
         />
       </div>
 
+      {/* Honeypot field - hidden from users but visible to bots */}
+      <div className="absolute left-[-9999px]" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="pt-2">
         <button
           type="submit"

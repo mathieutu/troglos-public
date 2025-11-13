@@ -19,6 +19,14 @@ export default function ContactPage() {
   const sendEmailAction = async (_currentState: unknown, formData: FormData) => {
     'use server'
 
+    // Honeypot validation - reject if the hidden field is filled
+    const honeypot = formData.get('website') as string
+    if (honeypot) {
+      console.warn('Spam detected: honeypot field was filled')
+      // Return success to avoid revealing the honeypot to bots
+      return 'success'
+    }
+
     const emailFields = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
