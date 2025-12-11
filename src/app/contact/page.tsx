@@ -16,7 +16,7 @@ export const metadata: Metadata = generatePageMetadata({
 })
 
 export default function ContactPage() {
-  const sendEmailAction = async (_currentState: unknown, formData: FormData) => {
+  const sendEmailAction = async (_currentState: unknown, formData: FormData): Promise<'success' | 'error'> => {
     'use server'
 
     // Honeypot validation - reject if the hidden field is filled
@@ -24,7 +24,19 @@ export default function ContactPage() {
     if (honeypot) {
       console.warn('Spam detected: honeypot field was filled')
       // Return success to avoid revealing the honeypot to bots
-      return 'success'
+      return 'error'
+    }
+
+    // Time-based spam detection - reject if form submitted too quickly
+    const timestamp = formData.get('timestamp') as string
+    const submittedAt = parseInt(timestamp, 10)
+    const submissionTime = Date.now() - submittedAt
+
+    const MIN_SUBMISSION_TIME = 10000 // 10 seconds
+    if (submissionTime < MIN_SUBMISSION_TIME) {
+      console.warn(`Spam detected: form submitted too quickly (${submissionTime}s)`)
+      // Return success to avoid revealing the check to bots
+      return 'error'
     }
 
     const emailFields = {

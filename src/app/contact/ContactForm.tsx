@@ -1,7 +1,7 @@
 'use client'
 
 import Form from 'next/form'
-import { useActionState } from 'react'
+import { useActionState, useState } from 'react'
 
 type State = 'success' | 'error' | null
 export const ContactForm = ({
@@ -10,6 +10,9 @@ export const ContactForm = ({
   sendEmailAction: Parameters<typeof useActionState<State, FormData>>[0]
 }) => {
   const [state, formAction, pending] = useActionState(sendEmailAction, null)
+  const [formLoadedAt] = useState(() => Date.now())
+
+
 
   return (
     <Form action={formAction} className="space-y-6">
@@ -134,6 +137,14 @@ export const ContactForm = ({
           autoComplete="off"
         />
       </div>
+
+      {/* Timestamp field for spam detection - hidden from users */}
+      <input
+        type="hidden"
+        name="timestamp"
+        id="timestamp"
+        value={formLoadedAt}
+      />
 
       <div className="pt-2">
         <button
