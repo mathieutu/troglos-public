@@ -170,7 +170,7 @@ export default async function NousRejoindrePage() {
                 <Link href="https://maps.app.goo.gl/f6q3YUAQd27MvgnA9" className="link">
                   Gymnase Nelson Paillou
                 </Link>{' '}
-                à Moulin à Vent, et nécessitent une inscription préalable.
+                à Moulin à Vent, et nécessitent de réserver sa place au préalable.
               </p>
               <p>
                 Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent de se

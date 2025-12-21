@@ -189,8 +189,8 @@ export default function ContactPage() {
                   corde et à l'équipement <strong>tous les jeudis à 20h</strong>.
                 </p>
                 <p>
-                  Ils ont lieu dans le Gymnase Nelson Paillou à Moulin à Vent, et nécessitent une
-                  inscription préalable.
+                  Ils ont lieu dans le Gymnase Nelson Paillou à Moulin à Vent, et nécessitent de
+                  réserver sa place au préalable.
                 </p>
                 <p>
                   Ces entraînements sont ouverts aux débutant·e·s ou confirmé·e·s, et permettent de

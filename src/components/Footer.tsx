@@ -33,6 +33,7 @@ export const Contact = (svgProps: SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
+
 const components = {
   contact: Contact,
   github: Github,
@@ -52,7 +53,7 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
     <Link href={href}>
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200 h-${size} w-${size}`}
+        className={`hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-200 h-${size} w-${size}`}
       />
     </Link>
   )
@@ -60,15 +61,18 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
 export function Footer() {
   return (
     <footer>
-      <div className="mt-16 flex flex-col items-center">
+      <div className="mt-16 flex flex-col items-center mb-8">
         <div className="mb-3 flex space-x-4">
           <SocialIcon kind="contact" href="/contact" size={6} />
           <SocialIcon kind="github" href="https://github.com/mathieutu/troglos-public" size={6} />
           <SocialIcon kind="facebook" href="https://www.facebook.com/troglos.fr" size={6} />
         </div>
-        <div className="mb-2 flex flex-wrap justify-center gap-x-2 text-sm text-gray-400">
-          <span>{`© ${new Date().getFullYear()}`}</span>
-          <span>{` • `}</span>
+        <div className="text-sm text-gray-200">
+          <Link className="hover:underline" href="https://app.troglos.fr">
+            Espace Adhérents
+          </Link>
+        </div>
+        <div className="flex flex-wrap justify-center gap-x-2 text-sm text-gray-400">
           <Link href="/" className="hover:underline">
             Clan Spéléo des Troglodytes
           </Link>
@@ -77,9 +81,9 @@ export function Footer() {
             18 rue Volney, 69008 Lyon
           </Link>
         </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-sm text-gray-400">
           <Link className="hover:underline" href="https://mathieutu.dev">
-            Mathieu TUDISCO
+            © {new Date().getFullYear()} Mathieu TUDISCO
           </Link>
         </div>
       </div>
