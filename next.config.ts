@@ -35,6 +35,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { permanent: true, source: '/', has: [{ type: 'host', value: 'initiations.troglos.fr' }], destination: '/nous-rejoindre?details=1'},
+      { permanent: true, source: '/initiations', destination: '/nous-rejoindre?details=1'},
       { permanent: true, source: '/decouvrir-la-speleo', destination: '/nous-rejoindre' },
       { permanent: true, source: '/decouvrir-le-canyoning', destination: '/nous-rejoindre' },
       { permanent: true, source: '/entrainements', destination: '/nous-rejoindre' },
