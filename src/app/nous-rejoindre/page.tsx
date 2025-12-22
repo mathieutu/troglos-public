@@ -93,20 +93,18 @@ export default async function NousRejoindrePage() {
                   '--card-border': 'var(--color-red-500)',
                 }}
               >
-                <p>
-                  <ul className="not-prose list-inside list-disc">
-                    <li>Des vêtements confortables, résistants et qui ne craignent plus rien</li>
-                    <li>
-                      Une combi neoprene pour le canyonisme{' '}
-                      <small className="text-xs italic">
-                        (nous t'accompagnons pour en louer une)
-                      </small>
-                    </li>
-                    <li>Des chaussures de randonnée robustes</li>
-                    <li>Un picnic compact et qui ne fait pas de miette</li>
-                    <li>Ton esprit le plus aventureux !</li>
-                  </ul>
-                </p>
+                <ul className="mt-4 not-prose list-inside list-disc">
+                  <li>Des vêtements confortables, résistants et qui ne craignent plus rien</li>
+                  <li>
+                    Une combi neoprene pour le canyonisme{' '}
+                    <small className="text-xs italic">
+                      (nous t'accompagnons pour en louer une)
+                    </small>
+                  </li>
+                  <li>Des chaussures de randonnée robustes</li>
+                  <li>Un picnic compact et qui ne fait pas de miette</li>
+                  <li>Ton esprit le plus aventureux !</li>
+                </ul>
                 <p>Le reste sera prêté par le club.</p>
               </Card>
             </div>
@@ -119,16 +117,14 @@ export default async function NousRejoindrePage() {
                   '--card-border': 'var(--color-blue-500)',
                 }}
               >
-                <p>
-                  <ul className="not-prose list-inside list-disc">
-                    <li>Les bases de la spéléologie et du canyonisme</li>
-                    <li>L'utilisation de l'équipement et les techniques de progression</li>
-                    <li>Des formations géologiques, des animaux</li>
-                    <li>
-                      Les principes de sécurité essentiels pour des aventures en toute confiance
-                    </li>
-                  </ul>
-                </p>
+                <ul className="mt-4 not-prose list-inside list-disc">
+                  <li>Les bases de la spéléologie et du canyonisme</li>
+                  <li>L'utilisation de l'équipement et les techniques de progression</li>
+                  <li>Des formations géologiques, des animaux</li>
+                  <li>
+                    Les principes de sécurité essentiels pour des aventures en toute confiance
+                  </li>
+                </ul>
               </Card>
 
               <Card
@@ -139,7 +135,7 @@ export default async function NousRejoindrePage() {
                   '--card-border': 'var(--color-emerald-500)',
                 }}
               >
-                <p>
+                <p className='mt-4 mb-0'>
                   Les encadrants sont bénévoles, mais il faudra néanmoins prévoir un budget d'une
                   trentaine d'euros (tarifs spécifiques pour jeunes, étudiants et demandeurs
                   d'emploi) pour les frais de prêt de matériel et d'assurance, plus le
