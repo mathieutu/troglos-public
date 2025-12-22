@@ -38,7 +38,7 @@ export default function ClubPage() {
         <section>
           <h2>Nos valeurs</h2>
           <div className="grid gap-x-8 md:grid-cols-2">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-8">
               <Card
                 title="Esprit d'équipe"
                 icon="🤝"
@@ -82,7 +82,7 @@ export default function ClubPage() {
                 </p>
               </Card>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-8">
               <Card
                 title="Inclusion et diversité"
                 icon="🌈"

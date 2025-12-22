@@ -43,7 +43,7 @@ export default async function NousRejoindrePage() {
 
         <section>
           <h2>Nos journées d'initiation</h2>
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between md:gap-4 flex-col md:flex-row">
             <p>
               Des sorties découvertes sont organisées toute l'année, sur demande et selon les
               disponibilités des encadrants bénévoles. Les encadrants proposent des sorties
@@ -64,12 +64,12 @@ export default async function NousRejoindrePage() {
               <Image
                 src={whatsappQrCode}
                 alt="QR Code pour rejoindre le groupe WhatsApp des initiations"
-                className="h-32 w-32 md:h-40 md:w-40"
+                className="not-prose size-40"
               />
             </HideDetails>
           </div>
 
-          <div className="grid items-start gap-4 md:grid-cols-2">
+          <div className="max-md:mt-8 grid items-start gap-4 md:grid-cols-2">
             <div className="grid gap-4">
               <Card
                 title="Point de ralliement"
@@ -193,7 +193,7 @@ export default async function NousRejoindrePage() {
             </Card>
           </div>
           <HideDetails>
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center justify-between md:gap-4 flex-col md:flex-row">
               <p>
                 Les entrainements et réunions sont visibles sur la plateforme{' '}
                 <Link
@@ -211,7 +211,7 @@ export default async function NousRejoindrePage() {
               <Image
                 src={yaentrainementQrCode}
                 alt="QR Code pour s'inscrire à Yaentrainement"
-                className="h-32 w-32 md:h-40 md:w-40"
+                className="not-prose size-40"
               />
             </div>
           </HideDetails>

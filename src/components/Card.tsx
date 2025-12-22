@@ -36,11 +36,10 @@ export const Card = ({
   )
 
   return (
-    <div className="relative m-4" style={style}>
+    <div className="relative" style={style}>
       <div
-        className={`${
-          imgSrc && 'h-full'
-        } ${href && 'hover:bg-(--card-bg-hover)/60'} group overflow-hidden rounded-lg border border-(--card-border)/40 bg-(--card-bg)/50 backdrop-blur-sm transition-all duration-200`}
+        className={`${imgSrc && 'h-full'
+          } ${href && 'hover:bg-(--card-bg-hover)/60'} group overflow-hidden rounded-lg border border-(--card-border)/40 bg-(--card-bg)/50 backdrop-blur-sm transition-all duration-200`}
       >
         {imgSrc && (
           <Image
