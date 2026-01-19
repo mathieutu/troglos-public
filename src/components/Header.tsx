@@ -62,7 +62,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 isolate z-10 flex w-full items-center justify-between px-10 py-5 transition-all duration-700 ${isScrolled ? 'bg-background-950/30 shadow-lg backdrop-blur-sm' : ''}`}
+      className={`fixed top-0 isolate z-100 flex w-full items-center justify-between px-10 py-5 transition-all duration-700 ${isScrolled ? 'bg-background-950/30 shadow-lg backdrop-blur-sm' : ''}`}
     >
       <Link href="/" aria-label="Clan Spéléo des Troglodytes">
         <div className="flex items-center justify-between">
