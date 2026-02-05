@@ -197,10 +197,10 @@ export default function ClubPage() {
               qui coordonnent des actions interclubs, et subventionnent certains de nos projets
             </li>
           </ul>
-          <ul className='flex justify-around items-center gap-2 not-prose my-12 mx-20'>
-            <li><Image src={lyon} alt="" height={40} className='h-10 w-auto' /></li>
-            <li><Image src={aura} alt="" height={40} className='h-10 w-auto' /></li>
-            <li><Image src={ffs} alt="" height={40} className='h-10 w-auto' /></li>
+          <ul className='flex flex-wrap justify-center sm:justify-around items-center gap-4 not-prose my-12 md:mx-20'>
+            <li><Image src={lyon} alt="" height={40} className='h-8 sm:h-10 w-auto' /></li>
+            <li><Image src={aura} alt="" height={40} className='h-8 sm:h-10 w-auto' /></li>
+            <li><Image src={ffs} alt="" height={40} className='h-8 sm:h-10 w-auto' /></li>
           </ul>
         </section>
 
