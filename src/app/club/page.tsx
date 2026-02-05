@@ -4,6 +4,10 @@ import { Card } from '@/components/Card'
 import clubBanner from '@/assets/images/photos/other_02.jpg'
 import { generatePageMetadata } from '@/config/metadata'
 import { Metadata } from 'next'
+import Image from 'next/image'
+import aura from '@/assets/images/partners/aura.png'
+import lyon from '@/assets/images/partners/lyon.png'
+import ffs from '@/assets/images/partners/ffs.png'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Le Club',
@@ -192,6 +196,11 @@ export default function ClubPage() {
               </Link>{' '}
               qui coordonnent des actions interclubs, et subventionnent certains de nos projets
             </li>
+          </ul>
+          <ul className='flex justify-around items-center gap-2 not-prose my-12 mx-20'>
+            <li><Image src={lyon} alt="" height={40} className='h-10 w-auto' /></li>
+            <li><Image src={aura} alt="" height={40} className='h-10 w-auto' /></li>
+            <li><Image src={ffs} alt="" height={40} className='h-10 w-auto' /></li>
           </ul>
         </section>
 
