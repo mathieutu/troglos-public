@@ -12,7 +12,7 @@ import ffs from '@/assets/images/partners/ffs.png'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Le Club',
   description:
-    "Découvrez le Clan Spéléo des Troglodytes, club de spéléologie et canyonisme basé à Lyon depuis plus de 60 ans. Une communauté de passionnés unis par l'exploration.",
+    "Découvrez le Clan Spéléo des Troglodytes, club de spéléologie et canyonisme basé à Lyon depuis plus de 60 ans. Une communauté de passionné·e·s unis par la découverte et l'exploration.",
   path: '/club',
   keywords: ['club', 'histoire', 'spéléologie', 'canyonisme', 'Lyon', 'association'],
 })
