@@ -3,9 +3,10 @@ import { Card } from '@/components/Card'
 import { Link } from '@/components/Link'
 import contactBanner from '@/assets/images/photos/other_04.jpg'
 import { ContactForm } from '@/app/contact/ContactForm'
-import { sendContactEmail } from '@/services/mailer'
+import { sendContactEmail, sendSpamNotification } from '@/services/mailer'
 import { generatePageMetadata } from '@/config/metadata'
 import { Metadata } from 'next'
+import { ContactFields } from '@/components/ContactEmail'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Contact',
@@ -15,16 +16,104 @@ export const metadata: Metadata = generatePageMetadata({
   keywords: ['contact', 'adresse', 'téléphone', 'email', 'local', 'Lyon'],
 })
 
+const SPAM_KEYWORDS = [
+  // Marketing / SEO
+  'seo', 'marketing', 'backlink', 'traffic', 'lead generation', 'guest post',
+  'link building', 'cold email', 'mass email', 'outreach', 'ranking', 'serp',
+  // Sales pitch
+  'buy now', 'act now', 'click here', 'limited offer', 'free quote', 'free trial',
+  'no monthly', 'subscription', 'dashboard', 'submit your', 'classified',
+  'one payment', 'no experience required', 'endless possibilities',
+  // Crypto / Finance
+  'crypto', 'bitcoin', 'blockchain', 'forex', 'trading', 'investment opportunity',
+  // Pharma / Casino
+  'casino', 'viagra', 'cialis', 'lottery', 'winner', 'prize',
+  // AI / Tech spam
+  'ai tool', 'ai service', 'chatgpt', 'gemini', 'stable diffusion', 'cohere',
+  'leonardo ai', 'artificial intelligence', 'machine learning', 'automation service',
+  'ai-powered', 'ai model', 'api key',
+  // Web services
+  'web design', 'web development', 'social media', 'digital marketing',
+  // Generic English words with no relation to speleology/canyoning
+  'free', 'tools', 'business', 'website', 'automation', 'software',
+  // English spam patterns
+  'boost', 'booster', 'submitter', 'unlimited', 'monetize', 'revenue',
+  'affordable', 'discount', 'promo', 'testimonial', 'roi',
+  'unsubscribe', 'opt-out', 'brightdata', 'shopify', 'saas', 'startup',
+  'freelancer', 'outsource', 'offshore', 'wholesale',
+]
+
+function detectSpam({ name, email, message, phone }: ContactFields): string | null {
+  const text = `${name} ${message}`.toLowerCase()
+
+  // Check for URLs (with or without protocol)
+  const urlPatterns = [
+    /https?:\/\//g,      // http:// or https://
+    /www\./g,             // www.
+    /\w+\.[a-z]{2,}/g,    // domain like example.com
+  ]
+  let urlCount = 0
+  for (const pattern of urlPatterns) {
+    urlCount += (text.match(pattern) || []).length
+  }
+  if (urlCount > 2) {
+    return `too many URLs (${urlCount})`
+  }
+
+  // Check for spam keywords (word boundary matching to catch variations)
+  const foundKeywords = SPAM_KEYWORDS.filter((kw) => new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text))
+  if (foundKeywords.length) {
+    return `spam keywords found: ${foundKeywords.join(', ')}`
+  }
+
+  const allowedPhonePatterns = [
+    /^0[\s.\-]?[1-9]([\s.\-]?\d{2}){4}$/, // French local format (0X XX XX XX XX)
+    /^\+\d{1,3}[\s.\-]?\d[\s.\-\d]{6,14}$/, // International format (+XX ...)
+  ]
+  if (phone && !allowedPhonePatterns.some((pattern) => pattern.test(phone))) {
+    return `suspicious phone number: ${phone}`
+  }
+  // Detect predominantly English messages (heuristic: check for common French words/patterns)
+  // A message to a French speleology club should contain some French
+  const frenchIndicators = [
+    /[àâäéèêëïîôùûüÿçœæ]/i,
+    /\b(je|tu|il|elle|nous|vous|ils|elles|le|la|les|un|une|des|du|de|et|est|sont|dans|pour|avec|sur|pas|que|qui|mais|cette|mon|ton|son|notre|votre|leur|bonjour|merci|salut|cordialement|bien|aussi)\b/i,
+  ]
+  const hasFrenchContent = frenchIndicators.some((pattern) => pattern.test(text))
+
+  // If no French content detected and message is long enough, likely spam
+  if (!hasFrenchContent && text.length > 100) {
+    return 'no French content detected in a long message'
+  }
+
+  // Check for suspicious email patterns (many spam emails use unusual TLDs)
+  const suspiciousTlds = ['.xyz', '.top', '.buzz', '.click', '.link', '.site', '.online', '.icu', '.club']
+  const emailLower = email.toLowerCase()
+  if (suspiciousTlds.some((tld) => emailLower.endsWith(tld))) {
+    return `suspicious email TLD: ${email}`
+  }
+
+  return null
+}
+
 export default function ContactPage() {
   const sendEmailAction = async (_currentState: unknown, formData: FormData): Promise<'success' | 'error'> => {
     'use server'
 
-    // Honeypot validation - reject if the hidden field is filled
-    const honeypot = formData.get('website') as string
-    if (honeypot) {
-      console.warn('Spam detected: honeypot field was filled')
-      // Return success to avoid revealing the honeypot to bots
-      return 'error'
+    const notifySpam = async (reason: string) => {
+      console.warn(`Spam detected: ${reason}`)
+      await sendSpamNotification({ reason, formData }).catch((err) =>
+        console.error('Failed to send spam notification:', err)
+      )
+    }
+
+    // Honeypot validation - reject if any hidden field is filled
+    const honeypotFields = ['website', 'company', 'url']
+    for (const field of honeypotFields) {
+      if (formData.get(field)) {
+        await notifySpam(`honeypot field "${field}" was filled`)
+        return 'error'
+      }
     }
 
     // Time-based spam detection - reject if form submitted too quickly
@@ -34,8 +123,7 @@ export default function ContactPage() {
 
     const MIN_SUBMISSION_TIME = 10000 // 10 seconds
     if (submissionTime < MIN_SUBMISSION_TIME) {
-      console.warn(`Spam detected: form submitted too quickly (${submissionTime}s)`)
-      // Return success to avoid revealing the check to bots
+      await notifySpam(`form submitted too quickly (${submissionTime}ms)`)
       return 'error'
     }
 
@@ -44,6 +132,19 @@ export default function ContactPage() {
       email: formData.get('email') as string,
       phone: formData.get('phone') as string,
       message: formData.get('message') as string,
+      debug: {
+        honeypots: Object.fromEntries(
+          honeypotFields.map((field) => [field, (formData.get(field) as string) || ''])
+        ),
+        submissionTime,
+      },
+    }
+
+    // Content-based spam filtering
+    const spamResult = detectSpam(emailFields)
+    if (spamResult) {
+      await notifySpam(spamResult)
+      return 'error'
     }
 
     try {
@@ -75,7 +176,7 @@ export default function ContactPage() {
 
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
+                      <div className="shrink-0">
                         <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gray-600">
                           <svg
                             className="h-4 w-4 text-white"
@@ -122,7 +223,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
+                      <div className="shrink-0">
                         <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gray-600">
                           <svg
                             className="h-4 w-4 text-white"

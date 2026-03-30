@@ -17,6 +17,10 @@ export type ContactFields = {
   email: string
   phone?: string
   message: string
+  debug?: {
+    honeypots: Record<string, string>
+    submissionTime: number
+  }
 }
 
 export const ContactEmail: Email<ContactFields> = (contact) => ({
@@ -44,6 +48,13 @@ export const ContactEmail: Email<ContactFields> = (contact) => ({
           <div style={{ marginTop: '1em', whiteSpace: 'pre-line' }}>{contact.message}</div>
         </ul>
       </div>
+      {contact.debug && (
+        <div style={{ marginTop: '2em', borderTop: '1px solid #e5e7eb', paddingTop: '1em', fontSize: '12px', color: '#9ca3af' }}>
+          <p><b>Debug anti-spam</b></p>
+          <p>Temps de soumission : {(contact.debug.submissionTime / 1000).toFixed(1)}s</p>
+          <p>Honeypots : {Object.entries(contact.debug.honeypots).map(([k, v]) => `${k}=${v ? `"${v}"` : '(vide)'}`).join(', ')}</p>
+        </div>
+      )}
     </body>
   ),
 })

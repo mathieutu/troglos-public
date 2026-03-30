@@ -2,6 +2,7 @@
 
 import { Mailer } from 'nodemailer-react'
 import { ContactEmail, type ContactFields } from '@/components/ContactEmail'
+import { SpamNotificationEmail, type SpamNotificationFields } from '@/components/SpamNotificationEmail'
 
 const { MAIL_USERNAME, MAIL_PASSWORD } = process.env
 
@@ -27,8 +28,12 @@ const mailer = Mailer(
   },
   {
     ContactEmail,
+    SpamNotificationEmail,
   }
 )
 
 export const sendContactEmail = async (contact: ContactFields) =>
   mailer.send('ContactEmail', contact, { to: 'contact@troglos.fr', replyTo: contact.email })
+
+export const sendSpamNotification = async (spam: SpamNotificationFields) =>
+  mailer.send('SpamNotificationEmail', spam, { to: 'informatique@troglos.fr' })

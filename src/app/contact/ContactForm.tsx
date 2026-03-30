@@ -46,7 +46,7 @@ export const ContactForm = ({
       {state === 'error' && (
         <div className="rounded-md bg-red-50 p-4">
           <div className="flex">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <svg
                 className="h-5 w-5 text-red-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -126,16 +126,15 @@ export const ContactForm = ({
         />
       </div>
 
-      {/* Honeypot field - hidden from users but visible to bots */}
+
+      {/* Honeypot fields - hidden from users but visible to bots */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
         <label htmlFor="website">Website</label>
-        <input
-          type="text"
-          id="website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-        />
+        <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+        <label htmlFor="company">Company</label>
+        <input type="text" id="company" name="company" tabIndex={-1} autoComplete="off" />
+        <label htmlFor="url">URL</label>
+        <input type="text" id="url" name="url" tabIndex={-1} autoComplete="off" />
       </div>
 
       {/* Timestamp field for spam detection - hidden from users */}
