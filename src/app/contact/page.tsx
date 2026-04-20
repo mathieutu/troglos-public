@@ -111,7 +111,7 @@ export default function ContactPage() {
     const honeypotFields = ['website', 'company', 'url']
     for (const field of honeypotFields) {
       if (formData.get(field)) {
-        await notifySpam(`honeypot field "${field}" was filled`)
+        // await notifySpam(`honeypot field "${field}" was filled`)
         return 'error'
       }
     }

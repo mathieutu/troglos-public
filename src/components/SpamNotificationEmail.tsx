@@ -34,7 +34,7 @@ export const SpamNotificationEmail: Email<SpamNotificationFields> = ({ reason, f
                             <b>{key}</b> : {String(value) || '(vide)'}
                         </li>
                     ))}
-                    <li><b>Temps de soumission :</b> {Date.now() - parseInt(formData.get('submissionTime') as string, 10)} ms</li>
+                    <li><b>Temps de soumission :</b> {Date.now() - parseInt(formData.get('timestamp') as string, 10)} ms</li>
                 </ul>
             </div>
         </body>
