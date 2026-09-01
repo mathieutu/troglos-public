@@ -42,7 +42,9 @@ export default async function NousRejoindrePage() {
         </section>
 
         <section>
-          <h2>Nos journées d'initiation</h2>
+          <h2 id="initiations" className="scroll-mt-24">
+            Nos journées d'initiation
+          </h2>
           <div className="flex items-center justify-between md:gap-4 flex-col md:flex-row">
             <p>
               Des sorties découvertes sont organisées toute l'année, sur demande et selon les
@@ -147,7 +149,9 @@ export default async function NousRejoindrePage() {
         </section>
 
         <section>
-          <h2>Et sinon ?</h2>
+          <h2 id="autres" className="scroll-mt-24">
+            Et sinon ?
+          </h2>
           <div className="grid gap-8 md:grid-cols-2">
             <Card
               title="Entrainement hebdomadaire"
@@ -218,7 +222,9 @@ export default async function NousRejoindrePage() {
         </section>
 
         <section>
-          <h2>Comment nous rejoindre ?</h2>
+          <h2 id="rejoindre" className="scroll-mt-24">
+            Comment nous rejoindre ?
+          </h2>
           <div className="grid w-full gap-8">
             <Card
               title="Contacte-nous"
@@ -294,7 +300,9 @@ export default async function NousRejoindrePage() {
         </section>
 
         <section>
-          <h2>Prêt·e pour l'aventure ?</h2>
+          <h2 id="contact" className="scroll-mt-24">
+            Prêt·e pour l'aventure ?
+          </h2>
           <p>
             Tu rêves d'explorer les mystères des profondeurs ou de t'immerger dans les remous des
             rivières ? Rejoins la Clan des Troglos et découvre un monde fascinant fait de calcaire

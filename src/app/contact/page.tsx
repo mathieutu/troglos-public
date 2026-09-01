@@ -273,7 +273,10 @@ export default function ContactPage() {
           </section>
 
           <section className="mb-16">
-            <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <h2
+              id="nous-croiser"
+              className="mb-8 scroll-mt-24 text-2xl font-bold text-gray-900 dark:text-gray-100"
+            >
               Où nous croiser ?
             </h2>
             <div className="grid gap-8 md:grid-cols-2">

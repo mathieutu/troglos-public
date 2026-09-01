@@ -40,7 +40,9 @@ export default function ClubPage() {
         </section>
 
         <section>
-          <h2>Nos valeurs</h2>
+          <h2 id="valeurs" className="scroll-mt-24">
+            Nos valeurs
+          </h2>
           <div className="grid gap-x-8 md:grid-cols-2">
             <div className="flex flex-col gap-8">
               <Card
@@ -134,7 +136,9 @@ export default function ClubPage() {
           </div>
         </section>
         <section>
-          <h2>Fonctionnement interne</h2>
+          <h2 id="fonctionnement" className="scroll-mt-24">
+            Fonctionnement interne
+          </h2>
           <p>
             Le Clan se réunit mensuellement, habituellement le premier mercredi du mois à 20h30, au{' '}
             <Link href="/contact">local du club</Link>. Ces réunions permettent de faire le point
@@ -151,7 +155,9 @@ export default function ClubPage() {
         </section>
 
         <section>
-          <h2>Nos partenaires</h2>
+          <h2 id="partenaires" className="scroll-mt-24">
+            Nos partenaires
+          </h2>
           <p>
             Outre des liens tissés avec les autres clubs, nous avons plusieurs partenaires qui nous
             assurent un soutien sous différentes formes :
@@ -205,7 +211,9 @@ export default function ClubPage() {
         </section>
 
         <section>
-          <h2>Rejoins-nous !</h2>
+          <h2 id="rejoindre" className="scroll-mt-24">
+            Rejoins-nous !
+          </h2>
           <p>
             Tu es curieux·se de découvrir le monde souterrain ou les sports d'eau vive ? Tu cherches
             un club convivial pour partager ta passion ?

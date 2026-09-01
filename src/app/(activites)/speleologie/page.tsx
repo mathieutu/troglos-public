@@ -79,7 +79,10 @@ export default function CavingPage() {
 
           <div className="py-12">
             <div className="flex flex-wrap items-center justify-between">
-              <h2 className="text-xl leading-9 font-bold tracking-tight text-gray-900 sm:text-2xl sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100">
+              <h2
+                id="sorties"
+                className="scroll-mt-24 text-xl leading-9 font-bold tracking-tight text-gray-900 sm:text-2xl sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100"
+              >
                 Les dernières sorties spéléo du Clan
               </h2>
               <Link
