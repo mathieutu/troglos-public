@@ -5,6 +5,7 @@ import canyoning from '@/assets/images/photos/canyoning_10.jpg'
 import { TripsListItem } from '@/components/layouts/ListLayoutWithTags'
 import Image from 'next/image'
 import { HomeCarousel } from '@/app/(activites)/HomeCarousel'
+import { EventsCalendar } from '@/app/(activites)/EventsCalendar'
 import { generatePageMetadata } from '@/config/metadata'
 import { Metadata } from 'next'
 
@@ -176,6 +177,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <EventsCalendar />
     </>
   )
 }
