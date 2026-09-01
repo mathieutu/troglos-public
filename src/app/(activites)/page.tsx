@@ -42,7 +42,12 @@ export default async function Home() {
               <div className="relative z-10 flex h-full flex-col justify-between p-8 lg:p-12">
                 <div>
                   <div className="mb-6 text-6xl">🦇</div>
-                  <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Spéléologie</h2>
+                  <h2
+                    id="speleologie"
+                    className="mb-6 scroll-mt-24 text-3xl font-bold text-white lg:text-4xl"
+                  >
+                    Spéléologie
+                  </h2>
                   <p className="mb-8 text-lg leading-relaxed text-gray-200">
                     Notre passion première ! De la simple balade souterraine aux expéditions les
                     plus ambitieuses, nous accompagnons tous les niveaux dans la découverte du monde
@@ -81,7 +86,12 @@ export default async function Home() {
               <div className="relative z-10 flex h-full flex-col justify-between p-8 lg:p-12">
                 <div>
                   <div className="mb-6 text-6xl">🦎</div>
-                  <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">Canyonisme</h2>
+                  <h2
+                    id="canyonisme"
+                    className="mb-6 scroll-mt-24 text-3xl font-bold text-white lg:text-4xl"
+                  >
+                    Canyonisme
+                  </h2>
                   <p className="mb-8 text-lg leading-relaxed text-gray-200">
                     Des parcours accessibles aux descentes les plus engagées, chaque canyon offre
                     son lot de sensations. L'été, rien ne vaut le plaisir de plonger dans les eaux
@@ -114,7 +124,10 @@ export default async function Home() {
       <section className="relative py-20">
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">
+            <h2
+              id="dernieres-aventures"
+              className="mb-6 scroll-mt-24 text-4xl font-bold text-white lg:text-5xl"
+            >
               Les Dernières Aventures
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-300">
@@ -126,7 +139,10 @@ export default async function Home() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Sorties Canyon */}
             <div className="space-y-8">
-              <h3 className="text-canyon-400 mb-6 flex items-center gap-3 text-2xl font-bold">
+              <h3
+                id="sorties-canyon"
+                className="text-canyon-400 mb-6 flex scroll-mt-24 items-center gap-3 text-2xl font-bold"
+              >
                 <span className="text-3xl">🦎</span>
                 Dernières sorties Canyon
               </h3>
@@ -144,7 +160,10 @@ export default async function Home() {
 
             {/* Sorties Spéléo */}
             <div className="space-y-8">
-              <h3 className="text-caving-400 mb-6 flex items-center gap-3 text-2xl font-bold">
+              <h3
+                id="sorties-speleo"
+                className="text-caving-400 mb-6 flex scroll-mt-24 items-center gap-3 text-2xl font-bold"
+              >
                 <span className="text-3xl">🦇</span>
                 Dernières sorties Spéléo
               </h3>

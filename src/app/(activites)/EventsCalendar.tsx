@@ -38,7 +38,9 @@ export async function EventsCalendar() {
     <section className="relative py-16">
       <div className="relative z-10 mx-auto max-w-3xl px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-white lg:text-4xl">Prochains Évènements</h2>
+          <h2 id="evenements" className="scroll-mt-24 text-3xl font-bold text-white lg:text-4xl">
+            Prochains Évènements
+          </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-300">
             Un aperçu des rendez-vous à venir.
           </p>
