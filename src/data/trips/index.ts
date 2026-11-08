@@ -20,7 +20,7 @@ type User = {
 }
 export type TripReport = {
   id: string
-  description: string
+  description: string | null
   place: Place
   placeType: 'cave' | 'canyon'
   quickSummary: string

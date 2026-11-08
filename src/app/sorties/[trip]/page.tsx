@@ -120,10 +120,13 @@ export default async function Page(props: { params: Promise<{ trip: string }> })
           </header>
           <div className="divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0 dark:divide-gray-700">
             <div className="py-8 xl:col-span-3 xl:col-start-2">
-              <div
-                className="prose prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: trip.description }}
-              />
+              <div className="prose prose-invert max-w-none">
+                {trip.description?.trim() ? (
+                  <div dangerouslySetInnerHTML={{ __html: trip.description }} />
+                ) : (
+                  <p>{trip.quickSummary}</p>
+                )}
+              </div>
               <div className="flex items-center justify-end space-x-2">
                 <dl className="text-sm leading-5 font-medium whitespace-nowrap">
                   <dt className="inline">Publié par</dt>{' '}
